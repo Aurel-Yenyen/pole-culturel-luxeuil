@@ -7,7 +7,7 @@ define('BASE_URL', dirname(dirname($_SERVER['SCRIPT_NAME']))); //Permet de remon
 
 require CORE.DS.'includes.php';
 
-new Dispatcher()
+new dispatcher()
 ?>
 
 

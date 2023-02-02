@@ -1,18 +1,17 @@
-<!-- Permet d'avoir accès à View et ses variables -->
+<!-- Initialisé depuis le dispatcher et appel à une action, peut ou non utilisé un model et envoi les variable à view -->
 
 <?php
 
 class Controller{
 
     public $request;
-    private $vars = array();
-    private $template = 'default';
-    private $rendered =false;
+    public $vars       = array(); //Contient les variables que l'on veut faire passer à la vue
+    public $layout      = 'default';
+    public $rendered   = false;
 
-    function __construct($request){
-        $this->request = $request;     
+    function __construct($request){ //Initialise comme une variable d'instance
+        $this -> request = $request;
     }
-
     public function render($view){ // Fonction qui nous permet de voir les pages
         if($this->rendered){return false ; }
         extract($this->vars);
@@ -21,23 +20,28 @@ class Controller{
         }else{
             $view = ROOT.DS.'view'.DS.$this->request->controller.DS.$view.'.php';
         }
-
         ob_start();
         require($view);
-        $content_for_layout = ob_get_clean();
-        require ROOT.DS.'view'.DS.'template'.DS.$this->template.'.php'; // Dans le dossier template, ouvre default.php, permet de créer plusieur rendu
+        $content_for_laytout = ob_get_clean();
+        require ROOT.DS.'view'.DS.'layout'.DS.$this->layout.'.php'; // Dans le dossier template, ouvre default.php, permet de créer plusieur rendu
         $this->rendered = true;
     }
 
     public function set($key, $value=null){
         if(is_array($key)){
-            $this->vars += $key;
+            $this->vars +=$key;
         }else{
-            $this->vars[$key] = $value;
+            $this -> vars[$key] = $value;
+        }
+
+    }
+
+    function loadModel($name){
+        $file = ROOT.DS.'model'.DS.$name.'.php';
+        require_once($file);
+        if(!isset($this->$name)){
+            $this->$name = new $name();
         }
 
     }
 }
-
-
-?>

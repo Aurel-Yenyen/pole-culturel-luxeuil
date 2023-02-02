@@ -1,5 +1,4 @@
-<!-- Fichier contenant les Requêtes -->
-
+<!-- Objet qui permet de stocker toutes les informations des requêtes faites par l'utilisateur -->
 
 <?php
 

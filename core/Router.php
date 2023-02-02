@@ -1,3 +1,5 @@
+<!-- Sert à parser les url dans les deux sens, lorsqu'une requête arrive il essaiera de comprendre à quoi elle correspond. Et on génèrera un lien -->
+
 <?php
 
 class Router{ // Classe qui détermine l'url
@@ -13,7 +15,7 @@ class Router{ // Classe qui détermine l'url
         $request->controller = $params[0]; // Crée un tableau pour les paramètres
         $request->action = isset($params[1]) ? $params[1] : 'index'; // Si ça ne retourne aucune action, retourne l'index
         $request->params = array_slice($params, 2);
-        return true;// Retourne les paramètres de r
+        return true;// Retourne les paramètres
     }
 
 

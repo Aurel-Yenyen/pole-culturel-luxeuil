@@ -6,7 +6,7 @@ class conf{
         'default' => array(
             'host' => 'localhost',
             'database' => 'tuto',
-            'login' => 'rot',
+            'login' => 'root',
             'password' => ''
         )
     );

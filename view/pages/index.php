@@ -1,6 +1,5 @@
-<div class="hero">
+<div class="content">
     <h1>Bienvenue</h1>
-    <p>C'est la page d'acceuil</p>
+    <p>Page d'accueil</p>
 </div>
 
-<!-- <p>Le message est : <?php echo $phrase .' '. $nom; ?></p> -->
