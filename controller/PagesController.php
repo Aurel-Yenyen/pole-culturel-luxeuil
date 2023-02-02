@@ -6,8 +6,12 @@ class PagesController extends Controller{
     //     $this->render('index');
     // }
     
-    function view(){
+    function view($id){
         $this->loadModel('Post');
-        $this->loadModel('Post');
+        $post = $this->Post->findfirst(array(
+            'conditions' => 'id=1'
+        ));
+        $this->set('post', $post);
     }
+    
 }

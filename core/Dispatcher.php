@@ -2,15 +2,15 @@
 
 <?php
 
-class dispatcher{
+class dispatcher{ // Récupère l'url, affiche les erreurs 
 
     var $request;
 
     function __construct(){
         $this->request = new Request;
-        Router::parse($this->request->url, $this->request);
-        $controller = $this->loadController();
-        if(!in_array($this->request->action, get_class_methods($controller))){
+        Router::parse($this->request->url, $this->request); 
+        $controller = $this->loadController(); //Permet de charger le contrôleur
+        if(!in_array($this->request->action, get_class_methods($controller))){ //Si la page n'est pas dans le controller
             $this->error('Le controlleur' . $this->request->controller . 'n\'a pas de méthode '. $this->request->action);
         }
         call_user_func_array(array($controller, $this->request->action), $this->request->params);

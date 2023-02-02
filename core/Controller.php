@@ -6,7 +6,7 @@ class Controller{
 
     public $request;
     public $vars       = array(); //Contient les variables que l'on veut faire passer à la vue
-    public $layout      = 'default';
+    public $layout      = 'default'; //Correspond aux templates
     public $rendered   = false;
 
     function __construct($request){ //Initialise comme une variable d'instance
