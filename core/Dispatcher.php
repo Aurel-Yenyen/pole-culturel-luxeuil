@@ -18,11 +18,9 @@ class dispatcher{ // Récupère l'url, affiche les erreurs
     }
     
     function error($message){ // Affichage de l'erreur
-        header('HTTP/1.0 404 not found');
         $controller = new Controller($this->request);
-        $controller->set('message', $message); // Lie le message d'erreur à la page 404 grâce à la variable $message
-        $controller->render('/errors/404');
-        die();
+        $controller->e404($message);
+
     }   
 
     function loadController(){

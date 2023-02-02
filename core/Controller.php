@@ -44,4 +44,14 @@ class Controller{
         }
 
     }
+
+    /**
+     * Permet de Gérer les erreurs 404
+     **/
+    function e404($message){
+        header('HTTP/1.0 404 not found');
+        $this->set('message', $message); // Lie le message d'erreur à la page 404 grâce à la variable $message
+        $this->render('/errors/404');
+        die();
+    }
 }

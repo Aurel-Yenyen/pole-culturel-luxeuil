@@ -10,7 +10,7 @@ class conf{
             'database' => 'tuto',
             'login' => 'root',
             'port' => '3306',
-            'password' => ''
+            'password' => '' // Attention: SQLSTATE[HY000] [1045] Erreur sur l'un des élément du tableau de la BD
         )
     );
 }
