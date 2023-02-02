@@ -11,7 +11,7 @@ class dispatcher{ // Récupère l'url, affiche les erreurs
         Router::parse($this->request->url, $this->request); 
         $controller = $this->loadController(); //Permet de charger le contrôleur
         if(!in_array($this->request->action, get_class_methods($controller))){ //Si la page n'est pas dans le controller
-            $this->error('Le controlleur' . $this->request->controller . 'n\'a pas de méthode '. $this->request->action);
+            $this->error('Le controlleur ' . $this->request->controller . ' n\'a pas de méthode '. $this->request->action);
         }
         call_user_func_array(array($controller, $this->request->action), $this->request->params);
         $controller->render($this->request->action);

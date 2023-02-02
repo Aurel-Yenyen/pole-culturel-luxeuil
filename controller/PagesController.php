@@ -8,13 +8,16 @@ class PagesController extends Controller{
     
     function view($id){
         $this->loadModel('Post');
-        $post = $this->Post->findfirst(array(
-            'conditions' => array('id'=>$id) // Définit le nom de la page (http://localhost/Projet-Mairie/pages/view/(2))
+        $d['page'] = $this->Post->findfirst(array(
+            'conditions' => array('id'=>$id, 'type' => 'page') // Définit le nom de la page (http://localhost/Projet-Mairie/pages/view/(2))
         ));
-        if(empty($post)){
+        if(empty($d['page'])){
             $this->e404('Page introuvable');
         }
-        $this->set('post', $post);
+        $d['pages'] = $this->Post->find(array(
+            'conditions' => array('type' => 'page')
+        ));
+        $this->set($d);
     }
     
 }
