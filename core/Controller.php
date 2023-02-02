@@ -4,15 +4,29 @@
 
 class Controller{
 
-    public $request;
-    public $vars       = array(); //Contient les variables que l'on veut faire passer à la vue
+    public $request;                 // Objt Request
+    public $vars       = array();    //Contient les variables que l'on veut faire passer à la vue
     public $layout      = 'default'; //Correspond aux templates
-    public $rendered   = false;
+    public $rendered   = false;      // Si la vue à été faites ou non
 
-    function __construct($request){ //Initialise comme une variable d'instance
-        $this -> request = $request;
+
+    /** 
+     * Constructeur
+     * @param $request Objet request de notre application
+    **/
+
+    function __construct($request = null){          //Initialise comme une variable d'instance
+        if($request){
+            $this->request = $request;                // On stock la request dans l'instance
+        }
     }
-    public function render($view){ // Fonction qui nous permet de voir les pages
+
+    /** 
+     * Permet de rendre une vue
+     * @param $view Fichier à rendre (chemin deouis le view ou nom de la vue)
+    **/
+    
+    public function render($view){                  // Fonction qui nous permet de voir les pages
         if($this->rendered){return false ; }
         extract($this->vars);
         if(strpos($view, '/') === 0){
@@ -27,6 +41,11 @@ class Controller{
         $this->rendered = true;
     }
 
+    /**
+     * Permet de passer une ou plusieurs variable à la vue
+     * @param $key nom de la variable OU tableau de variables
+     * @param $value valeur de la variable
+     **/
     public function set($key, $value=null){
         if(is_array($key)){
             $this->vars +=$key;
@@ -36,10 +55,13 @@ class Controller{
 
     }
 
+    /**
+     * Permet de Charger un modèle
+     **/
     function loadModel($name){
-        $file = ROOT.DS.'model'.DS.$name.'.php';
-        require_once($file);
         if(!isset($this->$name)){
+            $file = ROOT.DS.'model'.DS.$name.'.php';
+            require_once($file);
             $this->$name = new $name();
         }
 
@@ -53,5 +75,16 @@ class Controller{
         $this->set('message', $message); // Lie le message d'erreur à la page 404 grâce à la variable $message
         $this->render('/errors/404');
         die();
+    }
+
+    /**
+     * Permet d'appeler un controlleur depuis une vue
+     **/
+    function request($controller, $action){
+        $controller .= 'Controller';
+        require_once ROOT.DS. 'controller'.DS.$controller.'.php';
+        $c = new $controller();
+        return $c->$action();
+
     }
 }

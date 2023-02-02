@@ -9,15 +9,21 @@ class PagesController extends Controller{
     function view($id){
         $this->loadModel('Post');
         $d['page'] = $this->Post->findfirst(array(
-            'conditions' => array('id'=>$id, 'type' => 'page') // Définit le nom de la page (http://localhost/Projet-Mairie/pages/view/(2))
+            'conditions' => array('id'=>$id,'online' => 1, 'type' => 'page') // Définit le nom de la page (http://localhost/Projet-Mairie/pages/view/(2))
         ));
         if(empty($d['page'])){
             $this->e404('Page introuvable');
         }
-        $d['pages'] = $this->Post->find(array(
-            'conditions' => array('type' => 'page')
-        ));
         $this->set($d);
     }
     
+    /**
+     * Permet de récuperer les pages pour le menu
+     **/
+    function getMenu(){
+        $this->loadModel('Post');
+        return $this->Post->find(array(
+            'conditions' => array('online' => 1, 'type' => 'page') // Condition à revoir pour le site (type)!!!!!
+        ));
+    }
 }

@@ -10,7 +10,13 @@ class Model{
 
     public function __construct()
     {
+        // J'initialise quelques variables
+
+        if($this->table === false){
+            $this->table = strtolower(get_class($this)) .'s';
+        }
         // Connection à la base de donnée
+        
         $conf = conf::$databases[$this->conf]; //Peut contenir plusieurs base de données
         if(isset(Model::$connections[$this->conf])){
             $this->db = Model::$connections[$this->conf];
@@ -37,10 +43,7 @@ class Model{
             }
 
         }
-        // J'initialise quelques variables
-        if($this->table === false){
-            $this->table = strtolower(get_class($this)) .'s';
-        }
+
     }
 
 
