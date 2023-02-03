@@ -6,7 +6,10 @@ class dispatcher{ // Récupère l'url, affiche les erreurs
 
     var $request;
 
+
     function __construct(){
+
+    
         $this->request = new Request;
         Router::parse($this->request->url, $this->request); 
         $controller = $this->loadController(); //Permet de charger le contrôleur

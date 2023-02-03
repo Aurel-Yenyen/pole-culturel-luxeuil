@@ -7,6 +7,7 @@ class Model{
     public $conf = 'default'; // Peut-être changé suivant la base de donnée utilisé
     public $table = false;
     public $db;
+    public $primaryKey = 'id';
 
     public function __construct()
     {
@@ -48,9 +49,21 @@ class Model{
 
 
     public function find($req){ // Requête SQL
-        $sql = 'SELECT * FROM '.$this->table.' as '.get_class($this). ' '; // Bien faire attention aux espaces SQLSTATE[42S02] [1146] Erreur de concataination de la requête lors de la connexion à la base de donnée
+        $sql = 'SELECT '; // Bien faire attention aux espaces SQLSTATE[42S02] [1146] Erreur de concataination de la requête lors de la connexion à la base de donnée
         // Reviens à faire 
         // $sql = 'SELECT * FROM table WHERE condition';
+        if(isset($req['fields'])){
+            if(is_array($req['fields'])){
+                $sql.= implode(',',$req['fields']);
+            }else{
+                $sql.= $req['fields'];
+            }    
+        }else{
+            $sql.= '*';
+        }
+
+        $sql .= ' FROM '.$this->table.' as '.get_class($this). ' ';
+
 
         // Construction de la condition
         if(isset($req['conditions'])){//SQLSTATE[42000]: Syntax error or access violation: 1064: Erreur de concataination de la requête SQL
@@ -77,7 +90,15 @@ class Model{
 
     }
 
-    public function findfirst($req){ // Requête SQL
+    public function findFirst($req){ // Requête SQL
         return current($this->find($req)); // Fonction current qui permet de récuperer l'élément courant du tableau
     }
+
+    public function findCount($conditions){
+        $res = $this->findFirst(array(
+            'fields' => 'COUNT('.$this->primaryKey.') as count',
+            'conditions' => $conditions
+        ));
+        return $res->count;
+    }   
 }
