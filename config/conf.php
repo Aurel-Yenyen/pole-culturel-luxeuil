@@ -14,3 +14,5 @@ class conf{
         )
     );
 }
+
+Router::connect('post/:slug-:id','posts/view/.$v.([0-9]+)/slug:([a-z0-9\-]+)');

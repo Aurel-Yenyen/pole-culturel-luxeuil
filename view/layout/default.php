@@ -18,7 +18,7 @@
     </ul>
 
     <div class="container">
-        <style>.container{background: #3a3a3a}</style>
+        <style></style>
             <?php echo $content_for_laytout; ?>
 
     </div>

@@ -14,9 +14,11 @@ class PostsController extends Controller{
     
     function view($id){
         $this->loadModel('Post');
+        $condition = array('online' => 1,'id'=>$id, 'type' => 'post');
         $d['page'] = $this->Post->findFirst(array(
-            'conditions' => array('online' => 1,'id'=>$id, 'type' => 'post') // Définit la condition de la requête MySQL
+            'conditions' =>  $condition// Définit la condition de la requête MySQL
         ));
+        $d['total'] = $this->Post->findCount($condition);
         if(empty($d['page'])){
             $this->e404('Page introuvable');
         }
