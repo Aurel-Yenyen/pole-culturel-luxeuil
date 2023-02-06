@@ -69,7 +69,7 @@ class Router{ // Classe qui détermine l'url
                 }
             }
 
-            // self::routes[] = $r;
+
         }
 
         $r['catcher'] = $redir;
