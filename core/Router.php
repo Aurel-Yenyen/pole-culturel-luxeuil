@@ -16,17 +16,23 @@ class Router{ // Classe qui détermine l'url
     static function parse($url, $request){
         $url = trim($url, '/'); //Fonction qui enlève les espaces en début de chaîne
 
-        foreach(Router::$routes as $v){
-            if(preg_match($v['catcher'], $url, $match)){
-                $request->controller = $v['controller'];
-                $request->action = $v['action'];
-                $request->params = array();
-                foreach($v['params'] as $k => $v){
-                    $request->params[$k] = $match[$k];
+        if(empty($url)){
+            $url = (Router::$routes[0]['url']);
+        }else{
+            foreach(Router::$routes as $v){
+                if(preg_match($v['catcher'], $url, $match)){
+                    $request->controller = $v['controller'];
+                    $request->action = $v['action'];
+                    $request->params = array();
+                    foreach($v['params'] as $k => $v){
+                        $request->params[$k] = $match[$k];
+                    }
+                    return $request;
                 }
-                return $request;
             }
         }
+
+
 
         $params = explode('/', $url); //Sépare les différents morceau de l'url
         $request->controller = $params[0]; // Crée un tableau pour les paramètres
@@ -45,10 +51,10 @@ class Router{ // Classe qui détermine l'url
 
         $r['params'] = array();
         $r['redir'] = $redir;
-
+        $r['url'] = $url;
 
         $r['origin'] = preg_replace('/([a-z0-9]+):([^\/]+)/', '${1}:(?P<${1}>${2})', $url);
-        $r['origin'] = '/'. str_replace('/','\/', $r['origin']).'/';
+        $r['origin'] = '/'. str_replace('/','\/', $r['origin']).'$/';
 
         $params = explode('/', $url);
         foreach($params as $k => $v){
@@ -70,7 +76,7 @@ class Router{ // Classe qui détermine l'url
         foreach($r['params'] as $k => $v){
             $r['catcher'] = str_replace(":$k", "(?P<$k>$v)", $r['catcher']);
         }
-        $r['catcher'] = '/'. str_replace('/','\/', $r['catcher']).'/';
+        $r['catcher'] = '/'. str_replace('/','\/', $r['catcher']).'$/';
 
         self::$routes[] = $r;
 
