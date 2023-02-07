@@ -16,4 +16,3 @@
     </tbody>
 </table>
 
-// Faire le système des pages et du blog avec routing

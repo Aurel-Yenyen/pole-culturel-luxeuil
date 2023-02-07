@@ -5,22 +5,26 @@ class PostsController extends Controller{
     public $Post;
 
     function index(){
+        $perPage = 1;
         $this->loadModel('Post');
-        $condition = array('online' => 1, 'type' => 'post' );
+        $conditions = array('online' => 1, 'type' => 'musique' );
         $d['posts'] = $this->Post->find(array(
-            'conditions' => $condition
+            'conditions' => $conditions,
+            'limit'      => ($perPage*($this->request->page-1)). ',' .$perPage
         ));
+        $d['total'] = $this->Post->findCount($conditions);
+        $d['page'] = ceil($d['total'] / $perPage);
         $this->set($d);
     }
     
     function view($id, $slug){
         $this->loadModel('Post');
-        $condition = array('online' => 1,'id'=>$id, 'type' => 'post');
-        $d['post'] = $this->Post->findFirst(array(
+        $conditions = array('online' => 1,'id'=>$id, 'type' => 'musique');
+        $d['page'] = $this->Post->findFirst(array(
             'fields'     =>  'id, slug, name, content',
-            'conditions' =>  $condition// Définit la condition de la requête MySQL
+            'conditions' =>  $conditions// Définit la condition de la requête MySQL
         ));
-        if(empty($d['post'])){
+        if(empty($d['page'])){
             $this->e404('Page introuvable');
         }if($slug != $d['post']->slug){
             $this->redirect("posts/view/id:$id/slug:".$d['post']->slug,301);

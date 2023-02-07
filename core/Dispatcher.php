@@ -37,4 +37,3 @@ class dispatcher{ // Récupère l'url, affiche les erreurs
         return new $name($this->request);
     }
 }
-52min

@@ -84,6 +84,10 @@ class Model{
         }
 
 
+        if(isset($req['limit'])){//SQLSTATE[42000]: Syntax error or access violation: 1064: Erreur de concataination de la requête SQL
+            $sql .= 'LIMIT '.$req['limit']; 
+        }
+
         $pre = $this->db->prepare($sql);
         $pre->execute();
         return $pre->fetchAll(PDO::FETCH_OBJ);
