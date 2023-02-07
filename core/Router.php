@@ -6,8 +6,11 @@ class Router{ // Classe qui détermine l'url
 
 
     static $routes = array();
+    static $prefixes = array();
 
-
+    static function prefix($url, $prefix){
+        self::$prefixes[$url] = $prefix;
+    }
     /**
      * Permet de parser une url
      * @param $url --> Url à parser
@@ -35,6 +38,11 @@ class Router{ // Classe qui détermine l'url
 
 
         $params = explode('/', $url); //Sépare les différents morceau de l'url
+
+        if(in_array($params[0], array_keys(self::$prefixes))){
+            $request->prefix = self::$prefixes[$params[0]];
+            array_shift($params);
+        }
         $request->controller = $params[0]; // Crée un tableau pour les paramètres
         $request->action = isset($params[1]) ? $params[1] : 'index'; // Si ça ne retourne aucune action, retourne l'index
         $request->params = array_slice($params, 2);

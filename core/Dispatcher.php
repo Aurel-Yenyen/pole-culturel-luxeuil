@@ -8,16 +8,20 @@ class dispatcher{ // Récupère l'url, affiche les erreurs
 
 
     function __construct(){
-
+        
     
         $this->request = new Request;
         Router::parse($this->request->url, $this->request); 
         $controller = $this->loadController(); //Permet de charger le contrôleur
-        if(!in_array($this->request->action, array_diff(get_class_methods($controller), get_class_methods('Controller')))){ //Si la page n'est pas dans le controller
-            $this->error('Le controlleur ' . $this->request->controller . ' n\'a pas de méthode '. $this->request->action);
+        $action = $this->request->action;
+        if($this->request->prefix){
+            $action = $this->request->prefix .'_'. $action;
         }
-        call_user_func_array(array($controller, $this->request->action), $this->request->params);
-        $controller->render($this->request->action);
+        if(!in_array($action, array_diff(get_class_methods($controller), get_class_methods('Controller')))){ //Si la page n'est pas dans le controller
+            $this->error('Le controlleur ' . $this->request->controller . ' n\'a pas de méthode '. $action);
+        }
+        call_user_func_array(array($controller, $action), $this->request->params);
+        $controller->render($action);
     }
     
     function error($message){ // Affichage de l'erreur

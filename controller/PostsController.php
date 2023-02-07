@@ -6,8 +6,9 @@ class PostsController extends Controller{
 
     function index(){
         $this->loadModel('Post');
+        $condition = array('online' => 1, 'type' => 'post' );
         $d['posts'] = $this->Post->find(array(
-            'conditions' => array('online' => 1, 'type' => 'post' )
+            'conditions' => $condition
         ));
         $this->set($d);
     }
@@ -28,5 +29,18 @@ class PostsController extends Controller{
         $this->set($d);
     }
     
-
+    /**
+     * ADMIN
+     **/
+    function admin_index(){
+        $this->loadModel('Post');
+        $condition = array('type' => 'post' );
+        $d['posts'] = $this->Post->find(array(
+            'conditions' => $condition
+        ));
+        $this->set($d);
+    }
+    function spectacle(){
+        
+    }
 }
