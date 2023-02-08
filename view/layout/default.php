@@ -14,11 +14,12 @@
         <?php foreach($pagesMenu as $p): ?>
                 <li><a href="<?php echo BASE_URL. '/pages/view/'. $p->id;?>" title="<?php echo $p->$name;?>"><?php echo $p->name;?></a></li>
         <?php endforeach;?>
-        <li><a href="<?php echo BASE_URL. '/posts/index'; ?>">Actualité</a></li>
+        <li><a href="<?php echo Router::url('posts/index'); ?>">Actualité</a></li>
     </ul>
 
     <div class="container">
         <style></style>
+            <?php echo $this->Session->flash(); ?>
             <?php echo $content_for_laytout; ?>
 
     </div>

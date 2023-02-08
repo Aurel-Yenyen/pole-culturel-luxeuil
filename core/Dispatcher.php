@@ -24,16 +24,29 @@ class dispatcher{ // Récupère l'url, affiche les erreurs
         $controller->render($action);
     }
     
+
+    /*********************************************************************************************/
+
+
     function error($message){ // Affichage de l'erreur
         $controller = new Controller($this->request);
         $controller->e404($message);
 
     }   
 
+
+    /*********************************************************************************************/
+
+
+    
     function loadController(){
         $name = ucfirst($this->request->controller) . 'Controller';
         $file = ROOT.DS. 'controller'. DS . $name . '.php';
         require $file;
-        return new $name($this->request);
+        $controller = new $name($this->request);
+
+        $controller->Session = new Session();
+        
+        return $controller;
     }
 }

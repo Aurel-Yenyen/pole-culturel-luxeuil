@@ -48,6 +48,11 @@ class Model{
     }
 
 
+
+    /*********************************************************************************************/
+
+
+
     public function find($req){ // Requête SQL
         $sql = 'SELECT '; // Bien faire attention aux espaces SQLSTATE[42S02] [1146] Erreur de concataination de la requête lors de la connexion à la base de donnée
         // Reviens à faire 
@@ -94,9 +99,22 @@ class Model{
 
     }
 
+
+
+    /*********************************************************************************************/
+
+
+
+
     public function findFirst($req){ // Requête SQL
         return current($this->find($req)); // Fonction current qui permet de récuperer l'élément courant du tableau
     }
+
+
+
+    /*********************************************************************************************/
+
+
 
     public function findCount($conditions){
         $res = $this->findFirst(array(
@@ -106,6 +124,12 @@ class Model{
         return $res->count;
     }   
 
+
+
+    /*********************************************************************************************/
+
+
+    
     public function delete($id){
         $sql = "DELETE FROM {$this->table} WHERE {$this->primaryKey} = $id";
         $this->db->query($sql);

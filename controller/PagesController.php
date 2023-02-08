@@ -5,6 +5,7 @@ class PagesController extends Controller{
     public $Post;
     
     function view($id){
+        $this->render('index');
         $this->loadModel('Post');
         $d['page'] = $this->Post->findFirst(array(
             'conditions' => array('id'=>$id,'online' => 1, 'type' => 'page') // Définit le nom de la page (http://localhost/Projet-Mairie/pages/view/(2))

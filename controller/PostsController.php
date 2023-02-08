@@ -16,26 +16,38 @@ class PostsController extends Controller{
         $d['page'] = ceil($d['total'] / $perPage);
         $this->set($d);
     }
-    
+
+
+
+    /*********************************************************************************************/
+
+
+
     function view($id, $slug){
         $this->loadModel('Post');
         $conditions = array('online' => 1,'id'=>$id, 'type' => 'musique');
-        $d['page'] = $this->Post->findFirst(array(
+        $d['post'] = $this->Post->findFirst(array(
             'fields'     =>  'id, slug, name, content',
             'conditions' =>  $conditions// Définit la condition de la requête MySQL
         ));
-        if(empty($d['page'])){
+        if(empty($d['post'])){
             $this->e404('Page introuvable');
-        }if($slug != $d['page']->slug){
-            $this->redirect("posts/view/id:$id/slug:".$d['posts']->slug,301);
+        }if($slug != $d['post']->slug){
+            $this->redirect("posts/view/id:$id/slug:".$d['post']->slug,301);
 
         }
         $this->set($d);
     }
-    
+
+
+    /*********************************************************************************************/
+
+
+
     /**
      * ADMIN
      **/
+
     function admin_index(){
         $perPage = 10;
         $this->loadModel('Post');
@@ -54,9 +66,11 @@ class PostsController extends Controller{
     /**
      * ADMIN : Permet de supprimer un article
      **/
-    function admin_delete(){
+    
+    function admin_delete($id){
         $this->loadModel('Post');
-        $this->Post->delete($id);
+        // $this->Post->delete($id);
+        $this->Session->setFlash('Le contenu à bien été supprimé.');
         $this->redirect('admin/posts/index');
     }
 }

@@ -61,7 +61,7 @@ class Router{ // Classe qui détermine l'url
         $r['redir'] = $redir;
         $r['url'] = $url;
 
-        $r['origin'] = preg_replace('/([a-z0-9]+):([^\/]+)/', '${1}:(?P<${1}>${2})', $url);
+        $r['origin'] = preg_replace('/([a-zA-Z0-9]+):([^\/]+)/', '${1}:(?P<${1}>${2})', $url);
         $r['origin'] = '/'. str_replace('/','\/', $r['origin']).'$/';
 
         $params = explode('/', $url);
@@ -101,7 +101,7 @@ class Router{ // Classe qui détermine l'url
                         $v['redir'] = str_replace(":$k", $w, $v['redir']);
                     }
                 }
-                return BASE_URL.'/'. $v['redir'];
+                return BASE_URL.str_replace('//', '/', '/'. $v['redir']);
             }
         }
         foreach(self::$prefixes as $k =>$v){

@@ -26,6 +26,9 @@ class Controller{
      * @param $view Fichier à rendre (chemin deouis le view ou nom de la vue)
     **/
     
+    /*********************************************************************************************/
+
+
     public function render($view){                  // Fonction qui nous permet de voir les pages
         if($this->rendered){return false ; }
         extract($this->vars);
@@ -41,6 +44,10 @@ class Controller{
         $this->rendered = true;
     }
 
+
+    /*********************************************************************************************/
+
+
     /**
      * Permet de passer une ou plusieurs variable à la vue
      * @param $key nom de la variable OU tableau de variables
@@ -55,6 +62,11 @@ class Controller{
 
     }
 
+
+    /*********************************************************************************************/
+
+
+
     /**
      * Permet de Charger un modèle
      **/
@@ -67,6 +79,10 @@ class Controller{
 
     }
 
+
+    /*********************************************************************************************/
+
+
     /**
      * Permet de Gérer les erreurs 404
      **/
@@ -76,6 +92,10 @@ class Controller{
         $this->render('/errors/404');
         die();
     }
+
+
+    /*********************************************************************************************/
+
 
     /**
      * Permet d'appeler un controlleur depuis une vue
@@ -88,10 +108,18 @@ class Controller{
 
     }
 
+
+    /*********************************************************************************************/
+
+
+
     function redirect($url, $code = null){
         if($code == 301){
             header('HTTP/1.1 301 Moved Permanently');
         }
-        header("Location: ".Router::url($url));
+        header("Location: ". Router::url($url));
     }
+
+
+    /*********************************************************************************************/
 }
