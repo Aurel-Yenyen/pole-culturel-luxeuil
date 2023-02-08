@@ -101,10 +101,15 @@ class Router{ // Classe qui détermine l'url
                         $v['redir'] = str_replace(":$k", $w, $v['redir']);
                     }
                 }
-                return $v['redir'];
+                return BASE_URL.'/'. $v['redir'];
             }
         }
-        return $url;
+        foreach(self::$prefixes as $k =>$v){
+            if(strpos($url, $v) === 0){
+                $url = str_replace($v,$k,$url);
+            }
+        }
+        return BASE_URL.'/'.$url;
     }
 }
 

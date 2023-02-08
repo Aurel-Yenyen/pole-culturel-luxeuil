@@ -26,8 +26,8 @@ class PostsController extends Controller{
         ));
         if(empty($d['page'])){
             $this->e404('Page introuvable');
-        }if($slug != $d['post']->slug){
-            $this->redirect("posts/view/id:$id/slug:".$d['post']->slug,301);
+        }if($slug != $d['page']->slug){
+            $this->redirect("posts/view/id:$id/slug:".$d['posts']->slug,301);
 
         }
         $this->set($d);
@@ -37,14 +37,26 @@ class PostsController extends Controller{
      * ADMIN
      **/
     function admin_index(){
+        $perPage = 10;
         $this->loadModel('Post');
-        $condition = array('type' => 'post' );
+        $conditions = array('type' => 'musique' );
         $d['posts'] = $this->Post->find(array(
-            'conditions' => $condition
+            'fields'     => 'id,name,online',
+            'conditions' => $conditions,
+            'limit'      => ($perPage*($this->request->page-1)). ',' .$perPage
         ));
+        $d['total'] = $this->Post->findCount($conditions);
+        $d['page'] = ceil($d['total'] / $perPage);
         $this->set($d);
     }
-    function spectacle(){
+
         
+    /**
+     * ADMIN : Permet de supprimer un article
+     **/
+    function admin_delete(){
+        $this->loadModel('Post');
+        $this->Post->delete($id);
+        $this->redirect('admin/posts/index');
     }
 }
