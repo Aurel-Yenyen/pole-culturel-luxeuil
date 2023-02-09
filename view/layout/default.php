@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($title_for_layout) ? $title_for_layout: 'Mon Site'; ?></title>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -18,8 +18,7 @@
     </ul>
 
     <div class="container">
-        <style></style>
-            <?php echo $this->Session->flash(); ?>
+            <?php echo $this->Session->flash();?>
             <?php echo $content_for_laytout; ?>
 
     </div>

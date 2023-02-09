@@ -62,7 +62,7 @@ class Router{ // Classe qui détermine l'url
         $r['url'] = $url;
 
         $r['origin'] = preg_replace('/([a-zA-Z0-9]+):([^\/]+)/', '${1}:(?P<${1}>${2})', $url);
-        $r['origin'] = '/'. str_replace('/','\/', $r['origin']).'$/';
+        $r['origin'] = '/^'. str_replace('/','\/', $r['origin']).'$/';
 
         $params = explode('/', $url);
         foreach($params as $k => $v){
@@ -84,7 +84,7 @@ class Router{ // Classe qui détermine l'url
         foreach($r['params'] as $k => $v){
             $r['catcher'] = str_replace(":$k", "(?P<$k>$v)", $r['catcher']);
         }
-        $r['catcher'] = '/'. str_replace('/','\/', $r['catcher']).'$/';
+        $r['catcher'] = '/^'. str_replace('/','\/', $r['catcher']).'$/';
 
         self::$routes[] = $r;
 

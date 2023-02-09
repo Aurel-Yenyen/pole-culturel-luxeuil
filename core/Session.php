@@ -11,10 +11,11 @@ class session{
     /********************************************************************************************/
 
 
-    public function setFlash($message,$type){// Envoi un message au moment de l'action SQL
+    public function setFlash($message,$type = 'success'){// Envoi un message au moment de l'action SQL
         $_SESSION['flash'] = array(
             'message'    => $message,
             'type'       => $type
+        
         );
     }
 
@@ -24,7 +25,7 @@ class session{
 
     public function flash(){
         if(isset($_SESSION['flash'])){
-            return $_SESSION['flash']['mesage'];
+            return $_SESSION['flash']['message'];
         }
     }
 }
