@@ -24,8 +24,10 @@ class session{
 
 
     public function flash(){
-        if(isset($_SESSION['flash'])){
-            return $_SESSION['flash']['message'];
+        if(isset($_SESSION['flash']['message'])){
+            $html = '<p>'.$_SESSION['flash']['message'].'</p>';
+            $_SESSION['flash'] = array();
+            return $html;
         }
     }
 }
