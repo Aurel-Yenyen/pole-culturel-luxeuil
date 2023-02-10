@@ -2,9 +2,11 @@
 
 class session{
 
-    function __construct()
+    public function __construct()
     {
-        session_start();// Permet d'initialisé une session
+        if(!isset($_SESSION)){
+            session_start();// Permet d'initialisé une session
+        }
     }
 
 

@@ -62,14 +62,42 @@ class PostsController extends Controller{
         $this->set($d);
     }
 
-        
+
+        /*********************************************************************************************/
+
+
+    
+    /**
+     * ADMIN : Permet d'éditer un article
+     **/
+
+
+    function admin_edit($id = null){
+        $this->loadModel('Post');
+        if($this->request->data){
+            $this->Post->save($this->request->data);
+            $id = $this->Post->id;
+        }
+        if($id){
+            $this->request->data = $this->Post->findFirst(array(
+                'conditions' => array('id' => $id)
+            ));
+        }
+    }   
+
+    
+
+    /*********************************************************************************************/
+
+
+
     /**
      * ADMIN : Permet de supprimer un article
      **/
     
     function admin_delete($id){
         $this->loadModel('Post');
-        $this->Post->delete($id);
+        // $this->Post->delete($id);
         $this->Session->setFlash('Le contenu à bien été supprimé.', '');
         $this->redirect('cockpit/posts/index');
     }

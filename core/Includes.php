@@ -2,7 +2,9 @@
 
 <?php
 
+
 require 'Session.php';
+require 'Form.php';
 require 'Functions.php';
 require 'Router.php';
 

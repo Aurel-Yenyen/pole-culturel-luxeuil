@@ -8,6 +8,7 @@ class Model{
     public $table = false;
     public $db;
     public $primaryKey = 'id';
+    public $id;
 
     public function __construct()
     {
@@ -134,4 +135,31 @@ class Model{
         $sql = "DELETE FROM {$this->table} WHERE {$this->primaryKey} = $id";
         $this->db->query($sql);
     }
+
+
+
+    /*********************************************************************************************/
+
+
+
+    public function save($data){
+        $key = $this->primaryKey;
+        $fields = array();
+        $d = array();
+        if(isset($data->key)) unset($data->key);
+        foreach($data as $k => $v){
+            $fields[] = "$k=:$k";
+            $d[":$k"] = $v;
+        }
+        if(isset($data->key) && !empty($data->$key)){
+            $sql = 'UPDATE '. $this->table. ' SET '. implode(',', $fields). ' WHERE '. $key . '=:'.$key;
+            $this->id = $data->$key;
+        }else{
+            $sql = 'INSERT INTO '. $this->table. ' SET '. implode(',', $fields);
+        }
+        $pre = $this->db->prepare($sql);
+        $pre->execute();
+        debug($sql);
+    }
+    
 }
