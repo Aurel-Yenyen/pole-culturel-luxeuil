@@ -111,6 +111,9 @@ class Router{ // Classe qui détermine l'url
         }
         return BASE_URL.'/'.$url;
     }
+    static function webroot($url){
+        trim($url, '/');
+        return BASE_URL.'/'.$url;
+    }
 }
 
-// Temps de vidéo 52 min
