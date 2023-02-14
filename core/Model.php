@@ -9,6 +9,8 @@ class Model{
     public $db;
     public $primaryKey = 'id';
     public $id;
+    public $erros = array();
+    public $form;
 
     public function __construct()
     {
@@ -146,20 +148,31 @@ class Model{
         $key = $this->primaryKey;
         $fields = array();
         $d = array();
-        if(isset($data->key)) unset($data->key);
         foreach($data as $k => $v){
-            $fields[] = "$k=:$k";
-            $d[":$k"] = $v;
+            if($k!=$this->primaryKey){
+                $fields[] = "$k=:$k";
+                $d[":$k"] = $v;
+            }elseif(!empty($v)){
+                $d[":$k"] = $v;   
+            }
+
+
         }
-        if(isset($data->key) && !empty($data->$key)){
-            $sql = 'UPDATE '. $this->table. ' SET '. implode(',', $fields). ' WHERE '. $key . '=:'.$key;
+        if(isset($data->$key) && !empty($data->$key)){
+            $sql = 'UPDATE '. $this->table. ' SET '. implode(',', $fields). ' WHERE '. $key. '=:'.$key;
             $this->id = $data->$key;
-        }else{
+            $action = 'update';
+        }
+        else{
             $sql = 'INSERT INTO '. $this->table. ' SET '. implode(',', $fields);
+            $action = 'insert';
         }
         $pre = $this->db->prepare($sql);
-        $pre->execute();
-        debug($sql);
+        $pre->execute($d);
+        if($action == 'insert'){
+            $this->id = $this->db->lastInsertId();
+        }
+        return true;
     }
     
 }

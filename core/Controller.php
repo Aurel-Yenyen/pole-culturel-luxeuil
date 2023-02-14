@@ -18,7 +18,9 @@ class Controller{
     function __construct($request = null){          //Initialise comme une variable d'instance
         if($request){
             $this->request = $request;                // On stock la request dans l'instance
+            require ROOT.DS.'config'.DS.'hook.php';
         }
+
     }
 
     /** 
@@ -75,6 +77,10 @@ class Controller{
             $file = ROOT.DS.'model'.DS.$name.'.php';
             require_once($file);
             $this->$name = new $name();
+            // A voir!!
+            if(isset($this->Form)){
+                $this->$name->Form = $this->Form;
+            }
         }
 
     }

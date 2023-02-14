@@ -1,8 +1,9 @@
 <h1>Editer un article</h1>
 
-<form action="<?php echo Router::url('admin/posts/edit'); ?>" method="post">
+<form action="<?php echo Router::url('admin/posts/edit/'.$id); ?>" method="post">
     <?php echo $this->Form->input('name', 'Titre'); ?>
-    <?php echo $this->Form->input('slug', 'Titre'); ?>
+    <?php echo $this->Form->input('slug', 'Slug'); ?>
+    <?php echo $this->Form->input('type', 'Type');?>
     <?php echo $this->Form->input('id', 'hidden'); ?>
     <?php echo $this->Form->input('content', 'Contenu', array('type'=>'textarea', 'rows' => 10, 'cols' => 40)); ?>
     <?php echo $this->Form->input('online', 'Mettre en Ligne', array('type' => 'checkbox')); ?>

@@ -71,18 +71,31 @@ class PostsController extends Controller{
      * ADMIN : Permet d'éditer un article
      **/
 
-
+    
     function admin_edit($id = null){
         $this->loadModel('Post');
+        $d['id'] = '';
         if($this->request->data){
-            $this->Post->save($this->request->data);
-            $id = $this->Post->id;
+            if($this->Post->validates($this->request->data)){
+                $this->request->type = 'musique';
+                $this->request->created = date('Y-m-s h-i-s');
+
+                $this->Post->save($this->request->data);
+                $this->Session->setFlash('Le contenu à bien été modifié.', '');
+                $id = $this->Post->id;
+            }else{
+                $this->Session->setFlash('Merci de corriger vos informations.', 'error');
+            }
         }
-        if($id){
-            $this->request->data = $this->Post->findFirst(array(
-                'conditions' => array('id' => $id)
-            ));
+        else{
+            if($id){
+                $this->request->data = $this->Post->findFirst(array(
+                    'conditions' => array('id' => $id)
+                ));
+                $d['id'] = $id;
+            }       
         }
+        $this->set($d);
     }   
 
     
@@ -97,7 +110,7 @@ class PostsController extends Controller{
     
     function admin_delete($id){
         $this->loadModel('Post');
-        // $this->Post->delete($id);
+        $this->Post->delete($id);
         $this->Session->setFlash('Le contenu à bien été supprimé.', '');
         $this->redirect('cockpit/posts/index');
     }

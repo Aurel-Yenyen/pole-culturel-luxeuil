@@ -7,7 +7,6 @@
         <tr>
             <th>ID</th>
             <th>Titre</th>
-            <th>En ligne?<th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -15,7 +14,6 @@
         <?php foreach($posts as $k => $v):?>
             <tr>
                 <td><?php echo $v->id;?></td>
-                <td><span class="<?php echo ($v->online == 1)?'success':'error';?>"><?php echo ($v->online == 1)?'En ligne':'Hors Ligne';?></span></td>
                 <td><?php echo $v->name;?></td>
                 <td>
                     <a href="<?php echo Router::url('admin/posts/edit/'. $v->id);?>">Editer</a>

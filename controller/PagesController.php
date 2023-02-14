@@ -25,4 +25,18 @@ class PagesController extends Controller{
             'conditions' => array('online' => 1, 'type' => 'page') // Condition à revoir pour le site (type)!!!!!
         ));
     }
+
+    /*********************************************************************************************/
+
+
+
+    /**
+     * ADMIN
+     **/
+
+     function admin_index(){
+        $this->loadModel('Post');
+        $conditions = array('type' => 'pages' );
+
+    }   
 }
