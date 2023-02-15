@@ -9,9 +9,6 @@
 </head>
 <body>
 
-    <ul>
-        <li><a href="<?php echo Router::url('admin/evenements/index');?>">Articles</a></li>
-    </ul>
 
     <div class="container">
             <?php echo $this->Session->flash();?>

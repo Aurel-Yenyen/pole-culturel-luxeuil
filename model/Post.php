@@ -7,7 +7,7 @@ class Post extends Model{
             'rule' => 'notEmpty', 
             'message' => 'Vous devez préciser un titre'),
         'slug' => array(
-            'rule' => '([a-zA-Z0-9\/]+)',
+            'rule' => '([a-z0-9\/-]+)',
             'message' => "L'Url n'est pas valide")
     );
 

@@ -61,7 +61,7 @@ class Router{ // Classe qui détermine l'url
         $r['redir'] = $redir;
         $r['url'] = $url;
 
-        $r['origin'] = preg_replace('/([a-zA-Z0-9]+):([\/]+)/', '${1}:(?P<${1}>${2})', $url);
+        $r['origin'] = preg_replace('/([a-zA-Z0-9]+):([^\/]+)/', '${1}:(?P<${1}>${2})', $url);
         $r['origin'] = '/^'. str_replace('/','\/', $r['origin']).'$/';
 
         $params = explode('/', $url);
