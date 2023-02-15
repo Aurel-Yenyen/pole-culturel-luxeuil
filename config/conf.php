@@ -15,7 +15,8 @@ class conf{
     );
 }
 
-Router::prefix('cockpit', 'admin');
-Router::connect('/', 'posts/index');
 
-Router::connect('post/:slug-:id','posts/view/id:([0-9]+)/slug:([a-zA-Z0-9\-]+)');
+Router::prefix('cockpit', 'admin');
+Router::connect('/', 'pages/view/1');
+
+Router::connect('evenement/:slug-:id','evenements/view/id:([0-9]+)/slug:([a-zA-Z0-9\-]+)');

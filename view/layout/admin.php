@@ -8,11 +8,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h3><a href="<?php echo Router::url('admin/posts/index');?>"></a></h3>
 
     <ul>
-        <li><a href="<?php echo Router::url('admin/posts/index');?>">Articles</a></li>
-        <li><a href="<?php echo Router::url('admin/pages/index');?>">Pages</a></li>
+        <li><a href="<?php echo Router::url('admin/evenements/index');?>">Articles</a></li>
     </ul>
 
     <div class="container">
@@ -20,6 +18,6 @@
             <?php echo $content_for_laytout; ?>
 
     </div>
-    <a href="<?php echo Router::url('/')?>">Voir le site</a>
+    <a href="<?php echo Router::url('')?>">Voir le site</a>
 </body>
 </html>

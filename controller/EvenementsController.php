@@ -1,23 +1,30 @@
 <?php
 
-class PostsController extends Controller{
+class EvenementsController extends Controller{
 
     public $Post;
 
-    function index(){
-        $perPage = 1;
+    function spectacle(){
         $this->loadModel('Post');
         $conditions = array('online' => 1, 'type' => 'musique' );
         $d['posts'] = $this->Post->find(array(
             'conditions' => $conditions,
-            'limit'      => ($perPage*($this->request->page-1)). ',' .$perPage
         ));
         $d['total'] = $this->Post->findCount($conditions);
-        $d['page'] = ceil($d['total'] / $perPage);
+
         $this->set($d);
     }
 
+    function theatre(){
+        $this->loadModel('Post');
+        $conditions = array('online' => 1, 'type' => 'musique' );
+        $d['posts'] = $this->Post->find(array(
+            'conditions' => $conditions,
+        ));
+        $d['total'] = $this->Post->findCount($conditions);
 
+        $this->set($d);
+    }
 
     /*********************************************************************************************/
 
@@ -33,7 +40,7 @@ class PostsController extends Controller{
         if(empty($d['post'])){
             $this->e404('Page introuvable');
         }if($slug != $d['post']->slug){
-            $this->redirect("posts/view/id:$id/slug:".$d['post']->slug,301);
+            $this->redirect("evenements/view/id:$id/slug:".$d['post']->slug,301);
 
         }
         $this->set($d);
@@ -49,16 +56,21 @@ class PostsController extends Controller{
      **/
 
     function admin_index(){
-        $perPage = 10;
         $this->loadModel('Post');
-        $conditions = array('type' => 'musique' );
-        $d['posts'] = $this->Post->find(array(
+        $conditions = array(
+            'type' => 'musique',
+        );
+        $conditions1 = array(
+            'type' => 'page',
+        );
+        $d['articles'] = $this->Post->find(array(
             'fields'     => 'id,name,online',
-            'conditions' => $conditions,
-            'limit'      => ($perPage*($this->request->page-1)). ',' .$perPage
+            'conditions' => $conditions
         ));
-        $d['total'] = $this->Post->findCount($conditions);
-        $d['page'] = ceil($d['total'] / $perPage);
+        $d['pages'] = $this->Post->find(array(
+            'fields'     => 'id,name,online',
+            'conditions' => $conditions1
+        ));
         $this->set($d);
     }
 
@@ -72,13 +84,38 @@ class PostsController extends Controller{
      **/
 
     
-    function admin_edit($id = null){
+    function admin_editPost($id = null){
         $this->loadModel('Post');
         $d['id'] = '';
         if($this->request->data){
             if($this->Post->validates($this->request->data)){
                 $this->request->type = 'musique';
                 $this->request->created = date('Y-m-s h-i-s');
+
+                $this->Post->save($this->request->data);
+                $this->Session->setFlash('Le contenu à bien été modifié.', '');
+                $id = $this->Post->id;
+            }else{
+                $this->Session->setFlash('Merci de corriger vos informations.', 'error');
+            }
+        }
+        else{
+            if($id){
+                $this->request->data = $this->Post->findFirst(array(
+                    'conditions' => array('id' => $id)
+                ));
+                $d['id'] = $id;
+            }       
+        }
+        $this->set($d);
+    }   
+
+    function admin_editPage($id = null){
+        $this->loadModel('Post');
+        $d['id'] = '';
+        if($this->request->data){
+            if($this->Post->validates($this->request->data)){
+                $this->request->type = 'page';
 
                 $this->Post->save($this->request->data);
                 $this->Session->setFlash('Le contenu à bien été modifié.', '');
@@ -112,6 +149,14 @@ class PostsController extends Controller{
         $this->loadModel('Post');
         $this->Post->delete($id);
         $this->Session->setFlash('Le contenu à bien été supprimé.', '');
-        $this->redirect('cockpit/posts/index');
+        $this->redirect('cockpit/evenements/index');
     }
+
+
+
+/*********************************************************************************************/
+
+
+
+
 }
