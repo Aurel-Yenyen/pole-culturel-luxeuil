@@ -1,6 +1,6 @@
 <h1>Editer un article</h1>
 
-<form action="<?php echo Router::url('admin/evenements/editPost/'.$id); ?>" method="post">
+<form action="<?php echo Router::url('admin/backoffice/editPage/'.$id); ?>" method="post">
     <?php echo $this->Form->input('name', 'Titre'); ?>
     <?php echo $this->Form->input('slug', 'URL'); ?>
     <?php echo $this->Form->input('type', 'Type');?>

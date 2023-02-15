@@ -2,12 +2,12 @@
 
 class PagesController extends Controller{
 
-    public $Post;
+    public $Page;
     
     function view($id){
         $this->render('index');
-        $this->loadModel('Post');
-        $d['page'] = $this->Post->findFirst(array(
+        $this->loadModel('Page');
+        $d['page'] = $this->Page->findFirst(array(
             'conditions' => array('id'=>$id,'online' => 1, 'type' => 'page') // Définit le nom de la page (http://localhost/Projet-Mairie/pages/view/(2))
         ));
         if(empty($d['page'])){
@@ -20,8 +20,8 @@ class PagesController extends Controller{
      * Permet de récuperer les pages pour le menu
      **/
     function getMenu(){
-        $this->loadModel('Post');
-        return $this->Post->find(array(
+        $this->loadModel('Page');
+        return $this->Page->find(array(
             'conditions' => array('online' => 1, 'type' => 'page') // Condition à revoir pour le site (type)!!!!!
         ));
     }
@@ -34,9 +34,11 @@ class PagesController extends Controller{
      * ADMIN
      **/
 
-     function admin_index(){
-        $this->loadModel('Post');
-        $conditions = array('type' => 'pages' );
+    //  function admin_index(){
+    //     $this->loadModel('Page');
+    //     $conditions = array('type' => 'pages' );
 
-    }   
+    // }   
+
+    
 }

@@ -18,12 +18,19 @@
                 <td><span class="<?php echo ($v->online == 1)?'success':'error';?>"><?php echo ($v->online == 1)?'En ligne':'Hors Ligne';?></span></td>
                 <td><?php echo $v->name;?></td>
                 <td>
-                    <a href="<?php echo Router::url('admin/evenements/editPost/'. $v->id);?>">Editer</a>
-                    <a onclick="return confirm('Voulez-vous vraiment supprimer cet article')" href="<?php echo Router::url('admin/evenements/delete/'. $v->id);?>">Supprimer</a>
+                    <a href="<?php echo Router::url('admin/backoffice/editPost/'. $v->id);?>">Editer</a>
+                    <a onclick="return confirm('Voulez-vous vraiment supprimer cet article')" href="<?php echo Router::url('admin/backoffice/delete/'. $v->id);?>">Supprimer</a>
                 </td>
             </tr>
         <?php endforeach;?>
     </tbody>
+
+
+
+    <a href="<?php echo Router::url('admin/backoffice/editPost');?>">Ajouter un article</a>
+
+
+
     <thead>
         <tr>
             <th>ID</th>
@@ -39,12 +46,14 @@
                 <td><span class="<?php echo ($v->online == 1)?'success':'error';?>"><?php echo ($v->online == 1)?'En ligne':'Hors Ligne';?></span></td>
                 <td><?php echo $v->name;?></td>
                 <td>
-                    <a href="<?php echo Router::url('admin/evenements/editPage/'. $v->id);?>">Editer</a>
-                    <a onclick="return confirm('Voulez-vous vraiment supprimer cet article')" href="<?php echo Router::url('admin/evenements/delete/'. $v->id);?>">Supprimer</a>
+                    <a href="<?php echo Router::url('admin/backoffice/editPage/'. $v->id);?>">Editer</a>
+                    <a onclick="return confirm('Voulez-vous vraiment supprimer cet article')" href="<?php echo Router::url('admin/backoffice/delete/'. $v->id);?>">Supprimer</a>
                 </td>
             </tr>
         <?php endforeach;?>
     </tbody>
 </table>
 
-<a href="<?php echo Router::url('admin/evenements/editPost');?>">Ajouter un article</a>
+
+
+<a href="<?php echo Router::url('admin/backoffice/editPage');?>">Ajouter une page</a>
