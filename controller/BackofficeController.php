@@ -4,6 +4,7 @@ class BackofficeController extends Controller{
 
     public $Post;
     public $Page;
+    public $Model;
 
 
 /*********************************************************************************************/
@@ -17,18 +18,14 @@ class BackofficeController extends Controller{
     function admin_index(){
         $this->loadModel('Post');
         $this->loadModel('Page');
-        $conditions = array(
-            'type' => 'spectacle',
-        );
         $conditions1 = array(
             'type' => 'page',
         );
         $d['articles'] = $this->Post->find(array(
-            'fields'     => 'id,name,online',
-            'conditions' => $conditions
+            'fields'     => 'id,name,online,type',
         ));
         $d['pages'] = $this->Page->find(array(
-            'fields'     => 'id,name,online',
+            'fields'     => 'id,name,online,type',
             'conditions' => $conditions1
         ));
         $this->set($d);
@@ -49,9 +46,7 @@ class BackofficeController extends Controller{
         $d['id'] = '';
         if($this->request->data){
             if($this->Post->validates($this->request->data)){
-                $this->request->type = 'spectacle';
                 $this->request->created = date('Y-m-s h-i-s');
-
                 $this->Post->save($this->request->data);
                 $this->Session->setFlash('Le contenu à bien été modifié.', '');
                 $id = $this->Post->id;

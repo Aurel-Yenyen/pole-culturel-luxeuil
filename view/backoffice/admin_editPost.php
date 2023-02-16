@@ -9,6 +9,6 @@
     <?php echo $this->Form->input('online', 'Mettre en Ligne', array('type' => 'checkbox')); ?>
 
     <div class="action">
-        <input type="submit" value="Valider">
+        <input type="submit" value="Valider" onclick="">
     </div>
 </form>

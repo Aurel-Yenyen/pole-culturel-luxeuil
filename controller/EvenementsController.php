@@ -7,7 +7,7 @@ class EvenementsController extends Controller{
 
     function spectacle(){
         $this->loadModel('Post');
-        $conditions = array('online' => 1, 'type' => 'spectacle' );
+        $conditions = array('online' => 1, 'type' => 'Spectacle Musical' );
         $d['posts'] = $this->Post->find(array(
             'conditions' => $conditions,
         ));
@@ -18,7 +18,7 @@ class EvenementsController extends Controller{
 
     function theatre(){
         $this->loadModel('Post');
-        $conditions = array('online' => 1, 'type' => 'theatre' );
+        $conditions = array('online' => 1, 'type' => 'Theâtre' );
         $d['posts'] = $this->Post->find(array(
             'conditions' => $conditions,
         ));
@@ -36,8 +36,6 @@ class EvenementsController extends Controller{
         $conditions = array(
             'online' => 1,
             'id'=>$id, 
-            'type' => 'spectacle',
-            'type' => 'theatre'
         );
         $d['post'] = $this->Post->findFirst(array(
             'fields'     =>  'id, slug, name, content',
