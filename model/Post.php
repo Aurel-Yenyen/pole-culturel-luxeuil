@@ -14,7 +14,6 @@ class Post extends Model{
     function validates($data){
 
         $errors = array();
-        debug($data);
         foreach($this->validate as $k=>$v){
             if(!isset($data->$k)){
                 $errors[$k] = $v['message'];

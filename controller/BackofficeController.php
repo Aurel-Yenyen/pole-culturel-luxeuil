@@ -19,14 +19,61 @@ class BackofficeController extends Controller{
         $this->loadModel('Post');
         $this->loadModel('Page');
         $conditions1 = array(
+            'type' => 'Spectacle Musical',
+        );
+        $d['spectacle'] = $this->Post->find(array(
+            'fields' => 'id,name,online',
+            'conditions' => $conditions1
+        ));
+        $conditions2 = array(
+            'type' => 'Theatre',
+        );
+        $d['theatre'] = $this->Post->find(array(
+            'fields' => 'id,name,online',
+            'conditions' => $conditions2
+        ));
+        $conditions3 = array(
+            'type' => 'Magie',
+        );
+        $d['magie'] = $this->Post->find(array(
+            'fields' => 'id,name,online',
+            'conditions' => $conditions3
+        ));
+        $conditions4 = array(
+            'type' => 'Chorale',
+        );
+        $d['chorale'] = $this->Post->find(array(
+            'fields' => 'id,name,online',
+            'conditions' => $conditions4
+        ));
+        $conditions5 = array(
+            'type' => 'Cirque',
+        );
+        $d['cirque'] = $this->Post->find(array(
+            'fields' => 'id,name,online',
+            'conditions' => $conditions5
+        ));
+        $conditions6 = array(
+            'type' => 'Comédie',
+        );
+        $d['comedie'] = $this->Post->find(array(
+            'fields' => 'id,name,online',
+            'conditions' => $conditions6
+        ));
+        $conditions7 = array(
+            'type' => 'Autres',
+        );
+        $d['autres'] = $this->Post->find(array(
+            'fields' => 'id,name,online',
+            'conditions' => $conditions7
+        ));
+        $conditions10 = array(
             'type' => 'page',
         );
-        $d['articles'] = $this->Post->find(array(
-            'fields'     => 'id,name,online,type',
-        ));
+        
         $d['pages'] = $this->Page->find(array(
             'fields'     => 'id,name,online,type',
-            'conditions' => $conditions1
+            'conditions' => $conditions10
         ));
         $this->set($d);
     }
@@ -41,7 +88,158 @@ class BackofficeController extends Controller{
      **/
 
     
-    function admin_editPost($id = null){
+    function admin_editSpectacle($id = null){
+        $this->loadModel('Post');
+        $d['id'] = '';
+        if($this->request->data){
+            if($this->Post->validates($this->request->data)){
+                $this->request->created = date('Y-m-s h-i-s');
+                $this->Post->save($this->request->data);
+                $this->Session->setFlash('Le contenu à bien été modifié.', '');
+                $id = $this->Post->id;
+            }else{
+                $this->Session->setFlash('Merci de corriger vos informations.', 'error');
+            }
+        }
+        else{
+            if($id){
+                $this->request->data = $this->Post->findFirst(array(
+                    'conditions' => array('id' => $id)
+                ));
+                $d['id'] = $id;
+            }       
+        }
+        $this->set($d);
+    }   
+
+
+    function admin_editTheatre($id = null){
+        $this->loadModel('Post');
+        $d['id'] = '';
+        if($this->request->data){
+            if($this->Post->validates($this->request->data)){
+                $this->request->created = date('Y-m-s h-i-s');
+                $this->Post->save($this->request->data);
+                $this->Session->setFlash('Le contenu à bien été modifié.', '');
+                $id = $this->Post->id;
+            }else{
+                $this->Session->setFlash('Merci de corriger vos informations.', 'error');
+            }
+        }
+        else{
+            if($id){
+                $this->request->data = $this->Post->findFirst(array(
+                    'conditions' => array('id' => $id)
+                ));
+                $d['id'] = $id;
+            }       
+        }
+        $this->set($d);
+    }   
+
+
+    function admin_editMagie($id = null){
+        $this->loadModel('Post');
+        $d['id'] = '';
+        if($this->request->data){
+            if($this->Post->validates($this->request->data)){
+                $this->request->created = date('Y-m-s h-i-s');
+                $this->Post->save($this->request->data);
+                $this->Session->setFlash('Le contenu à bien été modifié.', '');
+                $id = $this->Post->id;
+            }else{
+                $this->Session->setFlash('Merci de corriger vos informations.', 'error');
+            }
+        }
+        else{
+            if($id){
+                $this->request->data = $this->Post->findFirst(array(
+                    'conditions' => array('id' => $id)
+                ));
+                $d['id'] = $id;
+            }       
+        }
+        $this->set($d);
+    }   
+
+
+    function admin_editChorale($id = null){
+        $this->loadModel('Post');
+        $d['id'] = '';
+        if($this->request->data){
+            if($this->Post->validates($this->request->data)){
+                $this->request->created = date('Y-m-s h-i-s');
+                $this->Post->save($this->request->data);
+                $this->Session->setFlash('Le contenu à bien été modifié.', '');
+                $id = $this->Post->id;
+            }else{
+                $this->Session->setFlash('Merci de corriger vos informations.', 'error');
+            }
+        }
+        else{
+            if($id){
+                $this->request->data = $this->Post->findFirst(array(
+                    'conditions' => array('id' => $id)
+                ));
+                $d['id'] = $id;
+            }       
+        }
+        $this->set($d);
+    }   
+
+
+    function admin_editCirque($id = null){
+        $this->loadModel('Post');
+        $d['id'] = '';
+        if($this->request->data){
+            if($this->Post->validates($this->request->data)){
+                $this->request->created = date('Y-m-s h-i-s');
+                $this->Post->save($this->request->data);
+                $this->Session->setFlash('Le contenu à bien été modifié.', '');
+                $id = $this->Post->id;
+            }else{
+                $this->Session->setFlash('Merci de corriger vos informations.', 'error');
+            }
+        }
+        else{
+            if($id){
+                $this->request->data = $this->Post->findFirst(array(
+                    'conditions' => array('id' => $id)
+                ));
+                $d['id'] = $id;
+            }       
+        }
+        $this->set($d);
+    }   
+
+
+
+    function admin_editComedie($id = null){
+        $this->loadModel('Post');
+        $d['id'] = '';
+        if($this->request->data){
+            if($this->Post->validates($this->request->data)){
+                $this->request->created = date('Y-m-s h-i-s');
+                $this->Post->save($this->request->data);
+                $this->Session->setFlash('Le contenu à bien été modifié.', '');
+                $id = $this->Post->id;
+            }else{
+                $this->Session->setFlash('Merci de corriger vos informations.', 'error');
+            }
+        }
+        else{
+            if($id){
+                $this->request->data = $this->Post->findFirst(array(
+                    'conditions' => array('id' => $id)
+                ));
+                $d['id'] = $id;
+            }       
+        }
+        $this->set($d);
+    }   
+
+
+    function admin_editAutres($id = null){
         $this->loadModel('Post');
         $d['id'] = '';
         if($this->request->data){

@@ -27,6 +27,60 @@ class EvenementsController extends Controller{
         $this->set($d);
     }
 
+    function magie(){
+        $this->loadModel('Post');
+        $conditions = array('online' => 1, 'type' => 'Magie' );
+        $d['posts'] = $this->Post->find(array(
+            'conditions' => $conditions,
+        ));
+        $d['total'] = $this->Post->findCount($conditions);
+
+        $this->set($d);
+    }
+
+    function chorale(){
+        $this->loadModel('Post');
+        $conditions = array('online' => 1, 'type' => 'Chorale' );
+        $d['posts'] = $this->Post->find(array(
+            'conditions' => $conditions,
+        ));
+        $d['total'] = $this->Post->findCount($conditions);
+
+        $this->set($d);
+    }
+
+    function cirque(){
+        $this->loadModel('Post');
+        $conditions = array('online' => 1, 'type' => 'Cirque' );
+        $d['posts'] = $this->Post->find(array(
+            'conditions' => $conditions,
+        ));
+        $d['total'] = $this->Post->findCount($conditions);
+
+        $this->set($d);
+    }
+
+    function comedie(){
+        $this->loadModel('Post');
+        $conditions = array('online' => 1, 'type' => 'Comédie' );
+        $d['posts'] = $this->Post->find(array(
+            'conditions' => $conditions,
+        ));
+        $d['total'] = $this->Post->findCount($conditions);
+
+        $this->set($d);
+    }
+
+    function autres(){
+        $this->loadModel('Post');
+        $conditions = array('online' => 1, 'type' => 'Autres' );
+        $d['posts'] = $this->Post->find(array(
+            'conditions' => $conditions,
+        ));
+        $d['total'] = $this->Post->findCount($conditions);
+
+        $this->set($d);
+    }
     /*********************************************************************************************/
 
 
