@@ -209,7 +209,7 @@
 
 </table>
 
-    <a href="<?php echo Router::url('backoffice/admin_editAutres'); ?>">Ajouter une Comédie</a>
+    <a href="<?php echo Router::url('backoffice/admin_editAutres'); ?>">Ajouter un Autres Evènements</a>
 
 <table>
 

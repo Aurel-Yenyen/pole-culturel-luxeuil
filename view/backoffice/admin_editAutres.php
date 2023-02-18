@@ -12,7 +12,7 @@
 
 <h1>Editer un article</h1>
 
-<form action="<?php echo Router::url('backoffice/editAutres/'.$id); ?>" method="post">
+<form action="<?php echo Router::url('admin/backoffice/editAutres/'.$id); ?>" method="post">
     <?php echo $this->Form->input('name', 'Titre'); ?>
     <?php echo $this->Form->input('content', 'Contenu', array('type'=>'textarea', 'rows' => 10, 'cols' => 40)); ?>
     <?php echo $this->Form->input('comment', 'Commentaire'); ?>

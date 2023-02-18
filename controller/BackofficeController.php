@@ -5,6 +5,7 @@ class BackofficeController extends Controller{
     public $Post;
     public $Page;
     public $Model;
+    public $Session;
 
 
 /*********************************************************************************************/
@@ -18,6 +19,7 @@ class BackofficeController extends Controller{
     function admin_index(){
         $this->loadModel('Post');
         $this->loadModel('Page');
+
         $conditions1 = array(
             'type' => 'Spectacle Musical',
         );
@@ -77,6 +79,7 @@ class BackofficeController extends Controller{
         ));
         $this->set($d);
     }
+
 
 
 /*********************************************************************************************/
@@ -311,7 +314,7 @@ class BackofficeController extends Controller{
         $this->loadModel('Post');
         $this->Post->delete($id);
         $this->Session->setFlash('Le contenu à bien été supprimé.', '');
-        $this->redirect('cockpit/evenements/index');
+        $this->redirect('cockpit/backoffice/index');
     }
 
 

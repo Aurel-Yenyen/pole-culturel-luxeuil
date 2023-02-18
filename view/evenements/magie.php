@@ -16,7 +16,7 @@
 
 <?php foreach ($posts as $k => $v): ?>
         <h2><?php echo $v->name;?></h2>
-        <<?php echo $v->content;?>
+        <h3><?php echo $v->content;?><h3>
         <p><a href="<?php echo Router::url("evenements/view/id:{$v->id}/slug:$v->slug");?>">Lire la suite &rarr;</a></p>
 
 <?php endforeach;?>
