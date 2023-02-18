@@ -279,8 +279,6 @@ class BackofficeController extends Controller{
         $d['id'] = '';
         if($this->request->data){
             if($this->Page->validates($this->request->data)){
-                $this->request->type = 'page';
-
                 $this->Page->save($this->request->data);
                 $this->Session->setFlash('Le contenu à bien été modifié.', '');
                 $id = $this->Page->id;

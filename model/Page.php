@@ -14,15 +14,11 @@ class Page extends Model{
     function validates($data){
 
         $errors = array();
-        debug($data);
         foreach($this->validate as $k=>$v){
             if(!isset($data->$k)){
                 $errors[$k] = $v['message'];
             }else{
                 if($v['rule'] == 'notEmpty'){
-                    if(empty($data->$k)){
-                        $errors[$k] = $v['message'];
-                    }
                 }elseif(!preg_match('/^'.$v['rule'].'$/', $data->$k)){
                     $errors[$k] = $v['message'];             
                 }
