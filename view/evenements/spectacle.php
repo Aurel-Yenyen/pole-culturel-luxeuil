@@ -15,6 +15,9 @@
 </div>
 
 <?php foreach ($posts as $k => $v): ?>
+        <?php for($i = 1; $i <= 3; $i++):?>
+        <img src="<?php echo Router::webroot('img/'.$v->id.'/'."$i".'.jpg')?>" alt="" height="100px" width="auto">
+        <?php endfor;?>
         <h2><?php echo $v->name;?></h2>
         <h3><?php echo $v->content;?><h3>
         <p><a href="<?php echo Router::url("evenements/view/id:{$v->id}/slug:$v->slug");?>">Lire la suite &rarr;</a></p>

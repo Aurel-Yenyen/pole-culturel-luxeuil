@@ -3,16 +3,16 @@
 class MediasController extends Controller{
 
 
-    function admin_index($id = null){
+    function admin_index($id){
         $this->loadModel('Media');
         if($this->request->data && !empty($_FILES['file']['name'])){
             if(strpos($_FILES['file']['type'], 'image') !== false ){
-                $dir = WEBROOT.DS.'img'.DS.'evenements';
+                $dir = WEBROOT.DS.'img'.DS.$id;
                 if(!file_exists($dir)) mkdir($dir);
                 move_uploaded_file($_FILES['file']['tmp_name'], $dir.DS.$_FILES['file']['name']);
                 $this->Media->save(array(
                     'name' => $this->request->data->name,
-                    'file' => 'evenements'.'/'.$_FILES['file']['name'],
+                    'file' => $id.'/'.$_FILES['file']['name'],
                     'post_id' => $id,
                     'type' => 'img'
                 ));
@@ -28,6 +28,17 @@ class MediasController extends Controller{
         $d['post_id'] = $id;
         $this->set($d);
     }
+    function admin_delete($id){
+        $this->loadModel('Media');
+        $media = $this->Media->findFirst(array(
+            'contions' => array('id' => $id)
+        ));
+        unlink(WEBROOT.DS.'img'.DS.$media->file);
+        $this->Media->delete($id);
+        $this->Session->setFlash('Le contenu à bien été supprimé.', '');
+        $this->redirect('cockpit/medias/index/'. $media->post_id);
+    }
 }
+//Voir pour suppr les paramètre d'id pour un affichage intégrale
 
 //Vidéo à 30 Min

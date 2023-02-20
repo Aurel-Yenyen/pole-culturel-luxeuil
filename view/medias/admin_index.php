@@ -28,7 +28,7 @@
                 <td><img src="<?php echo Router::webroot('img/' . $v->file);?>" height="100px" width="auto"></td>
                 <td><?php echo $v->name; ?></td>
                 <td>
-                    <a onclick="return confirm('Voulez-vous vraiment supprimer cette image')" href="<?php echo Router::url('backoffice/admin_delete/' . $v->id); ?>">Supprimer</a>
+                    <a onclick="return confirm('Voulez-vous vraiment supprimer cette image')" href="<?php echo Router::url('medias/admin_delete/' . $v->id); ?>">Supprimer</a>
                 </td>
             </tr>
         <?php endforeach; ?>
