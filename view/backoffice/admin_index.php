@@ -243,6 +243,7 @@
 <a href="<?php echo Router::url('backoffice/admin_editPage'); ?>">Ajouter une page</a>
 
 <a href="<?php echo Router::url('')?>">Voir le site</a>
+<a href="<?php echo Router::url('users/logout')?>">Se Déconnecter</a>
 </body>
 </html>
 

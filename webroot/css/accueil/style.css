@@ -1,3 +1,1173 @@
-body{
-    background: #cf2121;
+@media screen and (min-width: 1400px){
+    body{
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        transform-style: preserve-3d;
+        overflow-y: scroll;
+    }
+
+    
+    /* Image de Fond */
+    
+    .title{
+        position: absolute;
+        top: 13vh;
+        left: 35vw;
+        z-index: 3;
+        color: var(--colorTitle);
+        text-shadow:  0 0 20px var(--shadowTitle), 
+        0 0 2px var(--shadowTitle), 
+        0 0 3px var(--shadowTitle),   
+        0 0 4px var(--shadowTitle), 
+        0 0 5px var(--shadowTitle);
+        font-size: 2.3em;
+        font-family: 'Sofia Sans Condensed', sans-serif;
+    }    
+    .img-fond{
+        background: var(--imagePrimary);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 100vh;
+        background-position-y: -50vh;
+    }
+    .logo-lux{
+        background: var(--imageLogoLuxeuil);
+        background-size: cover;
+        width: 160px;
+        height: 180px;
+        position: absolute;
+        top: 75vh;
+        left: 1vw;
+        z-index: 3;
+    }
+    .logo-pole{
+        background: var(--imageLogoPole);
+        background-size: cover;
+        width: 190px;
+        height: 180px;
+        position: absolute;
+        top: 2vh;
+        left: 1vw;
+        z-index: 3;
+    }
+    
+    /* Onglet */
+    
+    nav{
+        display: grid;
+        justify-content: flex-end;
+        align-items: flex-end;
+        grid-gap: 25px;
+        font-family : 'Pacifico', cursive ;
+        z-index: 10;
+        position: absolute;
+        top: 5vh;
+        left: 75vw;
+    }
+    .onglet > .genre > .lien-nav::after{
+        display: block;
+        width: 0;
+        height: 0.2vh;
+        background: var(--soulignTextOnglet);
+        content: "";
+        transition: width 1s;
+        margin-left: 2vw;
+        margin-top: -0.5vh;
+        box-shadow:  0 0 7px var(--shadowOnglet), 
+        0 0 10px var(--shadowOnglet), 
+        0 0 42px var(--shadowOnglet),   
+        0 0 77px var(--shadowOnglet), 
+        0 0 100px var(--shadowOnglet);
+    }
+    .onglet:hover > .genre > .lien-nav::after{
+        width: 50%;
+    }
+    .lien-nav{
+        color: var(--colorTextOnglet);
+        text-shadow:  0 0 7px var(--shadowOnglet), 
+        0 0 10px var(--shadowOnglet), 
+        0 0 42px var(--shadowOnglet),   
+        0 0 77px var(--shadowOnglet), 
+        0 0 100px var(--shadowOnglet);
+        font-size: 3vh;
+    }
+    a{
+        text-decoration: none;
+    }
+    .cross{
+        display: none;
+    }
+    .onglet{
+        width: 28vw;
+        height: 6vh;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;    
+        border-radius: 50px 0px 0px 50px ;
+        display: flex;
+        transform: translateX(5vw);
+        transition: transform 1s;
+        z-index: 10;
+    }
+    .onglet:hover{
+        transform: translateX(0px);
+        transition: transform 1s;
+    }
+
+    .separation{
+        width: 0.2vw;
+        height: 4vh;
+        background: var(--colorSeparationOnglet);
+        margin-top: 1vh;
+        margin-right: 5px;
+        box-shadow:  0 0 7px var(--shadowOnglet), 
+        0 0 10px var(--shadowOnglet), 
+        0 0 42px var(--shadowOnglet),   
+        0 0 77px var(--shadowOnglet), 
+        0 0 100px var(--shadowOnglet);
+    }
+    .logo-spec{
+        background: var(--iconeSpectacle);
+        background-size: cover;
+        width: 2vw;
+        height: 4vh;
+        margin-left: 1vw;
+        margin-top: 0.5vh;
+        margin-right: 1vw;
+    }
+    .spec{
+        background: var(--colorSpectacle);
+    }
+    .logo-theatre{
+        background: var(--iconeTheatre);
+        background-size: cover;
+        width: 2.5vw;
+        height: 5vh;
+        margin-left: 1vw;
+        margin-top: 0.5vh;
+        margin-right: 0.7vw;
+    }
+    .theat{
+        background: var(--colorTheatre);
+    }
+    .logo-magie{
+        background: var(--iconeMagie);
+        background-size: cover;
+        width: 2vw;
+        height: 5.1vh;
+        margin-left: 1.2vw;
+        margin-top: 0.5vh;
+        margin-right: 1vw;
+    }
+    .magie{
+        background: var(--colorMagie);
+    }
+    .logo-chorale{
+        background: var(--iconeChorale);
+        background-size: cover;
+        width: 2.5vw;
+        height: 5vh;
+        margin-left: 1vw;
+        margin-top: 0.5vh;
+        margin-right: 0.7vw;
+    }
+    .chorale{
+        background: var(--colorChorale);
+    }
+    .logo-cirque{
+        background: var(--iconeCirque);
+        background-size: cover;
+        width: 2.5vw;
+        height: 5vh;
+        margin-left: 1vw;
+        margin-top: 0.5vh;
+        margin-right: 0.7vw;
+    }
+    .cirque{
+        background: var(--colorCirque);
+    }
+    .logo-comedie{
+        background: var(--iconeComedie);
+        background-size: cover;
+        width: 2.5vw;
+        height: 5vh;
+        margin-left: 1vw;
+        margin-top: 0.5vh;
+        margin-right: 0.7vw;
+        z-index: 10;
+    }
+    .comedie{
+        background: var(--colorComedie);
+    }
+    .logo-autre{
+        background: var(--iconeAutre);
+        background-size: cover;
+        width: 2.8vw;
+        height: 5.09vh;
+        margin-left: 0.8vw;
+        margin-right: 0.6vw;
+    }
+    .autre{
+        background: var(--colorAutreRDV);
+    }
+    .logo-contact{
+        background: var(--iconeContact);
+        background-size: cover;
+        width: 2.5vw;
+        height: 5vh;
+        margin-left: 1vw;
+        margin-top: 0.5vh;
+        margin-right: 0.7vw;
+    }
+    .contact{
+        background: var(--colorContact);
+    }
+    
+    .onglet:hover > .icon{
+        animation: rotate 1s ease-in ;
+    }
+    @keyframes rotate {
+        0%{
+            transform: rotate(-20deg);
+        }
+        50%{
+            transform: rotate(20deg);
+        }
+        100%{
+            transform: rotate(0deg);
+        }
+    }
+    /************************************************************************/
+
+    /****************** Les Affiches à venir ****************************/
+    
+    
+    
+    .affiche{
+        z-index: 10;
+    }
+    .content-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title-affiche{
+        margin-top: 7vh;
+        margin-left: 4vw;
+        font-family: 'Sofia Sans Condensed', sans-serif;
+        color: var(--colorPrimary-1);
+        font-size: 2.5vw;
+        font-weight: 400;
+
+    }
+
+    .cards{
+        display: flex;
+        width: 300vw; 
+        perspective:1000px;
+        margin-top: 5vh;
+        font-family: 'Sofia Sans Condensed', sans-serif;
+    }
+    .card1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 75vw;
+        height: 30vh;
+        margin-left: 12.5vw;
+        border-radius: 15px;
+        margin-right: 12.5vw;
+    }
+    .languette1{
+        background: var(--colorSpectacle);
+        width: 1vw;
+        height: 30vh;
+        position: absolute;
+        left: 12.50vw;
+        border-radius: 15px 0px 0px 15px;
+    }
+
+    @keyframes rotate360{
+        0%{
+            transform:rotateY(0deg) ;
+        }
+        50%{
+          transform:rotateY(180deg);
+        }
+        100%{
+          transform:rotateY(360deg);
+        }
+      }
+
+    .stage1{
+        width: 100%;
+        height:20vh;
+        transform:translate3d(0,0,800px);
+        position: absolute;
+        top: 5vh;
+        left: -120vw;
+
+    }
+    .caroussel{
+        width:auto;
+        height:100%;
+        transform-style:preserve-3d;
+        animation: rotate360 15s infinite linear;
+    }
+    .slide1{
+        position:absolute;
+        width: 15vw;
+        height:25vh;
+        margin:auto;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+    }
+    .a{
+        transform: rotateY(60deg) translateZ(6vw);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .a img{
+        width: auto;
+        height: 25vh;
+    }
+    .b{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform:translateZ(-6vw);
+    }
+    .b img{
+        width: auto;
+        height: 25vh;
+    }
+    .c{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform:rotateY(120deg) translateZ(-6vw);
+    }
+    .c img{
+        width: auto;
+        height: 25vh;
+    }
+
+    .text1{
+        margin-left: 10vw;
+        font-family: 'Sofia Sans Condensed', sans-serif;
+        color: var(--colorTitleCard);
+    }
+    .title1{
+        font-size: 2em;
+        font-weight: bolder;
+    }
+    .date-lieu-heure1{
+        display: flex;
+        font-size: 1.5em;
+        font-weight: 200;
+        color: var(--colorParaCard);
+    }
+    .date1::after{
+        content: "|";
+        margin-left: 0.5vw;
+        margin-right: 0.5vw;
+    }
+    .lieu1::after{
+        content: "|";
+        margin-left: 0.5vw;
+        margin-right: 0.5vw;
+    }
+    .btn-sub1{
+        position: absolute;
+        z-index: 10;
+        cursor: pointer;
+        margin-top: -2vh;
+        color: white;
+        width: 8vw;
+        height: 5vh;
+        border-radius: 10vw;
+        border: none;
+        box-shadow: 0 4px var(--shadowBtnSpectacle);
+        background: var(--colorSpectacle);
+        font-size: 1vw;
+        font-family: 'Sofia Sans Condensed', sans-serif;
+        font-weight: 500;
+        margin-left: 5vw;
+    }
+
+
+
+
+    /* ********** Slide 2 ****************** */
+
+
+
+        /****************** Les Affiches à venir ****************************/
+
+    .card2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 75vw;
+        height: 30vh;
+        margin-left: 12.5vw;
+        border-radius: 15px;
+        margin-right: 12.5vw;
+    }
+    .languette2{
+        background: var(--colorTheatre);
+        width: 1vw;
+        height: 30vh;
+        position: absolute;
+        left: 112.50vw;
+        border-radius: 15px 0px 0px 15px;
+    }
+
+    @keyframes rotate360{
+        0%{
+            transform:rotateY(0deg) ;
+        }
+        50%{
+          transform:rotateY(180deg);
+        }
+        100%{
+          transform:rotateY(360deg);
+        }
+      }
+
+    .stage2{
+        width: 100%;
+        height:20vh;
+        transform:translate3d(0,0,800px);
+        position: absolute;
+        left: -20vw;
+
+    }
+    .caroussel{
+        width:auto;
+        height:100%;
+        transform-style:preserve-3d;
+        animation: rotate360 15s infinite linear;
+    }
+    .slide2{
+        position:absolute;
+        width: 15vw;
+        height:25vh;
+        margin:auto;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+    }
+    .e{
+        transform: rotateY(60deg) translateZ(6vw);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .e img{
+        width: auto;
+        height: 25vh;
+    }
+    .f{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform:translateZ(-6vw);
+    }
+    .f img{
+        width: auto;
+        height: 25vh;
+    }
+    .g{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform:rotateY(120deg) translateZ(-6vw);
+    }
+    .g img{
+        width: auto;
+        height: 25vh;
+    }
+    .text2{
+        margin-left: 10vw;
+        font-family: 'Sofia Sans Condensed', sans-serif;
+        color: var(--colorTitleCard);
+    }
+    .title2{
+        font-size: 2em;
+        font-weight: bolder;
+    }
+    .date-lieu-heure2{
+        display: flex;
+        font-size: 1.5em;
+        font-weight: 200;
+        color: var(--colorParaCard);
+    }
+    .date2::after{
+        content: "|";
+        margin-left: 0.5vw;
+        margin-right: 0.5vw;
+    }
+    .lieu2::after{
+        content: "|";
+        margin-left: 0.5vw;
+        margin-right: 0.5vw;
+    }
+    .btn-sub2{
+        color: white;
+        position: absolute;
+        z-index: 10;
+        cursor: pointer;
+        margin-top: -2vh;
+        width: 8vw;
+        height: 5vh;
+        border-radius: 10vw;
+        border: none;
+        box-shadow: 0 4px var(--shadowBtnTheatre);
+        background: var(--colorTheatre);
+        font-size: 1vw;
+        font-family: 'Sofia Sans Condensed', sans-serif;
+        font-weight: 500;
+        margin-left: 5vw;
+    }
+
+
+
+    /* ********** slide 3 ************* */
+
+
+
+    .card3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 75vw;
+        height: 30vh;
+        margin-left: 12.5vw;
+        border-radius: 15px;
+        margin-right: 12.5vw;
+    }
+    .languette3{
+        background: var(--colorSpectacle);
+        width: 1vw;
+        height: 30vh;
+        position: absolute;
+        left: 212.50vw;
+        border-radius: 15px 0px 0px 15px;
+    }
+
+    @keyframes rotate360{
+        0%{
+            transform:rotateY(0deg) ;
+        }
+        50%{
+          transform:rotateY(180deg);
+        }
+        100%{
+          transform:rotateY(360deg);
+        }
+      }
+
+    .stage3{
+        width: 100%;
+        height:20vh;
+        transform:translate3d(0,0,800px);
+        position: absolute;
+        left: 80vw;
+    }
+    .caroussel{
+        width:auto;
+        height:100%;
+        transform-style:preserve-3d;
+        animation: rotate360 15s infinite linear;
+    }
+    .slide3{
+        position:absolute;
+        width: 15vw;
+        height:25vh;
+        margin:auto;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+    }
+    .i{
+        transform: rotateY(60deg) translateZ(6vw);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .i img{
+        width: auto;
+        height: 25vh;
+    }
+    .j{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform:translateZ(-6vw);
+    }
+    .j img{
+        width: auto;
+        height: 25vh;
+    }
+    .k{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform:rotateY(120deg) translateZ(-6vw);
+    }
+    .k img{
+        width: auto;
+        height: 25vh;
+    }
+    .text3{
+        margin-left: 10vw;
+        font-family: 'Sofia Sans Condensed', sans-serif;
+        color: var(--colorTitleCard);
+    }
+    .title3{
+        font-size: 2em;
+        font-weight: bolder;
+    }
+    .date-lieu-heure3{
+        display: flex;
+        font-size: 1.5em;
+        font-weight: 200;
+        color: var(--colorParaCard);
+    }
+    .date3::after{
+        content: "|";
+        margin-left: 0.5vw;
+        margin-right: 0.5vw;
+    }
+    .lieu3::after{
+        content: "|";
+        margin-left: 0.5vw;
+        margin-right: 0.5vw;
+    }
+    .btn-sub3{
+        color: white;
+         position: absolute;
+        z-index: 10;
+        cursor: pointer;
+        margin-top: -2vh;
+        width: 8vw;
+        height: 5vh;
+        border-radius: 10vw;
+        border: none;
+        box-shadow: 0 4px #68394d;
+        background: var(--colorSpectacle);
+        font-size: 1vw;
+        font-family: 'Sofia Sans Condensed', sans-serif;
+        font-weight: 500;
+        margin-left: 5vw;
+    }
+
+
+    /* ********** Input ********** */
+
+
+    .input-img{
+        position: absolute;
+        margin-top: 5vh;
+        margin-left: 47.5vw;
+    }
+    .input-img input{
+        margin-right: 1vw;
+    }
+    input{
+        cursor: pointer;
+    }
+    input[type="radio"]::after{
+        width: 16px;
+        height: 16px;
+        border-radius: 15px;
+        top: 0px;
+        left: 0px;
+        margin-top: -2px;
+        margin-left: -2px;
+        background-color: white;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 1px solid var(--colorPrimary-1);
+    }
+    input[type="radio"]:checked::after{
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        margin-top: -2px;
+        margin-left: -2px;
+        top: 0px;
+        left: 0px;
+        background: var(--colorPrimary-1);
+        background-size: cover;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+
+    }
+
+    
+
+    /* ***************** Carte Pass ************* */
+
+
+
+
+    .pass{
+        width: 15vw;
+        height: 17vh;
+        border-radius: 1vw;
+        background: var(--imageCardPass);
+        background-size: cover;
+        position: absolute;
+        top: 170vh;
+        left: 60vw;
+        transform: rotate(10deg);
+        box-shadow: 0 3px #b1b1b1;
+    }
+
+
+
+
+/* ***************** Plaquette ************* */
+
+
+
+
+    .plaquette{
+        background: var(--imageCircle);
+        margin-top: 20vh;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        margin-left: 30vw;
+        background-size: cover;
+        border-radius: 50vw;
+        width: 45vw;
+        height: 90vh;
+        font-family: 'Sofia Sans Condensed', sans-serif;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        z-index: -1;
+    }
+    .content-plaquette{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .title-plaquette{
+        color: white;
+        font-size: 2.5vw;
+        text-shadow:  0 0 1px black, 
+        0 0 1px black, 
+        0 0 1px black,   
+        0 0 1px black, 
+        0 0 1px black;
+        z-index: 10;
+    }
+    .para-plaquette{
+        color: white;
+        font-size: 1.2vw;
+        text-shadow:  0 0 1px black, 
+        0 0 1px black, 
+        0 0 1px black,   
+        0 0 1px black, 
+        0 0 1px black;
+        z-index: 10;
+    }
+    .circle-plaquette{
+        position: absolute;
+        top: 193vh;
+        left: 40vw;
+        width: 25vw;
+        height: 50vh;
+        background-size: cover;
+        border-radius: 50vw;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        animation: MoveCircle 30s infinite linear;
+        cursor: pointer;
+    }
+    @keyframes MoveCircle {
+        0%{
+            transform: translateX(0) translateY(0) scale(1);
+        }
+        20%{
+            transform: translateX(-40vw) translateY(-40vh) scale(0.5);
+
+        }
+        40%{
+            transform: translateX(-40vw) translateY(30vh) scale(0.7);
+        }
+        60%{
+            transform: translateX(40vw) translateY(-30vh) scale(0.5);
+        }
+        80%{
+            transform: translateX(35vw) translateY(30vh) scale(0.7);
+        }
+        90%{
+            transform: translateY(-30vh) scale(0.6);
+        }
+        100%{
+            transform: translateX(0) translateY(0) scale(1);
+        }
+    }
+    .lien-plaquette{
+        margin-top: 15vh;
+        margin-left: 2vw;
+    }
+    .btn-plaquette{
+        width: 22vw;
+        height: 20vh;
+        border-radius: 10vw;
+        background: none;
+        color: white;
+        border: none;
+        font-family: 'Sofia Sans Condensed', sans-serif;
+        font-size: 3.5vw;
+        font-weight: 900;
+        animation: changeColor 30s infinite linear;
+        cursor: pointer;
+    }
+    @keyframes changeColor {
+        0%{
+            color: white;
+        }
+        20%{
+            color: var(--colorPrimary-1);
+        }
+        40%{
+            color: var(--colorPrimary-1);
+        }
+        50%{
+            color: white;
+        }
+        60%{
+            color: var(--colorPrimary-1);
+        }
+        80%{
+            color: var(--colorPrimary-1);
+        }
+        90%{
+            color: white;
+        }
+        100%{
+            color: white;
+        }
+    }
+
+
+
+    /***************** Caroussel *************/
+
+    
+
+    #images-partenaire{
+        animation: spin 30s linear infinite;
+    }
+    #change{
+        position: absolute;
+        height: 150px;
+        left: 200px;
+        top: 0;
+        background: white;
+        z-index: 1;
+    }
+    #caroussel-partenaire{
+        width: 240vw;
+        height: 200px;
+        overflow: hidden;
+        margin-bottom: 50px;
+        margin-top: 10vh;
+    }
+    #img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12, #img13, #img14, #img15, #img16, #img17, #img18{
+        width: auto;
+        height: 10vh; 
+        margin: 20px;
+        margin-left: 100px;
+        filter: grayscale();
+    }
+    #img1:hover, #img2:hover, #img3:hover, #img4:hover, #img5:hover, #img6:hover, #img7:hover, #img8:hover, #img9:hover, #img10:hover, #img11:hover, #img12:hover, #img13:hover, #img14:hover, #img15:hover, #img16:hover, #img17:hover, #img18:hover{
+        filter: none;
+        transform: scale(1.4);
+        transition: transform 1s;
+    }
+    #input-partenaire{
+        margin-left: 25%;
+    }
+
+    @keyframes spin{
+        0%{
+            transform: translateX(0vw);
+        }
+        20%{
+            transform: translateX(-20vw);  
+        }
+        40%{
+            transform: translateX(-40vw);  
+        }
+        60%{
+            transform: translateX(-60vw);     
+        }
+        80%{
+            transform: translateX(-80vw);   
+        }
+
+        100%{
+            transform: translateX(-100vw);   
+        }
+
+    }
+    #input-partenaire{
+        margin-left: 45vw;
+        margin-top: 3vh;
+    }
+    .title-partenaire{
+        margin-top: 10vh;
+        margin-left: 5vw;
+        font-family: 'Sofia Sans Condensed', sans-serif;
+        color: var(--colorPrimary-1);
+        font-size: 2.5vw;
+        font-weight: 400;
+    }
+
+
+
+
+    /**************** Image Footer ****************************/
+
+
+
+    
+    footer{
+        width: 100vw;
+        height: 35vh;
+        background: var(--colorPrimary-1);
+        margin-top: 30vh;
+        font-family: 'Sofia Sans Condensed', sans-serif;
+        text-shadow:  0 0 20px var(--shadowTitle), 
+        0 0 2px var(--shadowTitle), 
+        0 0 3px var(--shadowTitle),   
+        0 0 4px var(--shadowTitle), 
+        0 0 5px var(--shadowTitle);
+    }
+    a{
+        text-decoration: none;
+    }
+    .schema-footer{
+        background: var(--imageFooter-1);
+        width: 100vw;
+        height: 25vh;
+        background-size: cover;
+        position: absolute;
+        margin-top: -25vh;
+        z-index: -10;
+    }
+    .content-footer{
+        display: flex;
+        justify-content: space-around;
+    }
+    .pole-footer{
+        background: var(--imageLogoPole);
+        background-size: cover;
+        width: 250px;
+        height: 230px;
+        margin-top: 7vh;
+    }
+    .pole-footer:hover{
+        transform: scale(1.1);
+        transition: transform 0.5s linear;
+    }
+    .separation-footer1{
+        width: 0.01vw;
+        height:28vh;
+        background: var(--colorTextFooter);
+        margin-left: -10vw;
+        margin-top: 4.5vh;
+        box-shadow:  0 0 1px var(--shadowTitle), 
+        0 0 2px var(--shadowTitle), 
+        0 0 3px var(--shadowTitle),   
+        0 0 4px var(--shadowTitle), 
+        0 0 5px var(--shadowTitle);
+    }
+    .adresse-footer{
+        display: flex;
+        width: 30vw;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        margin-top: 1vh;
+    }
+    .contact-footer{
+        width: 15vw;
+        height: 26vh;
+        color: var(--colorTextFooter);
+        font-size: 1vw;
+        border: 2px dashed var(--colorTextFooter);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: -12vw;
+        margin-top: 4vh;
+        box-shadow:  0 0 1px var(--shadowTitle), 
+        0 0 2px var(--shadowTitle), 
+        0 0 3px var(--shadowTitle),   
+        0 0 4px var(--shadowTitle), 
+        0 0 5px var(--shadowTitle);
+    }
+    .logo1{
+        background:var(--iconeAdress);
+        width: 2vw;
+        height: 4vh;
+        background-size: cover;
+        margin-top: 1vh;
+    }
+    .rue-contact, .cp-contact{
+        margin-top: -2.2vh;
+    }
+    .tel-mail{
+        margin-top: 4vh;
+        color: var(--colorTextFooter);
+        font-size: 0.8vw;
+    }
+
+    .tel-footer, .mail-footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 12vw;
+        height: 12.1vh;
+        border: 2px dashed var(--colorTextFooter);
+        border-radius: 20px;
+        margin-left: 1vw;
+        box-shadow:  0 0 1px var(--shadowTitle), 
+        0 0 2px var(--shadowTitle), 
+        0 0 3px var(--shadowTitle),   
+        0 0 4px var(--shadowTitle), 
+        0 0 5px var(--shadowTitle);
+    }
+    .mail-footer{
+        margin-top: 1.5vh;
+    }
+    .logo2{
+        background: var(--iconePhone);
+        width: 1.45vw;
+        height: 3vh;
+        background-size: cover;
+        margin-top: 2vh;
+    }
+    .logo3{
+        background: var(--iconeMail);
+        width: 1.5vw;
+        height: 3vh;
+        background-size: cover;
+    }
+    .separation-footer2{
+        width: 0.01vw;
+        height:28vh;
+        background: var(--colorTextFooter);
+        margin-left: -25.5vw;
+        margin-top: 4.3vh;
+        box-shadow:  0 0 1px var(--shadowTitle), 
+        0 0 2px var(--shadowTitle), 
+        0 0 3px var(--shadowTitle),   
+        0 0 4px var(--shadowTitle), 
+        0 0 5px var(--shadowTitle);
+    }
+    .genre-footer{
+        margin-top: 4.4vh;
+        margin-left: -5vw;
+    }
+    .add{
+        color: var(--colorTextFooter);
+        font-size: 1.1em;
+        display: flex;
+    }
+    .add::before{
+        content: ">";
+        position: absolute;
+        margin-left: -1vw;
+    }
+    .add:hover{
+        color: var(--colorHoverFooter);
+    }
+
+    .separation-footer3{
+        width: 0.01vw;
+        height:28vh;
+        background: var(--colorTextFooter);
+        margin-left: -5vw;
+        margin-top: 4vh;
+        box-shadow:  0 0 1px var(--shadowTitle), 
+        0 0 2px var(--shadowTitle), 
+        0 0 3px var(--shadowTitle),   
+        0 0 4px var(--shadowTitle), 
+        0 0 5px var(--shadowTitle);
+    }
+    .site-footer{
+        font-size: 1vw;
+        display: flex;
+        flex-direction: column;
+        margin-left: -10vw;
+    }
+    .text-footer{
+        color: var(--colorTextFooter);
+        margin-top: 1vh;
+    }
+    .text-footer:hover{
+        color: var(--colorHoverFooter);
+    }
+    .facebook-footer, .ville-footer, .odt-footer, .admin{
+        display: flex;
+        margin-top: 4vh;
+    }
+    .facebook-fotter:hover > .logo-facebook{
+        background: var(--iconeFacebookRed); 
+        background-size: cover; 
+        width: 2vw;
+        height: 4.2vh;
+        z-index: 10;
+    }
+    .img-footer{
+        width: 2vw;
+        height: 4.2vh;
+        margin-right: 1vw;
+        z-index: 1;
+    }
+    .logo-facebook{
+        background: var(--iconeFacebook);
+        background-size: cover;
+    }
+    .logo-ville{
+        background: var(--iconeVille);
+        background-size: cover;
+    }
+    .logo-admin{
+        background: var(--iconeAdmin);
+        background-size: cover;
+        margin-left: 0.1vw;
+    }
+    .logo-office{
+        background: var(--iconeOfficeTourism);
+        background-size: cover;
+        width: 1.6vw;
+        height: auto;
+        margin-top: 0.1vh;
+        margin-left: 0.3vw;
+    }
+
 }
+
+
+

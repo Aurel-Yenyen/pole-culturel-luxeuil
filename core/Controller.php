@@ -16,6 +16,8 @@ class Controller{
     **/
 
     function __construct($request = null){          //Initialise comme une variable d'instance
+        $this->Session = new Session();
+        $this->Form = new Form($this);
         if($request){
             $this->request = $request;                // On stock la request dans l'instance
             require ROOT.DS.'config'.DS.'hook.php';

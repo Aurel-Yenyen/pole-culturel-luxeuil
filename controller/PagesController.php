@@ -15,7 +15,7 @@ class PagesController extends Controller{
         }
         $this->set($d);
     }
-    
+
     /**
      * Permet de récuperer les pages pour le menu
      **/

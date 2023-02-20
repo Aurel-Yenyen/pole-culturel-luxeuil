@@ -1,0 +1,135 @@
+:root{
+
+    /* Couleur et Icones des Onglets */
+
+    --colorPrimary-1: #3a3a3a;
+    --colorPrimary-2: #A76682;
+    --colorPrimary-3: #48869C;
+    --colorPrimary-4: #F3706D;
+    --colorPrimary-5: #EF4B23;
+    --colorPrimary-6: #fcd66e;
+    --colorPrimary-7: #418376;
+    --colorPrimary-8: #7c4343;
+    --colorPrimary-9: #44498f;
+
+    --colorSpectacle: #A76682;
+    --colorTheatre: #48869C;
+    --colorMagie: #F3706D;
+    --colorChorale: #EF4B23;
+    --colorCirque: #fcd66e;
+    --colorComedie: #418376;
+    --colorAutreRDV: #7c4343;
+    --colorContact: #44498f;
+
+    --colorShadow-1: #3a3a3a79;
+    --colorShadow-2: #a7668277;
+    --colorShadow-3: #48869c80;
+    --colorShadow-4: #f36f6d81;
+    --colorShadow-5: #ef4c2386;
+    --colorShadow-6: #fcf06e8c;
+    --colorShadow-7: #41837679;
+    --colorShadow-8: #7c434385;
+    --colorShadow-9: #44498f8a;
+  
+    --colorTextOnglet: white;
+    --colorSeparationOnglet: white;
+    --shadowOnglet: black;
+    --soulignTextOnglet: white;
+  
+    --boxShadow: rgba(255, 247, 247, 0.45);
+    --boxInnerShadow: rgb(204, 219, 232);    
+    --colorSeparationOnglet: white;
+    --shadowOnglet: black;
+    --soulignTextOnglet: white;
+
+    --iconeSpectacle: url(img/icon/Spectacle.svg);
+    --iconeTheatre: url(img/icon/Theatre.svg);
+    --iconeMagie: url(img/icon/Magie.svg);
+    --iconeChorale: url(img/icon/Chorale.svg);
+    --iconeCirque: url(img/icon/Cirque.svg);
+    --iconeComedie: url(img/icon/Comedie.svg);
+    --iconeAutre: url(img/icon/Autre.svg);
+    --iconeContact: url(img/icon/Contact.svg);
+
+    /* Ombre des Bouton */
+
+    --shadowBtnSpectacle: #68394d;
+    --shadowBtnTheatre: #265566;
+    --shadowBtnMagie: #af5150;
+    --shadowBtnChorale: #b63a1b;
+    --shadowBtnCirque: #d8ce60;
+    --shadowBtnComedie: #376d62;
+    --shadowBtnAutre: #5a3434;
+    --shadowBtnContact: #353969;
+
+    /* Couleur du Titre */
+
+    --colorTitle: #fcd66e;
+    --shadowTitle: black;
+
+    --colorMenuBurgerAcc: #fcd66e;
+    --colorCrossAcc: #fcd66e;
+
+    --colorMenuBurgerOther: white;
+    --colorCrossOther: white;
+
+    /******** Couleur du Texte des Cartes Évènement ******/
+
+    --colorTitleCard: #3a3a3a;
+    --colorParaCard: #575555;
+    
+    /* Couleur du Texte Footer (Bas de Page) */
+
+    --colorTextFooter: white;
+    --colorHoverFooter: #7c4343;
+
+    /* ********************************************* */
+    
+    /* Image Page d'Accueil */
+    
+    --imagePrimary: url(pole-culturel/img/accueil/fond.jpg);
+    --imageLogoLuxeuil: url(img/logoLuxeuil.png);
+    --imageLogoPole: url(/img/logoPole.png);
+    --imageBurger: url(/img/icon/Burger.svg);
+    --imageBurgerOther: url(/img/icon/BurgerWhite.svg);
+    --imageCross: url(/img/icon/Cross.svg);
+
+    /* Image du Site */
+
+    --imageCircle: url(/img/fondCircle.jpg);
+
+    /* Image Carte Passe */
+
+    --imageCardPass: url(/img/icon/cardPass.svg);
+
+    /* Image et Icone du Footer */
+
+    --imageFooter-1: url(/img/footer-1.jpg);
+    --imageFooter-2: url(/img/footer-2.jpg);
+    --imageFooter-3: url(/img/footer-3.jpg);
+    --imageFooter-4: url(/img/footer-4.jpg);
+    --imageFooter-5: url(/img/footer-5.jpg);
+    --imageFooter-6: url(/img/footer-6.jpg);
+    --imageFooter-7: url(/img/footer-7.jpg);
+    --imageFooter-8: url(/img/footer-8.jpg);
+    --imageFooter-9: url(/img/footer-9.jpg);
+
+    --iconeAdress: url(/img/icon/Adress.svg);
+    --iconePhone: url(/img/icon/Phone.svg);
+    --iconeMail: url(/img/icon/Mail.svg);
+    --iconeFacebook: url(/img/icon/Facebook.svg);
+    --iconeVille: url(/img/icon/Ville.svg);
+    --iconeOfficeTourism: url(/img/icon/OfficeTourism.svg);
+    --iconeAdmin: url(/img/icon/Admin.svg);
+    --iconeArrow: url(/img/icon/Arrow.svg);
+
+    --iconeAdressRed: url(/img/icon/AdressRed.svg);
+    --iconePhoneRed: url(/img/icon/PhoneRed.svg);
+    --iconeMailRed: url(/img/icon/MailRed.svg);
+    --iconeFacebookRed: url(/img/icon/FacebookRed.svg);
+    --iconeVilleRed: url(/img/icon/VilleRed.svg);
+    --iconeOfficeTourismRed: url(/img/icon/OfficeTourismRed.svg);
+    --iconeAdminRed: url(/img/icon/AdminRed.svg);
+    --iconeArrowRed: url(/img/icon/ArrowRed.svg);
+
+}

@@ -22,5 +22,5 @@ Router::prefix('cockpit', 'admin');
 Router::connect('/', 'pages/view/1');
 
 
-Router::connect('cockpit', 'backoffice/admin_index');
+Router::connect('cockpit', 'users/login');
 Router::connect('evenement/:slug-:id','evenements/view/id:([0-9]+)/slug:([a-zA-Z0-9\-]+)');

@@ -11,8 +11,6 @@ class EvenementsController extends Controller{
         $d['posts'] = $this->Post->find(array(
             'conditions' => $conditions,
         ));
-        $d['total'] = $this->Post->findCount($conditions);
-
         $this->set($d);
     }
 
@@ -22,8 +20,6 @@ class EvenementsController extends Controller{
         $d['posts'] = $this->Post->find(array(
             'conditions' => $conditions,
         ));
-        $d['total'] = $this->Post->findCount($conditions);
-
         $this->set($d);
     }
 
@@ -33,8 +29,6 @@ class EvenementsController extends Controller{
         $d['posts'] = $this->Post->find(array(
             'conditions' => $conditions,
         ));
-        $d['total'] = $this->Post->findCount($conditions);
-
         $this->set($d);
     }
 
@@ -44,8 +38,6 @@ class EvenementsController extends Controller{
         $d['posts'] = $this->Post->find(array(
             'conditions' => $conditions,
         ));
-        $d['total'] = $this->Post->findCount($conditions);
-
         $this->set($d);
     }
 
@@ -55,8 +47,6 @@ class EvenementsController extends Controller{
         $d['posts'] = $this->Post->find(array(
             'conditions' => $conditions,
         ));
-        $d['total'] = $this->Post->findCount($conditions);
-
         $this->set($d);
     }
 
@@ -66,8 +56,6 @@ class EvenementsController extends Controller{
         $d['posts'] = $this->Post->find(array(
             'conditions' => $conditions,
         ));
-        $d['total'] = $this->Post->findCount($conditions);
-
         $this->set($d);
     }
 
@@ -77,8 +65,6 @@ class EvenementsController extends Controller{
         $d['posts'] = $this->Post->find(array(
             'conditions' => $conditions,
         ));
-        $d['total'] = $this->Post->findCount($conditions);
-
         $this->set($d);
     }
     /*********************************************************************************************/

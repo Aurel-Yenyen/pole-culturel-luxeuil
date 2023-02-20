@@ -45,6 +45,12 @@ class Router{ // Classe qui détermine l'url
         }
         $request->controller = $params[0]; // Crée un tableau pour les paramètres
         $request->action = isset($params[1]) ? $params[1] : 'index'; // Si ça ne retourne aucune action, retourne l'index
+        foreach(self::$prefixes as $k => $v){
+            if(strpos($request->action, $v.'_') === 0){
+                $request->prefix = $v;
+                $request->action = str_replace($v.'_', '', $request->action);
+            }
+        }
         $request->params = array_slice($params, 2);
         return true;// Retourne les paramètres
     }
