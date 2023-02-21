@@ -7,11 +7,11 @@
 
             <div class="title">
                 <h1 class="title-back">SAISON CULTURELLE</h1>
-                <h2 class="title2-back">2022-2023</h2>
+                <h2 class="title2-back"><?php echo $posts;?></h2>
             </div>
 
 
-            <div class="img-fond"></div>
+            <div ><img class="img-fond" src="<?php echo Router::webroot('img/accueil/fond.png')?>" alt="" srcset=""></div>
             <div class="logo-lux"></div>
             <div class="logo-pole"></div>
         </div>
@@ -24,10 +24,13 @@
                 <ul class="navBar">
                     <?php $pagesMenu = $this->request('Pages', 'getMenu');?>
                         <?php foreach($pagesMenu as $p): ?>
-                            <a href="<?php echo Router::url($p->slug);?>" class="onglet <?php echo $p->id;?>" title="<?php echo $p->name;?>" ><?php echo $p->name;?>
-                            <div class="logo-spec icon"></div>
-                            <div class="separation"></div>
-                            <div class="genre"><div class="lien-nav"></div></div></a>
+                            <?php if($p->slug !=''):?>
+                            <a href="<?php echo Router::url($p->slug);?>" class="onglet onglet-<?php echo $p->id;?>" title="<?php echo $p->name;?>" >
+                                <div class="logo-<?php echo $p->id;?> icon"></div>
+                                <div class="separation"></div>
+                                <div class="genre"><div class="lien-nav"></div></div>
+                                <?php echo $p->name;?></a>
+                            <?php endif;?>
                         <?php endforeach;?>
             </nav>
 

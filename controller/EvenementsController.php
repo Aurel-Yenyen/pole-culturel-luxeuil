@@ -67,6 +67,9 @@ class EvenementsController extends Controller{
         ));
         $this->set($d);
     }
+    function contact(){
+
+    }
     /*********************************************************************************************/
 
 

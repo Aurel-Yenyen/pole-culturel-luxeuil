@@ -3,6 +3,7 @@
 class PagesController extends Controller{
 
     public $Page;
+    public $Post;
     
     function view($id){
         $this->render('index');
@@ -24,6 +25,15 @@ class PagesController extends Controller{
         return $this->Page->find(array(
             'conditions' => array('online' => 1, 'type' => 'page') // Condition à revoir pour le site (type)!!!!!
         ));
+    }
+
+    function index($Posts){
+        $this->loadModel('Post');
+        $d['posts'] = $this->Post->findFirst(array(
+            'conditions' => array('online' => 1, 'type' => 'Année') // Définit le nom de la page (http://localhost/Projet-Mairie/pages/view/(2))
+        ));
+        $this->set($d);
+        debug($d['posts']);
     }
 
     /*********************************************************************************************/

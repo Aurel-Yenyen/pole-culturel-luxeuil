@@ -25,12 +25,10 @@
         font-family: 'Sofia Sans Condensed', sans-serif;
     }    
     .img-fond{
-        background: var(--imagePrimary);
-        background-size: cover;
-        background-repeat: no-repeat;
+        transform: scale(1.5) translateY(-15%);
         width: 100vw;
         height: 100vh;
-        background-position-y: -50vh;
+
     }
     .logo-lux{
         background: var(--imageLogoLuxeuil);
@@ -59,7 +57,6 @@
         display: grid;
         justify-content: flex-end;
         align-items: flex-end;
-        grid-gap: 25px;
         font-family : 'Pacifico', cursive ;
         z-index: 10;
         position: absolute;
@@ -68,13 +65,14 @@
     }
     .onglet > .genre > .lien-nav::after{
         display: block;
+        position: absolute;
         width: 0;
-        height: 0.2vh;
+        height: 0.35vh;
         background: var(--soulignTextOnglet);
         content: "";
         transition: width 1s;
-        margin-left: 2vw;
-        margin-top: -0.5vh;
+        margin-left: 1vw;
+        margin-top: 4.5vh;     
         box-shadow:  0 0 7px var(--shadowOnglet), 
         0 0 10px var(--shadowOnglet), 
         0 0 42px var(--shadowOnglet),   
@@ -82,19 +80,21 @@
         0 0 100px var(--shadowOnglet);
     }
     .onglet:hover > .genre > .lien-nav::after{
-        width: 50%;
+        width: 10%;
     }
     .lien-nav{
         color: var(--colorTextOnglet);
+    }
+    .navBar > a{
+        text-decoration: none;
+        color: white;
         text-shadow:  0 0 7px var(--shadowOnglet), 
         0 0 10px var(--shadowOnglet), 
         0 0 42px var(--shadowOnglet),   
         0 0 77px var(--shadowOnglet), 
         0 0 100px var(--shadowOnglet);
-        font-size: 3vh;
-    }
-    a{
-        text-decoration: none;
+        font-size: 1.5em;
+        margin-top: 4.5vh;
     }
     .cross{
         display: none;
@@ -119,76 +119,64 @@
         height: 4vh;
         background: var(--colorSeparationOnglet);
         margin-top: 1vh;
-        margin-right: 5px;
+        margin-right: 40px;
         box-shadow:  0 0 7px var(--shadowOnglet), 
         0 0 10px var(--shadowOnglet), 
         0 0 42px var(--shadowOnglet),   
         0 0 77px var(--shadowOnglet), 
         0 0 100px var(--shadowOnglet);
     }
-    .logo-spec{
-        background: var(--iconeSpectacle);
-        background-size: cover;
+    .logo-1{
         width: 2vw;
         height: 4vh;
         margin-left: 1vw;
         margin-top: 0.5vh;
         margin-right: 1vw;
     }
-    .spec{
+    .onglet-1{
         background: var(--colorSpectacle);
     }
-    .logo-theatre{
-        background: var(--iconeTheatre);
-        background-size: cover;
+    .logo-2{
         width: 2.5vw;
         height: 5vh;
         margin-left: 1vw;
         margin-top: 0.5vh;
         margin-right: 0.7vw;
     }
-    .theat{
+    .onglet-2{
         background: var(--colorTheatre);
     }
-    .logo-magie{
-        background: var(--iconeMagie);
-        background-size: cover;
+    .logo-3{
         width: 2vw;
         height: 5.1vh;
         margin-left: 1.2vw;
         margin-top: 0.5vh;
         margin-right: 1vw;
     }
-    .magie{
+    .onglet-3{
         background: var(--colorMagie);
     }
-    .logo-chorale{
-        background: var(--iconeChorale);
-        background-size: cover;
+    .logo-4{
         width: 2.5vw;
         height: 5vh;
         margin-left: 1vw;
         margin-top: 0.5vh;
         margin-right: 0.7vw;
     }
-    .chorale{
+    .onglet-4{
         background: var(--colorChorale);
     }
-    .logo-cirque{
-        background: var(--iconeCirque);
-        background-size: cover;
+    .logo-5{
         width: 2.5vw;
         height: 5vh;
         margin-left: 1vw;
         margin-top: 0.5vh;
         margin-right: 0.7vw;
     }
-    .cirque{
+    .onglet-5{
         background: var(--colorCirque);
     }
-    .logo-comedie{
-        background: var(--iconeComedie);
-        background-size: cover;
+    .logo-6{
         width: 2.5vw;
         height: 5vh;
         margin-left: 1vw;
@@ -196,30 +184,26 @@
         margin-right: 0.7vw;
         z-index: 10;
     }
-    .comedie{
+    .onglet-6{
         background: var(--colorComedie);
     }
-    .logo-autre{
-        background: var(--iconeAutre);
-        background-size: cover;
+    .logo-7{
         width: 2.8vw;
         height: 5.09vh;
         margin-left: 0.8vw;
         margin-right: 0.6vw;
     }
-    .autre{
+    .onglet-7{
         background: var(--colorAutreRDV);
     }
-    .logo-contact{
-        background: var(--iconeContact);
-        background-size: cover;
+    .logo-8{
         width: 2.5vw;
         height: 5vh;
         margin-left: 1vw;
         margin-top: 0.5vh;
         margin-right: 0.7vw;
     }
-    .contact{
+    .onglet-8{
         background: var(--colorContact);
     }
     
