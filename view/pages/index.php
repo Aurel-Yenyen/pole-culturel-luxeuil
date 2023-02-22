@@ -7,16 +7,16 @@
 
             <div class="title">
                 <h1 class="title-back">SAISON CULTURELLE</h1>
-                <h2 class="title2-back"><?php echo $posts;?></h2>
+                <h2 class="title2-back">2022-2023</h2>
             </div>
 
 
-            <div ><img class="img-fond" src="<?php echo Router::webroot('img/accueil/fond.png')?>" alt="" srcset=""></div>
-            <div class="logo-lux"></div>
-            <div class="logo-pole"></div>
+            <div><img class="img-fond" src="img/accueil/fond-anime.gif"></div>
+                 <img class="logo-lux" src="img/accueil/logoLuxeuil.png" width="160px" height="180px">
+                 <img class="logo-pole"src="img/accueil/logoPole.png" width="190px" height="190px"></div>
         </div>
 
-        <div class="burger" id="menu"></div>
+        <div class="burger" id="menu"><img src="img/icon/Burger.svg" alt=""></div>
         <div class="overlay" id="overlay"></div>
         <div class="cross" id="close">X</div>
 
@@ -26,10 +26,10 @@
                         <?php foreach($pagesMenu as $p): ?>
                             <?php if($p->slug !=''):?>
                             <a href="<?php echo Router::url($p->slug);?>" class="onglet onglet-<?php echo $p->id;?>" title="<?php echo $p->name;?>" >
-                                <div class="logo-<?php echo $p->id;?> icon"></div>
+                                <div><img class="icon-<?php echo $p->id;?> icon" src="<?php echo Router::webroot('img/icon/icon-'.$p->id.'.svg');?>" alt=""></div>
                                 <div class="separation"></div>
-                                <div class="genre"><div class="lien-nav"></div></div>
-                                <?php echo $p->name;?></a>
+                                <div class="genre"><div class="lien-nav"><?php echo $p->name;?></div></div>
+                                </a>
                             <?php endif;?>
                         <?php endforeach;?>
             </nav>
@@ -172,20 +172,20 @@
 
 
 
-        <section class="plaquette">
+        <section >
 
-            <div class="pass">
-                <div class="card-pass"></div>
-            </div>
+            <div><img class="plaquette" src="img/accueil/fondCircle.jpg" alt="">
+                <img class="pass" src="img/icon/cardPass.svg" alt="" width="300px" height="170px">
+
             <div class="content-plaquette">
                 <h3 class="title-plaquette">Découvrez notre plaquette de la saison!</h3>
                 <h3 class="para-plaquette">Profitez de notre carte Pass'Pôle Culturel et bénéficiez de nombreux avantages!</h3>
             </div>
         
-            <a class="circle-plaquette" href="doc/plaquette2022_1.pdf">
+            <a class="circle-plaquette" href="<?php echo Router::webroot('doc/plaquette2022_1.pdf')?>">
                 <div class="lien-plaquette"><button class="btn-plaquette">Télécharger Ici</button></div>
             </a>
-            
+            </div>
         </section>
 
         <section class="partenaire">
@@ -222,18 +222,18 @@
     </main>
     <footer>
 
-        <div class="schema-footer"></div>
+        <img class="schema-footer" src="img/footer/footer-1.jpg" alt="">
 
         <div class="content-footer">
 
-            <div class="pole-footer"></div>
+            <div><img class="pole-footer" src="img/accueil/logoPole.png" alt=""></div>
 
             <div class="separation-footer1"></div>
 
             <div class="adresse-footer">
 
                 <div class="contact-footer">
-                    <div class="logo-footer logo1"></div>
+                    <div><img class="logo-footer logo1" src="img/icon/Adress.svg" alt=""></div>
                     <div class="nom-contact"><p class="here-footer">Pôle Culturel</p></div>
                     <div class="rue-contact"><p class="here-footer">1 Avenue des Thermes</p></div>
                     <div class="cp-contact"><p class="here-footer">70300 Luxeuil-les-bains</p></div>
@@ -242,14 +242,14 @@
                 <div class="tel-mail">
             
                     <div class="tel-footer">
-                        <div class="logo-footer logo2"></div>
+                        <div><img class="logo-footer logo2" src="img/icon/Phone.svg" alt=""></div>
                         <div class="text-tel">
                             <p class="tel">03.84.40.56.20</p>
                         </div>
                     </div>
 
                     <div class="mail-footer">
-                        <div class="logo-footer logo3"></div>
+                        <div><img class="logo-footer logo3" src="img/icon/Mail.svg" alt=""></div>
                         <div class="text-mail">
                             <p class="mail">poleculturel@luxeuil-les-bains.fr</p>
                         </div>
@@ -261,15 +261,12 @@
             <div class="separation-footer2"></div>
 
             <div class="genre-footer">
-
-                <a href="/Spectacle/spectacle.html" class="add">Spectacle Musical</p></a>
-                <a href="/Theatre/theatre.html" class="add">Thêatre</p></a>
-                <a href="/Magie/magie.html" class="add">Magie</p></a>
-                <a href="/Chorale/chorale.html" class="add">Chorale</p></a>
-                <a href="/Cirque/cirque.html" class="add">Cirque</p></a>
-                <a href="/Comedie/comedie.html" class="add">Comédie</p></a>
-                <a href="/Autres/Autres.html" class="add">Autres Rendez-vous</p></a>
-                <a href="/Contact/contact.html" class="add">Contact</p></a>
+            <?php $pagesMenu = $this->request('Pages', 'getMenu');?>
+                        <?php foreach($pagesMenu as $p): ?>
+                            <?php if($p->slug !=''):?>
+                            <a href="<?php echo Router::url($p->slug);?>" class="add" title="<?php echo $p->name;?>" ><?php echo $p->name;?></a>
+                            <?php endif;?>
+                        <?php endforeach;?>
 
             </div>
 
@@ -278,19 +275,19 @@
             <div class="site-footer">
 
                 <div class="facebook-footer">
-                    <div class="logo-facebook img-footer"></div>
+                    <div><img class="logo-facebook img-footer" src="img/icon/Facebook.svg" alt=""></div>
                     <a href="#" class="text-footer lien-facebook">Notre Facebook</a>
                 </div>
                 <div class="ville-footer">
-                    <div class="logo-ville img-footer"></div>
+                    <div><img class="logo-ville img-footer" src="img/icon/Ville.svg" alt=""></div>
                     <a href="#" class="text-footer lien-ville">Site de notre ville</a>
                 </div>
                 <div class="odt-footer">
-                    <div class="logo-office img-footer"></div>
+                    <div><img class="logo-office img-footer" src="img/icon/OfficeTourism.svg" alt=""></div>
                     <a href="#" class="text-footer lien-odt">Site de notre office du tourisme</a>
                 </div>
                 <div class="admin">
-                    <div class="logo-admin img-footer"></div>
+                    <div><img class="logo-admin img-footer" src="img/icon/Admin.svg" alt=""></div>
                     <a href="<?php echo Router::url('cockpit');?>" class="text-footer space-admin">Espace Administrateur</a>
                 </div>
             </div>

@@ -6,6 +6,7 @@ class EvenementsController extends Controller{
     public $Page;
 
     function spectacle(){
+        $this->layout = 'event';
         $this->loadModel('Post');
         $conditions = array('online' => 1, 'type' => 'Spectacle Musical' );
         $d['posts'] = $this->Post->find(array(
@@ -15,6 +16,7 @@ class EvenementsController extends Controller{
     }
 
     function theatre(){
+        $this->layout = 'event';
         $this->loadModel('Post');
         $conditions = array('online' => 1, 'type' => 'Theâtre' );
         $d['posts'] = $this->Post->find(array(
@@ -24,6 +26,7 @@ class EvenementsController extends Controller{
     }
 
     function magie(){
+        $this->layout = 'event';
         $this->loadModel('Post');
         $conditions = array('online' => 1, 'type' => 'Magie' );
         $d['posts'] = $this->Post->find(array(
@@ -33,6 +36,7 @@ class EvenementsController extends Controller{
     }
 
     function chorale(){
+        $this->layout = 'event';
         $this->loadModel('Post');
         $conditions = array('online' => 1, 'type' => 'Chorale' );
         $d['posts'] = $this->Post->find(array(
@@ -42,6 +46,7 @@ class EvenementsController extends Controller{
     }
 
     function cirque(){
+        $this->layout = 'event';
         $this->loadModel('Post');
         $conditions = array('online' => 1, 'type' => 'Cirque' );
         $d['posts'] = $this->Post->find(array(
@@ -51,6 +56,7 @@ class EvenementsController extends Controller{
     }
 
     function comedie(){
+        $this->layout = 'event';
         $this->loadModel('Post');
         $conditions = array('online' => 1, 'type' => 'Comédie' );
         $d['posts'] = $this->Post->find(array(
@@ -60,6 +66,7 @@ class EvenementsController extends Controller{
     }
 
     function autres(){
+        $this->layout = 'event';
         $this->loadModel('Post');
         $conditions = array('online' => 1, 'type' => 'Autres' );
         $d['posts'] = $this->Post->find(array(

@@ -1,0 +1,992 @@
+@media screen and (300px <= width <= 450px) and (orientation: portrait){
+
+    body{
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    header{
+        overflow-x: hidden;
+    }
+    main{
+        overflow-x: hidden;
+    }
+    footer{
+        overflow-x: hidden;
+    }
+  
+    /***************NavBar *****************/
+  
+    nav{
+      background: var(--colorPrimary-4);
+      width: 100vw;
+      height: 70px;
+      color: white;
+      padding: 10px;
+    }
+  
+    a{
+      color: white;
+    }
+    .burger{
+        background: var(--imageBurgerOther);
+        background-size: cover;
+        width: 73px;
+        height: 50px;
+        position: absolute;
+        top: 15px;
+        margin-left: 72vw;
+        z-index: 3;
+    }
+    .overlay{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background: #000;
+        top: 0;
+        z-index: 5;
+        opacity: 0.7;
+        overflow-y: hidden;
+        visibility: hidden;
+    }
+    .cross{
+        color: white;
+        font-size: 2em;
+        background-size: cover;
+        margin: 30px;
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        visibility: hidden;
+        font-family : 'Pacifico', cursive ;
+        text-shadow:  0 0 20px var(--shadowTitle), 
+        0 0 2px var(--shadowTitle), 
+        0 0 3px var(--shadowTitle),   
+        0 0 4px var(--shadowTitle), 
+        0 0 5px var(--shadowTitle);
+    }
+    .logo-nav{
+      background: var(--imageLogoPole);
+      background-size: cover;
+      width: 75px;
+      height: 70px;
+    }
+    .facebook-ville{
+      display: none;
+    }
+    .onglet{
+      position: absolute;
+      left: 45vw;
+      visibility: hidden;
+      z-index: 10;
+    }
+    .onglet-nav{
+      width: 55vw;
+      height: 5vh;
+      box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      overflow: hidden;
+      margin-top: 4vh;
+      z-index: 10;
+    }
+    .window-onglet{
+      margin-top: 0.3vh;
+      height: 5vh;
+      width: 20vw;
+      overflow: hidden;
+    }
+    .slide-onglet{
+      width: 20vw;
+      height: 4.5vh;
+      transform: skewX(-20deg) translateX(-10px);
+      z-index: -10;
+    }
+    .slide-accueil{
+      background: var(--colorShadow-1);
+      box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+    }
+    .slide-spec{
+      background: var(--colorShadow-2);
+      box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+    }
+    .slide-theatre{
+      background: var(--colorShadow-3);
+      box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+    }
+    .slide-chorale{
+      background: var(--colorShadow-5);
+      box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+    }
+    .slide-cirque{
+      background: var(--colorShadow-6);
+      box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+    }
+    .slide-comedie{
+      background: var(--colorShadow-7);
+      box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+    }
+    .slide-autres{
+      background: var(--colorShadow-8);
+      box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+    }
+    .slide-contact{
+      background: var(--colorShadow-9);
+      box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+    }
+    .onglet-nav:hover > .window-onglet > .slide-onglet{
+      width: 200px;
+      transition: width 1s linear;
+    }
+    .lien-nav{
+      position: absolute;
+      font-family : 'Pacifico', cursive ;
+      font-size: 5vw;
+      left: 7vw;
+      text-shadow:  0 0 20px var(--shadowTitle), 
+      0 0 2px var(--shadowTitle), 
+      0 0 3px var(--shadowTitle),   
+      0 0 4px var(--shadowTitle), 
+      0 0 5px var(--shadowTitle);
+    }
+  
+  
+  
+  
+    /************ Footer ***************/
+  
+    
+    .content-footer{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 500px;
+      background: var(--colorPrimary-4);
+      margin-top: 100px;
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      text-shadow:  0 0 20px var(--shadowTitle), 
+      0 0 2px var(--shadowTitle), 
+      0 0 3px var(--shadowTitle),   
+      0 0 4px var(--shadowTitle), 
+      0 0 5px var(--shadowTitle);
+  }
+    a{
+        text-decoration: none;
+  }
+  .schema-footer{
+      background: var(--imageFooter-4);
+      width: 100vw;
+      height: 50px;
+      background-size: cover;
+      position: absolute;
+      margin-top: 52px;
+      z-index: -10;
+  }
+  .pole-footer{
+      background: var(--imageLogoPole);
+      background-size: cover;
+      width: 160px;
+      height: 150px;
+  }
+  .adresse-footer{
+      display: flex;
+      width: 330px;
+      height: 230px;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+  .contact-footer{
+      width: 250px;
+      height: 215px;
+      color: var(--colorTextFooter);
+      font-size: 1vw;
+      border: 2px dashed var(--colorTextFooter);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 4vh;
+      box-shadow:  0 0 1px var(--shadowTitle), 
+      0 0 2px var(--shadowTitle), 
+      0 0 3px var(--shadowTitle),   
+      0 0 4px var(--shadowTitle), 
+      0 0 5px var(--shadowTitle);
+  }
+  .logo1{
+      background:var(--iconeAdress);
+      width: 30px;
+      height: 30px;
+      background-size: cover;
+      margin-top: 1vh;
+  }
+  .nom-contact, .rue-contact, .cp-contact{
+      font-size: 3.5em;
+  }
+  .tel-mail{
+      margin-top: 4vh;
+      color: var(--colorTextFooter);
+      font-size: 0.8em;
+  }
+
+  .tel-footer, .mail-footer{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 100px;
+      border: 2px dashed var(--colorTextFooter);
+      border-radius: 20px;
+      margin-left: 20px;
+      box-shadow:  0 0 1px var(--shadowTitle), 
+      0 0 2px var(--shadowTitle), 
+      0 0 3px var(--shadowTitle),   
+      0 0 4px var(--shadowTitle), 
+      0 0 5px var(--shadowTitle);
+  }
+  .mail-footer{
+      margin-top: 1.3vh;
+  }
+  .logo2{
+      background: var(--iconePhone);
+      width: 30px;
+      height: 30px;
+      background-size: cover;
+      margin-top: 2vh;
+  }
+  .logo3{
+      background: var(--iconeMail);
+      width: 30px;
+      height: 30px;
+      background-size: cover;
+  }
+  .genre-footer{
+      display: none;
+  }
+  .site-footer{
+      font-size: 0.6em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1vh;
+  }
+  .text-footer{
+      color: var(--colorTextFooter);
+      margin-top: 4vh;
+      font-size: 1.4em;
+  }
+
+  .facebook-footer, .ville-footer, .odt-footer{
+      display: flex;  
+  }
+  .img-footer{
+      margin-top: 4vh;
+      margin-right: 2vw;
+      margin-left: 2vw;
+  }
+  .logo-facebook{
+      background: var(--iconeFacebook);
+      background-size: cover;
+      width: 30px;
+      height: 23px;
+  }
+  .logo-ville{
+      background: var(--iconeVille);
+      background-size: cover;
+      width: 29px;
+      height: 23px;
+  }
+  .logo-office{
+      background: var(--iconeOfficeTourism);
+      background-size: cover;
+      width: 23px;
+      height: 21px;
+      margin-top: 4.3vh;
+  }
+  .admin{
+      display: none;
+  }
+}
+  
+
+
+
+/**************** Responsive Surface Pro *****************/
+
+
+
+
+
+
+@media screen and (450px <= width <= 600px) and (orientation: portrait){
+
+  body{
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+  }
+
+  header{
+      overflow-x: hidden;
+  }
+  main{
+      overflow-x: hidden;
+  }
+  footer{
+      overflow-x: hidden;
+  }
+
+  /***************NavBar *****************/
+
+  nav{
+    background: var(--colorPrimary-4);
+    width: 100vw;
+    height: 70px;
+    color: white;
+    padding: 10px;
+  }
+
+  a{
+    color: white;
+  }
+  .burger{
+      background: var(--imageBurgerOther);
+      background-size: cover;
+      width: 73px;
+      height: 50px;
+      position: absolute;
+      top: 15px;
+      margin-left: 72vw;
+      z-index: 3;
+  }
+  .overlay{
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      background: #000;
+      top: 0;
+      z-index: 5;
+      opacity: 0.7;
+      overflow-y: hidden;
+      visibility: hidden;
+  }
+  .cross{
+      color: white;
+      font-size: 2em;
+      background-size: cover;
+      margin: 30px;
+      position: absolute;
+      top: 0;
+      z-index: 10;
+      visibility: hidden;
+      font-family : 'Pacifico', cursive ;
+      text-shadow:  0 0 20px var(--shadowTitle), 
+      0 0 2px var(--shadowTitle), 
+      0 0 3px var(--shadowTitle),   
+      0 0 4px var(--shadowTitle), 
+      0 0 5px var(--shadowTitle);
+  }
+  .logo-nav{
+    background: var(--imageLogoPole);
+    background-size: cover;
+    width: 75px;
+    height: 70px;
+  }
+  .facebook-ville{
+    display: none;
+  }
+  .onglet{
+    position: absolute;
+    left: 45vw;
+    visibility: hidden;
+    z-index: 10;
+  }
+  .onglet-nav{
+    width: 55vw;
+    height: 5vh;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 4vh;
+    z-index: 10;
+  }
+  .window-onglet{
+    margin-top: 0.3vh;
+    height: 5vh;
+    width: 20vw;
+    overflow: hidden;
+  }
+  .slide-onglet{
+    width: 20vw;
+    height: 4.5vh;
+    transform: skewX(-20deg) translateX(-10px);
+    z-index: -10;
+  }
+  .slide-accueil{
+    background: var(--colorShadow-1);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .slide-theatre{
+    background: var(--colorShadow-3);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .slide-magie{
+    background: var(--colorShadow-4);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .slide-chorale{
+    background: var(--colorShadow-5);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .slide-cirque{
+    background: var(--colorShadow-6);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .slide-comedie{
+    background: var(--colorShadow-7);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .slide-autres{
+    background: var(--colorShadow-8);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .slide-contact{
+    background: var(--colorShadow-9);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .onglet-nav:hover > .window-onglet > .slide-onglet{
+    width: 200px;
+    transition: width 1s linear;
+  }
+  .lien-nav{
+    position: absolute;
+    font-family : 'Pacifico', cursive ;
+    font-size: 5vw;
+    left: 7vw;
+    text-shadow:  0 0 20px var(--shadowTitle), 
+    0 0 2px var(--shadowTitle), 
+    0 0 3px var(--shadowTitle),   
+    0 0 4px var(--shadowTitle), 
+    0 0 5px var(--shadowTitle);
+  }
+
+
+
+
+  /************ Footer ***************/
+
+  
+  .content-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 520px;
+    background: var(--colorPrimary-4);
+    margin-top: 100px;
+    font-family: 'Sofia Sans Condensed', sans-serif;
+    text-shadow:  0 0 20px var(--shadowTitle), 
+    0 0 2px var(--shadowTitle), 
+    0 0 3px var(--shadowTitle),   
+    0 0 4px var(--shadowTitle), 
+    0 0 5px var(--shadowTitle);
+}
+  a{
+      text-decoration: none;
+}
+  .schema-footer{
+      background: var(--imageFooter-4);
+      width: 100vw;
+      height: 90px;
+      background-size: cover;
+      position: absolute;
+      margin-top: 22px;
+      z-index: -10;
+  }
+  .pole-footer{
+      background: var(--imageLogoPole);
+      background-size: cover;
+      width: 160px;
+      height: 150px;
+  }
+  .adresse-footer{
+      display: flex;
+      width: 500px;
+      height: 230px;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+  .contact-footer{
+      width: 240px;
+      height: 215px;
+      color: var(--colorTextFooter);
+      font-size: 0.9vw;
+      border: 2px dashed var(--colorTextFooter);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 4vh;
+      box-shadow:  0 0 1px var(--shadowTitle), 
+      0 0 2px var(--shadowTitle), 
+      0 0 3px var(--shadowTitle),   
+      0 0 4px var(--shadowTitle), 
+      0 0 5px var(--shadowTitle);
+  }
+  .logo1{
+      background:var(--iconeAdress);
+      width: 30px;
+      height: 30px;
+      background-size: cover;
+      margin-top: 1vh;
+  }
+  .nom-contact, .rue-contact, .cp-contact{
+      font-size: 3.5em;
+  }
+  .tel-mail{
+      margin-top: 4vh;
+      color: var(--colorTextFooter);
+      font-size: 0.8em;
+  }
+
+  .tel-footer, .mail-footer{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 240px;
+      height: 100px;
+      border: 2px dashed var(--colorTextFooter);
+      border-radius: 20px;
+      margin-left: 20px;
+      box-shadow:  0 0 1px var(--shadowTitle), 
+      0 0 2px var(--shadowTitle), 
+      0 0 3px var(--shadowTitle),   
+      0 0 4px var(--shadowTitle), 
+      0 0 5px var(--shadowTitle);
+  }
+  .mail-footer{
+      margin-top: 1.3vh;
+  }
+  .logo2{
+      background: var(--iconePhone);
+      width: 30px;
+      height: 30px;
+      background-size: cover;
+      margin-top: 2vh;
+  }
+  .logo3{
+      background: var(--iconeMail);
+      width: 30px;
+      height: 30px;
+      background-size: cover;
+  }
+  .genre-footer{
+      display: none;
+  }
+  .site-footer{
+      font-size: 0.6em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3vh;
+  }
+  .text-footer{
+      color: var(--colorTextFooter);
+      margin-top: 4vh;
+      font-size: 1.4em;
+  }
+
+  .facebook-footer, .ville-footer, .odt-footer{
+      display: flex; 
+      justify-content: space-around;
+      align-items: center;
+
+  }
+  .img-footer{
+    margin-top: 3vh;
+    margin-right: 2vw;
+  }
+  .logo-facebook{
+      background: var(--iconeFacebook);
+      background-size: cover;
+      width: 28px;
+      height: 25px;
+      margin-left: -4vw;
+  }
+  .logo-ville{
+      background: var(--iconeVille);
+      background-size: cover;
+      width: 27px;
+      height: 25px;
+      margin-left: 2vw;
+  }
+  .logo-office{
+      background: var(--iconeOfficeTourism);
+      background-size: cover;
+      width: 21px;
+      height: 21px;
+      margin-left: 2vw;
+  }
+  .admin{
+      display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+/**************** Responsive Tablette Portrait ************/
+
+
+
+
+
+
+
+
+
+
+@media screen and (600px <= width <= 950px) and (orientation: portrait){
+
+  body{
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+  }
+
+  header{
+      overflow-x: hidden;
+  }
+  main{
+      overflow-x: hidden;
+  }
+  footer{
+      overflow-x: hidden;
+  }
+
+  /***************NavBar *****************/
+
+  nav{
+    background: var(--colorPrimary-4);
+    width: 100vw;
+    height: 70px;
+    color: white;
+    padding: 10px;
+  }
+
+  a{
+    color: white;
+  }
+  .burger{
+      background: var(--imageBurgerOther);
+      background-size: cover;
+      width: 73px;
+      height: 50px;
+      position: absolute;
+      top: 15px;
+      margin-left: 72vw;
+      z-index: 3;
+  }
+  .overlay{
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      background: #000;
+      top: 0;
+      z-index: 5;
+      opacity: 0.7;
+      overflow-y: hidden;
+      visibility: hidden;
+  }
+  .cross{
+      color: white;
+      font-size: 2em;
+      background-size: cover;
+      margin: 30px;
+      position: absolute;
+      top: 0;
+      z-index: 10;
+      visibility: hidden;
+      font-family : 'Pacifico', cursive ;
+      text-shadow:  0 0 20px var(--shadowTitle), 
+      0 0 2px var(--shadowTitle), 
+      0 0 3px var(--shadowTitle),   
+      0 0 4px var(--shadowTitle), 
+      0 0 5px var(--shadowTitle);
+  }
+  .logo-nav{
+    background: var(--imageLogoPole);
+    background-size: cover;
+    width: 75px;
+    height: 70px;
+  }
+  .facebook-ville{
+    display: none;
+  }
+  .onglet{
+    position: absolute;
+    left: 45vw;
+    visibility: hidden;
+    z-index: 10;
+  }
+  .onglet-nav{
+    width: 55vw;
+    height: 5vh;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 4vh;
+    z-index: 10;
+  }
+  .window-onglet{
+    margin-top: 0.3vh;
+    height: 5vh;
+    width: 20vw;
+    overflow: hidden;
+  }
+  .slide-onglet{
+    width: 20vw;
+    height: 4.5vh;
+    transform: skewX(-20deg) translateX(-10px);
+    z-index: -10;
+  }
+  .slide-accueil{
+    background: var(--colorShadow-1);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .slide-theatre{
+    background: var(--colorShadow-3);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .slide-magie{
+    background: var(--colorShadow-4);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .slide-chorale{
+    background: var(--colorShadow-5);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .slide-cirque{
+    background: var(--colorShadow-6);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .slide-comedie{
+    background: var(--colorShadow-7);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .slide-autres{
+    background: var(--colorShadow-8);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .slide-contact{
+    background: var(--colorShadow-9);
+    box-shadow: var(--boxShadow) 3px 0px 3px 0px;
+  }
+  .onglet-nav:hover > .window-onglet > .slide-onglet{
+    width: 200px;
+    transition: width 1s linear;
+  }
+  .lien-nav{
+    position: absolute;
+    font-family : 'Pacifico', cursive ;
+    font-size: 5vw;
+    left: 7vw;
+    text-shadow:  0 0 20px var(--shadowTitle), 
+    0 0 2px var(--shadowTitle), 
+    0 0 3px var(--shadowTitle),   
+    0 0 4px var(--shadowTitle), 
+    0 0 5px var(--shadowTitle);
+  }
+
+
+
+
+  /************ Footer ***************/
+
+  
+  .content-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 620px;
+    background: var(--colorPrimary-4);
+    margin-top: 140px;
+    font-family: 'Sofia Sans Condensed', sans-serif;
+    text-shadow:  0 0 20px var(--shadowTitle), 
+    0 0 2px var(--shadowTitle), 
+    0 0 3px var(--shadowTitle),   
+    0 0 4px var(--shadowTitle), 
+    0 0 5px var(--shadowTitle);
+}
+  a{
+      text-decoration: none;
+}
+.schema-footer{
+    background: var(--imageFooter-4);
+    width: 100vw;
+    height: 150px;
+    background-size: cover;
+    position: absolute;
+
+    z-index: -10;
+}
+.pole-footer{
+    background: var(--imageLogoPole);
+    background-size: cover;
+    width: 181px;
+    height: 170px;
+}
+.adresse-footer{
+    display: flex;
+    width: 700px;
+    height: 300px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.contact-footer{
+    width: 340px;
+    height: 280px;
+    color: var(--colorTextFooter);
+    font-size: 0.9vw;
+    border: 2px dashed var(--colorTextFooter);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+    box-shadow:  0 0 1px var(--shadowTitle), 
+    0 0 2px var(--shadowTitle), 
+    0 0 3px var(--shadowTitle),   
+    0 0 4px var(--shadowTitle), 
+    0 0 5px var(--shadowTitle);
+}
+.logo1{
+    background:var(--iconeAdress);
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    margin-top: 1vh;
+}
+.nom-contact, .rue-contact, .cp-contact{
+    font-size: 3em;
+}
+.tel-mail{
+    margin-top: 4vh;
+    color: var(--colorTextFooter);
+    font-size: 1.3em;
+}
+
+.tel-footer, .mail-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 340px;
+    height: 130px;
+    border: 2px dashed var(--colorTextFooter);
+    border-radius: 20px;
+    margin-left: 20px;
+    box-shadow:  0 0 1px var(--shadowTitle), 
+    0 0 2px var(--shadowTitle), 
+    0 0 3px var(--shadowTitle),   
+    0 0 4px var(--shadowTitle), 
+    0 0 5px var(--shadowTitle);
+}
+.mail-footer{
+    margin-top: 1.3vh;
+}
+.logo2{
+    background: var(--iconePhone);
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    margin-top: 2vh;
+}
+.logo3{
+    background: var(--iconeMail);
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+}
+.genre-footer{
+    display: none;
+}
+.site-footer{
+    font-size: 0.6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vh;
+}
+.text-footer{
+    color: var(--colorTextFooter);
+    margin-top: 4vh;
+    font-size: 1.4em;
+}
+
+.facebook-footer, .ville-footer, .odt-footer{
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+
+}
+.img-footer{
+  margin-top: 3vh;
+  margin-right: 2vw;
+}
+.logo-facebook{
+    background: var(--iconeFacebook);
+    background-size: cover;
+    width: 28px;
+    height: 25px;
+    margin-left: -4vw;
+}
+.logo-ville{
+    background: var(--iconeVille);
+    background-size: cover;
+    width: 27px;
+    height: 25px;
+    margin-left: 2vw;
+}
+.logo-office{
+    background: var(--iconeOfficeTourism);
+    background-size: cover;
+    width: 21px;
+    height: 21px;
+    margin-left: 2vw;
+}
+.admin{
+    display: none;
+}
+}
+
+
+
+
+
+
+
+
+
+  
+  

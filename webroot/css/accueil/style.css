@@ -25,7 +25,6 @@
         font-family: 'Sofia Sans Condensed', sans-serif;
     }    
     .img-fond{
-        transform: scale(1.5) translateY(-15%);
         width: 100vw;
         height: 100vh;
 
@@ -60,7 +59,7 @@
         font-family : 'Pacifico', cursive ;
         z-index: 10;
         position: absolute;
-        top: 5vh;
+        top: 3vh;
         left: 75vw;
     }
     .onglet > .genre > .lien-nav::after{
@@ -72,7 +71,7 @@
         content: "";
         transition: width 1s;
         margin-left: 1vw;
-        margin-top: 4.5vh;     
+        margin-top: 0.3vh;     
         box-shadow:  0 0 7px var(--shadowOnglet), 
         0 0 10px var(--shadowOnglet), 
         0 0 42px var(--shadowOnglet),   
@@ -80,10 +79,13 @@
         0 0 100px var(--shadowOnglet);
     }
     .onglet:hover > .genre > .lien-nav::after{
-        width: 10%;
+        width: 5%;
     }
     .lien-nav{
-        color: var(--colorTextOnglet);
+        margin-top: 10px;
+    }
+    .burger{
+        display: none;
     }
     .navBar > a{
         text-decoration: none;
@@ -94,31 +96,32 @@
         0 0 77px var(--shadowOnglet), 
         0 0 100px var(--shadowOnglet);
         font-size: 1.5em;
-        margin-top: 4.5vh;
+        margin-top: 40px;
     }
     .cross{
         display: none;
     }
     .onglet{
-        width: 28vw;
-        height: 6vh;
+        width: 40vw;
+        height: 7vh;
         box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;    
         border-radius: 50px 0px 0px 50px ;
         display: flex;
-        transform: translateX(5vw);
+        transform: translateX(4vw);
         transition: transform 1s;
-        z-index: 10;
+        z-index: -10;
     }
+
     .onglet:hover{
         transform: translateX(0px);
         transition: transform 1s;
     }
 
     .separation{
-        width: 0.2vw;
-        height: 4vh;
+        width: 4px;
+        height: 40px;
         background: var(--colorSeparationOnglet);
-        margin-top: 1vh;
+        margin-top: 10px;
         margin-right: 40px;
         box-shadow:  0 0 7px var(--shadowOnglet), 
         0 0 10px var(--shadowOnglet), 
@@ -126,57 +129,67 @@
         0 0 77px var(--shadowOnglet), 
         0 0 100px var(--shadowOnglet);
     }
-    .logo-1{
-        width: 2vw;
-        height: 4vh;
-        margin-left: 1vw;
-        margin-top: 0.5vh;
-        margin-right: 1vw;
-    }
     .onglet-1{
         background: var(--colorSpectacle);
     }
-    .logo-2{
+    .onglet-2{
+        background: var(--colorTheatre);
+    }
+    .onglet-3{
+        background: var(--colorMagie);
+    }
+    .onglet-4{
+        background: var(--colorChorale);
+    }
+    .onglet-5{
+        background: var(--colorCirque);
+    }
+    .onglet-6{
+        background: var(--colorComedie);
+    }
+    .onglet-7{
+        background: var(--colorAutre);
+    }
+    .onglet-8{
+        background: var(--colorContact);
+    }
+    .icon-1{
+        width: 2vw;
+        height: 4vh;
+        margin-left: 1.2vw;
+        margin-top: 1vh;
+        margin-right: 0.8vw;
+        z-index: 10;
+    }
+    .icon-2{
         width: 2.5vw;
         height: 5vh;
         margin-left: 1vw;
         margin-top: 0.5vh;
         margin-right: 0.7vw;
     }
-    .onglet-2{
-        background: var(--colorTheatre);
-    }
-    .logo-3{
+    .icon-3{
         width: 2vw;
         height: 5.1vh;
         margin-left: 1.2vw;
         margin-top: 0.5vh;
         margin-right: 1vw;
     }
-    .onglet-3{
-        background: var(--colorMagie);
-    }
-    .logo-4{
+    .icon-4{
         width: 2.5vw;
         height: 5vh;
         margin-left: 1vw;
         margin-top: 0.5vh;
         margin-right: 0.7vw;
     }
-    .onglet-4{
-        background: var(--colorChorale);
-    }
-    .logo-5{
+    .icon-5{
         width: 2.5vw;
         height: 5vh;
         margin-left: 1vw;
         margin-top: 0.5vh;
         margin-right: 0.7vw;
     }
-    .onglet-5{
-        background: var(--colorCirque);
-    }
-    .logo-6{
+    .icon-6{
         width: 2.5vw;
         height: 5vh;
         margin-left: 1vw;
@@ -184,28 +197,21 @@
         margin-right: 0.7vw;
         z-index: 10;
     }
-    .onglet-6{
-        background: var(--colorComedie);
-    }
-    .logo-7{
+    .icon-7{
         width: 2.8vw;
         height: 5.09vh;
-        margin-left: 0.8vw;
-        margin-right: 0.6vw;
+        margin-top: 0.75vh;
+        margin-left: 1vw;
+        margin-right: 0.4vw;
     }
-    .onglet-7{
-        background: var(--colorAutreRDV);
-    }
-    .logo-8{
+    .icon-8{
         width: 2.5vw;
         height: 5vh;
         margin-left: 1vw;
-        margin-top: 0.5vh;
+        margin-top: 0.7vh;
         margin-right: 0.7vw;
     }
-    .onglet-8{
-        background: var(--colorContact);
-    }
+
     
     .onglet:hover > .icon{
         animation: rotate 1s ease-in ;
@@ -701,26 +707,6 @@
 
     }
 
-    
-
-    /* ***************** Carte Pass ************* */
-
-
-
-
-    .pass{
-        width: 15vw;
-        height: 17vh;
-        border-radius: 1vw;
-        background: var(--imageCardPass);
-        background-size: cover;
-        position: absolute;
-        top: 170vh;
-        left: 60vw;
-        transform: rotate(10deg);
-        box-shadow: 0 3px #b1b1b1;
-    }
-
 
 
 
@@ -730,10 +716,7 @@
 
 
     .plaquette{
-        background: var(--imageCircle);
         margin-top: 20vh;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
         margin-left: 30vw;
         background-size: cover;
         border-radius: 50vw;
@@ -743,11 +726,24 @@
         box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
         z-index: -1;
     }
+    .pass{
+        width: 250px;
+        height: 142px;
+        border-radius: 15px;
+        position: absolute;
+        top: 170vh;
+        left: 60vw;
+        transform: rotate(10deg);
+        box-shadow: 0 3px #b1b1b1;
+    }
     .content-plaquette{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-top: -90vh;
+        margin-bottom: 90vh;
+        margin-left: 5vw;
     }
     .title-plaquette{
         color: white;
@@ -767,6 +763,7 @@
         0 0 1px black,   
         0 0 1px black, 
         0 0 1px black;
+        margin-top: -2vh;
         z-index: 10;
     }
     .circle-plaquette{
@@ -856,7 +853,7 @@
     
 
     #images-partenaire{
-        animation: spin 30s linear infinite;
+        animation: spin 10s linear infinite;
     }
     #change{
         position: absolute;
@@ -867,7 +864,7 @@
         z-index: 1;
     }
     #caroussel-partenaire{
-        width: 240vw;
+        width: 250vw;
         height: 200px;
         overflow: hidden;
         margin-bottom: 50px;
@@ -893,22 +890,28 @@
         0%{
             transform: translateX(0vw);
         }
-        20%{
+        10%{
             transform: translateX(-20vw);  
         }
-        40%{
+        25%{
             transform: translateX(-40vw);  
         }
-        60%{
+        40%{
             transform: translateX(-60vw);     
         }
-        80%{
+        55%{
             transform: translateX(-80vw);   
         }
-
-        100%{
+        70%{
             transform: translateX(-100vw);   
         }
+        85%{
+            transform: translateX(-120vw);   
+        }
+        100%{
+            transform: translateX(-150vw);   
+        }
+
 
     }
     #input-partenaire{
@@ -989,12 +992,13 @@
         margin-left: 1vw;
         margin-right: 1vw;
         margin-top: 1vh;
+
     }
     .contact-footer{
         width: 15vw;
         height: 26vh;
         color: var(--colorTextFooter);
-        font-size: 1vw;
+        font-size: 1.3em;
         border: 2px dashed var(--colorTextFooter);
         border-radius: 20px;
         display: flex;
@@ -1022,7 +1026,7 @@
     .tel-mail{
         margin-top: 4vh;
         color: var(--colorTextFooter);
-        font-size: 0.8vw;
+        font-size: 1.2em;
     }
 
     .tel-footer, .mail-footer{
@@ -1077,6 +1081,7 @@
         color: var(--colorTextFooter);
         font-size: 1.1em;
         display: flex;
+        margin-top: 10px;
     }
     .add::before{
         content: ">";
@@ -1092,7 +1097,7 @@
         height:28vh;
         background: var(--colorTextFooter);
         margin-left: -5vw;
-        margin-top: 4vh;
+        margin-top: 4.25vh;
         box-shadow:  0 0 1px var(--shadowTitle), 
         0 0 2px var(--shadowTitle), 
         0 0 3px var(--shadowTitle),   
@@ -1104,6 +1109,7 @@
         display: flex;
         flex-direction: column;
         margin-left: -10vw;
+        margin-top: -1vh;
     }
     .text-footer{
         color: var(--colorTextFooter);
