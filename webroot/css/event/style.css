@@ -9,16 +9,37 @@
     /***************NavBar *****************/
   
     nav{
-      background: var(--colorPrimary-2);
       width: 100vw;
       height: 20vh;
       display: flex;
       color: white;
       padding: 10px;
     }
-    a{
-      color: white;
+    .nav-2{
+      background: var(--colorPrimary-2);
+    }    
+    .nav-3{
+      background: var(--colorPrimary-3);
     }
+    .nav-4{
+      background: var(--colorPrimary-4);
+    }
+    .nav-5{
+      background: var(--colorPrimary-5);
+    }
+    .nav-6{
+      background: var(--colorPrimary-6);
+    }
+    .nav-7{
+      background: var(--colorPrimary-7);
+    }
+    .nav-8{
+      background: var(--colorPrimary-8);
+    }
+    .nav-9{
+      background: var(--colorPrimary-9);
+    }
+
     .cross{
       display: none;
     }
@@ -29,7 +50,7 @@
     }
     .facebook-ville{
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       position: absolute;
       width: 300px;
       top: 0;
@@ -41,37 +62,10 @@
       margin-top: 5vh;
       margin-right: 20px;
     }
-    .lien-facebook::after{
-      content: "";
-      width: 2px;
-      height: 40px;
-      display: block;
-      background: white;
-      position: absolute;
-      left: 3vw;
-    }
     .lien-odt{
       width: 33px;
       height: 33px;
       margin-top: 5.3vh;
-    }
-    .lien-odt::after{
-      content: "";
-      width: 2px;
-      height: 40px;
-      display: block;
-      background: white;
-      position: absolute;
-      left: 8vw;
-      top: 5vh;
-    }
-    .lien-luxeuil{
-      background: var(--imageLogoLuxeuil);
-      width: 120px;
-      height: 140px;
-      background-size: cover;
-  
-      margin-left: 30px;
     }
     .onglet{
       display: flex;
@@ -101,35 +95,35 @@
       transform: skewX(-20deg) translateX(-10px);
       z-index: -10;
     }
-    .slide-Spectacle{
+    .slide-1{
       background: var(--colorShadow-2);
       box-shadow: var(--boxShadow) 3px 0px 3px 0px;
     }
-    .slide-Theâtre{
+    .slide-2{
       background: var(--colorShadow-3);
       box-shadow: var(--boxShadow) 3px 0px 3px 0px;
     }
-    .slide-Magie{
+    .slide-3{
       background: var(--colorShadow-4);
       box-shadow: var(--boxShadow) 3px 0px 3px 0px;
     }
-    .slide-Chorale{
+    .slide-4{
       background: var(--colorShadow-5);
       box-shadow: var(--boxShadow) 3px 0px 3px 0px;
     }
-    .slide-Cirque{
+    .slide-5{
       background: var(--colorShadow-6);
       box-shadow: var(--boxShadow) 3px 0px 3px 0px;
     }
-    .slide-Comédie{
+    .slide-6{
       background: var(--colorShadow-7);
       box-shadow: var(--boxShadow) 3px 0px 3px 0px;
     }
-    .slide-Autres{
+    .slide-7{
       background: var(--colorShadow-8);
       box-shadow: var(--boxShadow) 3px 0px 3px 0px;
     }
-    .slide-Contact{
+    .slide-8{
       background: var(--colorShadow-9);
       box-shadow: var(--boxShadow) 3px 0px 3px 0px;
     }
@@ -138,6 +132,7 @@
       transition: width 1s linear;
     }
     .lien-nav{
+      color: white;
       position: absolute;
       font-family : 'Pacifico', cursive ;
       font-size: 1vw;
@@ -151,13 +146,21 @@
   
   
   
-    /************ Formulaire ***************/
-
+    /************ Main ***************/
+    .caroussel{
+      width: 200px;
+      height: 100px;
+      overflow: hidden;
+    }
+    .caroussel > img{
+      transform: translateX(0px);
+    }
     
+    /************ Footer ***************/ 
     footer{
         width: 100vw;
         height: 35vh;
-        background: var(--colorPrimary-2);
+
         margin-top: 30vh;
         font-family: 'Sofia Sans Condensed', sans-serif;
         text-shadow:  0 0 20px var(--shadowTitle), 
@@ -166,9 +169,31 @@
         0 0 4px var(--shadowTitle), 
         0 0 5px var(--shadowTitle);
     }
-    a{
-        text-decoration: none;
+    .footer-2{
+        background: var(--colorPrimary-2);
     }
+    .footer-3{
+      background: var(--colorPrimary-3);
+    }
+    .footer-4{
+      background: var(--colorPrimary-4);
+    }
+    .footer-5{
+      background: var(--colorPrimary-5);
+    }
+    .footer-6{
+      background: var(--colorPrimary-6);
+    }
+    .footer-7{
+      background: var(--colorPrimary-7);
+    }
+    .footer-8{
+      background: var(--colorPrimary-8);
+    }
+    .footer-9{
+      background: var(--colorPrimary-9);
+    }
+
     .schema-footer{
         width: 100vw;
         height: 25vh;
@@ -299,6 +324,8 @@
         color: var(--colorTextFooter);
         font-size: 0.9vw;
         margin-top: 14px;
+        color: white;
+        text-decoration: none;
     }
     .add:hover{
         color: rgb(163, 84, 84);

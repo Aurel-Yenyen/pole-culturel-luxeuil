@@ -75,6 +75,13 @@ class EvenementsController extends Controller{
         $this->set($d);
     }
     function contact(){
+        $this->layout = 'cont';
+        $this->loadModel('Post');
+        $conditions = array('online' => 1, 'type' => 'Autres' );
+        $d['posts'] = $this->Post->find(array(
+            'conditions' => $conditions,
+        ));
+        $this->set($d);
 
     }
     /*********************************************************************************************/

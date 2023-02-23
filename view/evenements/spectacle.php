@@ -4,14 +4,13 @@
 <div class="overlay" id="overlay"></div>
 <div class="cross" id="close">X</div>
 
-<nav>
+<nav class="nav-2">
 
     <a href="<?php echo Router::url('');?>"><img class="logo-nav" src="<?php echo Router::webroot('img/accueil/logoPole.png')?>" alt=""></a>
 
     <div class="facebook-ville">
         <a href="#"><img class="lien-facebook" src="<?php echo Router::webroot('img/icon/Facebook.svg')?>" alt=""></a>
         <a href="#"><img class="lien-odt" src="<?php echo Router::webroot('img/icon/OfficeTourism.svg')?>" alt=""></a>
-        <a href="#"><img class="lien-luxeuil" src="<?php echo Router::webroot('img/icon/Ville.svg')?>" alt=""></a>
     </div>
 
     <div class="onglet" id="nav">
@@ -21,7 +20,7 @@
                             <?php if($p->slug != 'evenements/spectacle/'):?>
                             <a href="<?php echo Router::url($p->slug);?>" class="onglet-nav">
                                 <div class="window-onglet">
-                                    <div class="slide-onglet slide-<?php echo $p->name;?>"></div>
+                                    <div class="slide-onglet slide-<?php echo $p->id;?>"></div>
                                 </div>
                                 <p class="lien-nav <?php echo $p->name;?>"><?php echo $p->name;?></p>
                             </a>
@@ -36,16 +35,19 @@
 
 <main>
 <?php foreach ($posts as $k => $v): ?>
+        <div class="caroussel">
         <?php for($i = 1; $i <= 3; $i++):?>
-            <img src="<?php echo Router::webroot('img/'.$v->id.'/img-'."$i".'.png')?>" alt="" height="100px" width="auto">
+            <img src="<?php echo Router::webroot('img/'.$v->id.'/img-'."$i".'.jpg')?>" alt="" height="100px" width="auto">
         <?php endfor;?>
+        </div>
         <h2><?php echo $v->name;?></h2>
         <h3><?php echo $v->content;?><h3>
         <p><a href="<?php echo Router::url("evenements/view/id:{$v->id}/slug:$v->slug");?>">Lire la suite &rarr;</a></p>
 
 <?php endforeach;?>
 </main>
-<footer>
+
+<footer class="footer-2">
 
 <img class="schema-footer" src="<?php echo Router::webroot('img/footer/footer-2.jpg')?>" alt="">
 
