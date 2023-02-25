@@ -147,20 +147,119 @@
   
   
     /************ Main ***************/
-    .caroussel{
-      width: 200px;
-      height: 100px;
-      overflow: hidden;
+
+    .contenu-affiche{
+      display: flex;
+      justify-content: space-around;
+      margin-top: 400px;
+      font-family: 'Sofia Sans Condensed', sans-serif;
     }
-    .caroussel > img{
-      transform: translateX(0px);
+    #wrapper{
+      position: relative;
+      width: 510px;
+      height: 140px;
+      margin: 50px auto;
+      perspective: 800px;
+      perspective-origin : 50% 50%;
+      margin-left: 10vw;
+      margin-top: 15vh;
     }
+    #allPlan{
+      position: absolute; 
+      height:100%;
+      width:100%; 
+      animation: carrousel 10s infinite linear forwards ;
+      transform-style: preserve-3d;
+    }
+    
+    .plan{
+      position: absolute;
+      width: auto;
+      height: 400px;
+      left: 0px;
+      top: 0px;  
+      text-align: center; 
+    }
+    .plan img{  
+      height:100%;
+      width:100%;
+    }
+    .p1{ 
+    transform: rotateY(120deg) translateZ(200px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    .p2{
+    transform: rotateY(240deg) translateZ(200px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    .p3{ 
+    transform: rotateY(360deg) translateZ(200px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    } 
+    
+    
+    @keyframes carrousel{
+      from { transform: translateZ(-1000px) rotateY(0deg); }
+      to   { transform : translateZ(-1000px) rotateY(360deg); }
+    }
+
+    .barre{
+      position: absolute;
+      margin-top: 30px;
+      width: 110vw;
+      height: 50px;
+      background: var(--colorPrimary-2);
+      color: rgb(248, 247, 247);
+      z-index: -10;
+      text-shadow:  0 0 20px var(--shadowTitle), 
+      0 0 2px var(--shadowTitle), 
+      0 0 3px var(--shadowTitle),   
+      0 0 4px var(--shadowTitle), 
+      0 0 5px var(--shadowTitle);
+    }
+    .contenu-title{
+      margin-left: 200px;
+      margin-top: -20px;
+      font-size: 1.3em;
+      
+    }
+    .content-affiche{
+      position: absolute;
+      left: 35vw;
+      margin-top: 150px;
+      color: rgb(71, 71, 71);
+      font-size: 1.5em;
+      line-height: 40px;
+      font-weight:400;
+      margin-right: 120px;
+    }
+
+    a > button{
+      background: white;
+      color: var(--colorPrimary-2);
+      border: 2px solid var(--colorPrimary-2);
+      width: 150px;
+      height: 50px;
+      font-size: 0.7em;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: -20px;
+      margin-right: 5vw;
+      box-shadow: 0 6px rgb(180, 180, 180);
+      cursor: pointer;
+      font-weight: bold;
+    }
+    a:hover > button{
+      transform: translateY(2px);
+      box-shadow: 0 4px var(--colorShadow-2)
+    }
+
+
     
     /************ Footer ***************/ 
     footer{
         width: 100vw;
         height: 35vh;
-
         margin-top: 30vh;
         font-family: 'Sofia Sans Condensed', sans-serif;
         text-shadow:  0 0 20px var(--shadowTitle), 

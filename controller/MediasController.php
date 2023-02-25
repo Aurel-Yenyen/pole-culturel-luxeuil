@@ -13,6 +13,7 @@ class MediasController extends Controller{
                 $this->Media->save(array(
                     'name' => $this->request->data->name,
                     'file' => $id.'/'.$_FILES['file']['name'],
+                    'format' => '',
                     'post_id' => $id,
                     'type' => 'img'
                 ));

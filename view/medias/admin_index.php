@@ -36,8 +36,9 @@
 
 </table>
 <form action="<?php echo Router::url('admin/medias/index/' .$post_id)?>" method="post" enctype="multipart/form-data">
+        <?php echo $this->Form->input('name', 'Format');?>
         <?php echo $this->Form->input('file', 'Image', array('type' => 'file'));?>
-        <?php echo $this->Form->input('name', 'Titre');?>
+        <?php echo $this->Form->input('format', 'Format');?>
         <div class="action">
             <input type="submit" value="Valider">
         </div>

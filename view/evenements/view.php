@@ -18,7 +18,7 @@
 ?>
         <?php for($i = 1; $i <= 3; $i++):?>
             <div class="caroussel-img">
-            <img class="" src="<?php echo Router::webroot('img/'.$post->id.'/img-'."$i".'.png')?>" alt="" height="100px" width="auto">
+            <img class="" src="<?php echo Router::webroot('img/'.$post->id.'/img-'."$i".'.jpg')?>" alt="" height="100px" width="auto">
             </div>
         <?php endfor;?>
 <h1><?php echo $post->name;?></h1>
