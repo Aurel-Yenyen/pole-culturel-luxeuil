@@ -34,6 +34,12 @@
 </header>
 
 <main>
+<?php foreach ($pagesMenu as $p): ?>
+    <?php if($p->slug == 'evenements/spectacle/'):?>
+        <h1 class="title-page title-<?php echo $p->id?>">Nos Spectacles Musicaux</h1>
+    <?php endif;?>
+<?php endforeach;?>
+
 <?php foreach ($posts as $k => $v): ?>
     <div class="contenu-affiche">
         <div id="wrapper">
@@ -43,14 +49,14 @@
         <?php endfor;?>
             </div>
         </div>
-        <div class="barre barre-<?php echo $v->id?>">
+        <div class="barre barre-<?php echo $v->type?>">
             <div class="contenu-title">
                 <h2><?php echo $v->name .'&ensp;|&ensp;'. $v->dateText. '&ensp;|&ensp;' .$v->heure.'&ensp;|&ensp;'. $v->prix;?></h2>  
             </div>
         </div>
         <div class="content-text">
             <h3 class="content-affiche"><?php echo $v->content;?><h3>
-            <a href="<?php echo Router::url("evenements/view/id:{$v->id}/slug:$v->slug");?>"><button>Lire la suite...</button></a>
+            <a href="<?php echo Router::url("evenements/view/id:{$v->id}/slug:$v->slug");?>"><button class="btn-<?php echo $v->type?>">Lire la suite...</button></a>
         </div>
     </div>
 <?php endforeach;?>

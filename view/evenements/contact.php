@@ -34,6 +34,13 @@
 </header>
 
 <main>
+
+<?php foreach ($pagesMenu as $p): ?>
+    <?php if($p->slug == 'evenements/contact/'):?>
+        <h1 class="title-page title-<?php echo $p->id?>">Vous Désirez nous contacter?</h1>
+    <?php endif;?>
+<?php endforeach;?>
+
     <section class="formulaire">
 
         <form>
@@ -67,11 +74,7 @@
             </div>
 
         </form>
-        <?php $retour = mail("aurel-yenyen@outlook.fr", "Question Événements", "Coucou les amis! ", "");
-            if($retour){
-                echo "<p>L'email a bien été envoyé!</p>";
-            }
-        ?>
+
     </section>
 
 </main>
