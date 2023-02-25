@@ -853,7 +853,7 @@
     
 
     #images-partenaire{
-        animation: spin 10s linear infinite;
+        animation: spin 20s linear infinite;
     }
     #change{
         position: absolute;
@@ -887,28 +887,10 @@
     }
 
     @keyframes spin{
-        0%{
+        from{
             transform: translateX(0vw);
         }
-        10%{
-            transform: translateX(-20vw);  
-        }
-        25%{
-            transform: translateX(-40vw);  
-        }
-        40%{
-            transform: translateX(-60vw);     
-        }
-        55%{
-            transform: translateX(-80vw);   
-        }
-        70%{
-            transform: translateX(-100vw);   
-        }
-        85%{
-            transform: translateX(-120vw);   
-        }
-        100%{
+        to{
             transform: translateX(-150vw);   
         }
 
