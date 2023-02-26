@@ -222,14 +222,14 @@
       margin: 50px auto;
       perspective: 800px;
       perspective-origin : 50% 50%;
-      margin-left: 10vw;
+      margin-left:5vw;
       margin-top: 15vh;
     }
     #allPlan{
       position: absolute; 
       height:100%;
       width:100%; 
-      animation: carrousel 10s infinite linear forwards ;
+      animation: carrousel 20s infinite linear forwards ;
       transform-style: preserve-3d;
     }
     
@@ -246,15 +246,15 @@
       width:100%;
     }
     .p1{ 
-    transform: rotateY(120deg) translateZ(200px);
+    transform: rotateY(120deg) translateZ(300px);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
     .p2{
-    transform: rotateY(240deg) translateZ(200px);
+    transform: rotateY(240deg) translateZ(300px);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
     .p3{ 
-    transform: rotateY(360deg) translateZ(200px);
+    transform: rotateY(360deg) translateZ(300px);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     } 
     
