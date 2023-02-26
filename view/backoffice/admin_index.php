@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Administration</title>
     <link rel="stylesheet" href="<?php echo Router::webroot('css/admin/admin_index/style.css');?>">
 </head>
 <body>
@@ -13,7 +13,9 @@
 
 
 <div class="content">
-    Editer un article
+    <h1>Espace Administrateur</h1>
+    <a href="<?php echo Router::url('')?>">Voir le site</a>
+    <a href="<?php echo Router::url('users/logout')?>">Se Déconnecter</a>
 </div>
 
 <table>
@@ -242,8 +244,7 @@
 
 <a href="<?php echo Router::url('backoffice/admin_editPage'); ?>">Ajouter une page</a>
 
-<a href="<?php echo Router::url('')?>">Voir le site</a>
-<a href="<?php echo Router::url('users/logout')?>">Se Déconnecter</a>
+
 </body>
 </html>
 

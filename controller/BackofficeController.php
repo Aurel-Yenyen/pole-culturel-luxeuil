@@ -21,49 +21,49 @@ class BackofficeController extends Controller{
         $this->loadModel('Page');
 
         $conditions1 = array(
-            'type' => 'Spectacle Musical',
+            'type' => 'spectacle',
         );
         $d['spectacle'] = $this->Post->find(array(
             'fields' => 'id,name,online',
             'conditions' => $conditions1
         ));
         $conditions2 = array(
-            'type' => 'Theatre',
+            'type' => 'theatre',
         );
         $d['theatre'] = $this->Post->find(array(
             'fields' => 'id,name,online',
             'conditions' => $conditions2
         ));
         $conditions3 = array(
-            'type' => 'Magie',
+            'type' => 'magie',
         );
         $d['magie'] = $this->Post->find(array(
             'fields' => 'id,name,online',
             'conditions' => $conditions3
         ));
         $conditions4 = array(
-            'type' => 'Chorale',
+            'type' => 'chorale',
         );
         $d['chorale'] = $this->Post->find(array(
             'fields' => 'id,name,online',
             'conditions' => $conditions4
         ));
         $conditions5 = array(
-            'type' => 'Cirque',
+            'type' => 'cirque',
         );
         $d['cirque'] = $this->Post->find(array(
             'fields' => 'id,name,online',
             'conditions' => $conditions5
         ));
         $conditions6 = array(
-            'type' => 'Comédie',
+            'type' => 'comedie',
         );
         $d['comedie'] = $this->Post->find(array(
             'fields' => 'id,name,online',
             'conditions' => $conditions6
         ));
         $conditions7 = array(
-            'type' => 'Autres',
+            'type' => 'autres',
         );
         $d['autres'] = $this->Post->find(array(
             'fields' => 'id,name,online',
