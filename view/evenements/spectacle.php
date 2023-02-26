@@ -56,7 +56,7 @@
         </div>
         <div class="content-text">
             <h3 class="content-affiche"><?php echo $v->content;?><h3>
-            <a href="<?php echo Router::url("evenements/view/id:{$v->id}/slug:$v->slug");?>"><button class="btn-<?php echo $v->type?>">Lire la suite...</button></a>
+            <a href="<?php echo Router::url("evenements/view/id:{$v->id}/slug:$v->slug");?>"><button class="btn-<?php echo $v->type?>">Voir la suite...</button></a>
         </div>
     </div>
 <?php endforeach;?>
