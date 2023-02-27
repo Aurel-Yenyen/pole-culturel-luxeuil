@@ -90,7 +90,7 @@ class EvenementsController extends Controller{
             'id'=>$id, 
         );
         $d['post'] = $this->Post->findFirst(array(
-            'fields'     =>  'id, slug, name, content',
+            'fields'     =>  'id, slug, name, content, prix, youtube, dateText, lieu, heure, type',
             'conditions' =>  $conditions// Définit la condition de la requête MySQL
         ));
         if(empty($d['post'])){
