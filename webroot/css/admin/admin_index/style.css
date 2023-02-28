@@ -1,3 +1,175 @@
 body{
-    background: #3a3a3a;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Sofia Sans Condensed', sans-serif;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+.lien-service{
+    margin-right: 3vw;
+}
+.nav > h1{
+    color: white;
+    text-shadow:  0 0 20px rgb(219, 112, 112), 
+    0 0 2px rgb(219, 112, 112), 
+    0 0 3px rgb(219, 112, 112),   
+    0 0 4px rgb(219, 112, 112), 
+    0 0 5px rgb(219, 112, 112);
+    margin-left: 3vw;
+}
+.nav::after{
+    content: "";
+    width: 100vw;
+    height: 2px;
+    background: rgb(219, 112, 112);
+    position: absolute;
+    margin-top: 82px;
+}
+.lien1{
+    position: absolute;
+    text-decoration: none;
+    font-size: 1.5em;
+    top: 3vh;
+    left: 85vw;
+    color: white;
+    text-shadow:  0 0 20px rgb(219, 112, 112), 
+    0 0 2px rgb(219, 112, 112), 
+    0 0 3px rgb(219, 112, 112),   
+    0 0 4px rgb(219, 112, 112), 
+    0 0 5px rgb(219, 112, 112);
+}
+.lien1:hover{
+    transform: scale(1.2);
+    transition: transform 0.5s linear;
+}
+.lien2{
+    position: absolute;
+    top: 1.5vh;
+    left: 92vw;
+}
+.admin-Pe{
+    display: flex;
+    margin-right: 3vw;
+}
+.admin-page{
+    background: rgb(219, 112, 112);
+    padding-left: 1.5vw;
+    padding-top: 2vh;
+    padding-right: 1.5vw;
+    color: #3a3a3a;
+
+}
+.success{
+    margin-left: 1vw;
+}
+a > img{
+    margin-left: 2vw;
+}
+.top > a{
+    position: absolute;
+    top: 125px;
+    left: 250px;
+}
+.edit{
+    margin-left: 3vw;
+}
+.admin-spectacle{
+    padding: 2vw;
+    padding-left: 6vw;
+
+}
+.top1{
+    color: var(--colorPrimary-2);
+}
+.top1 > a{
+    position: absolute;
+    top: 15.5vh;
+    left: 50.2vw;
+}
+.event1{
+    display: flex;
+}
+.top2{
+    color: var(--colorPrimary-3);  
+}
+.admin-theatre{
+    padding: 2vw;
+    padding-left: 6vw;
+}
+.top2 > a{
+    position: absolute;
+    top: 15.5vh;
+    left: 86.6vw;
+}
+.event2{
+    display: flex;
+}
+.top3{
+    color: var(--colorPrimary-4);  
+}
+.admin-magie{
+    padding: 2vw;
+    padding-left: 6vw;
+}
+.top3 > a{
+    position: absolute;
+    top: 81vh;
+    left: 50.4vw;
+}
+.name{
+    width: 210px;
+}
+.top4{
+    color: var(--colorPrimary-5);  
+}
+.top4 > a{
+    position: absolute;
+    top: 81vh;
+    left: 86.8vw;
+}
+.admin-chorale{
+    padding: 2vw;
+    padding-left: 6vw;
+}
+.event3{
+    display: flex;
+}
+.top5{
+    color: var(--colorPrimary-6);  
+}
+.top5 > a{
+    position: absolute;
+    top: 111.5vh;
+    left: 50.4vw;
+}
+.admin-cirque{
+    padding: 2vw;
+    padding-left: 6vw;
+}
+.top6{
+    color: var(--colorPrimary-7);  
+}
+.top6 > a{
+    position: absolute;
+    top: 111.5vh;;
+    left: 87vw;
+}
+.admin-comedie{
+    padding: 2vw;
+    padding-left: 6vw;
+}
+.top7{
+    color: var(--colorPrimary-8);  
+}
+.top7 > a{
+    position: absolute;
+    top: 148vh;
+    left: 50.2vw;
+}
+.admin-autres{
+    padding: 2vw;
+    padding-left: 6vw;
 }

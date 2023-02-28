@@ -1,0 +1,62 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+tbody{
+    display: flex;
+    margin-left: 15vw;
+    margin-top: 5vh;
+}
+td > img{
+height: 200px;
+width: auto;
+}
+h1{
+    color: white;
+    text-shadow:  0 0 20px #3a3a3a, 
+    0 0 2px #3a3a3a, 
+    0 0 3px #3a3a3a,   
+    0 0 4px #3a3a3a, 
+    0 0 5px #3a3a3a;
+    margin-left: 3vw;
+}
+form{
+    margin-left: 3vw;
+    margin-top: 3vh;
+}
+.champs{
+    width: 100px;
+}
+label{
+    color: white;
+    text-shadow:  0 0 20px #3a3a3a, 
+    0 0 2px #3a3a3a, 
+    0 0 3px #3a3a3a,   
+    0 0 4px #3a3a3a, 
+    0 0 5px #3a3a3a;
+}
+input{
+    margin: 20px;
+    color: white;
+    text-shadow:  0 0 20px #3a3a3a, 
+    0 0 2px #3a3a3a, 
+    0 0 3px #3a3a3a,   
+    0 0 4px #3a3a3a, 
+    0 0 5px #3a3a3a;
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    background: none;
+    border-radius: 20px;
+    border: 2px solid #3a3a3a;
+}
+.input{
+    margin: 20px;
+    width: 300px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid #3a3a3a;
+}
+
