@@ -12,6 +12,8 @@
 
 <h1>Editer un article</h1>
 
+
+
 <form action="<?php echo Router::url('backoffice/admin_editSpectacle/'.$id); ?>" method="post">
     <?php echo $this->Form->input('name', 'Titre'); ?>
     <?php echo $this->Form->input('content', 'Contenu', array('type'=>'textarea', 'rows' => 10, 'cols' => 40)); ?>

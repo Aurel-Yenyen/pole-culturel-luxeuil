@@ -33,7 +33,7 @@ class Form{
         }
     }
     if(!isset($options['type'])){
-        $html .='<input type="text" id="input'.$name.'" name="'.$name.'" value="'.$value.'" '.$attr.'>';
+        $html .='<input class="input" type="text" id="input'.$name.'" name="'.$name.'" value="'.$value.'" '.$attr.'>';
     }elseif($options['type'] == 'textarea'){
         $html .='<textarea id="input'.$name.'" name="'.$name.'" '.$attr.'>'.$value.'</textarea>';
     }elseif($options['type'] == 'checkbox'){

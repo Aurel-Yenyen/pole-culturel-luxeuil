@@ -5,6 +5,7 @@ body{
 }
 tbody{
     display: flex;
+    justify-content: space-evenly;
     margin-left: 15vw;
     margin-top: 5vh;
 }
@@ -19,7 +20,8 @@ h1{
     0 0 3px #3a3a3a,   
     0 0 4px #3a3a3a, 
     0 0 5px #3a3a3a;
-    margin-left: 3vw;
+    margin: 3vw;
+
 }
 form{
     margin-left: 3vw;
@@ -44,7 +46,7 @@ input{
     0 0 3px #3a3a3a,   
     0 0 4px #3a3a3a, 
     0 0 5px #3a3a3a;
-    width: 300px;
+    width: 200px;
     height: 40px;
     padding: 10px;
     background: none;
@@ -58,5 +60,17 @@ input{
     padding: 10px;
     border-radius: 20px;
     border: 2px solid #3a3a3a;
+}
+input[type='file']{
+    width: 300px;
+    height: 20px;
+}
+input[type='submit']:hover{
+    background: rgb(112, 219, 121);
+}
+.lien-return{
+    position: absolute;
+    top: 5vh;
+    left: 85vw;
 }
 

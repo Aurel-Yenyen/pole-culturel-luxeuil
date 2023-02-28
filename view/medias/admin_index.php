@@ -11,24 +11,17 @@
     
     <div class="content">
     <div class="content">
-        <h1>Ajouter une image</h1>
-
+        <h1>Ajouter une image</h1>  
+        <a class="lien-return" href="<?php echo Router::url('cockpit')?>"><img src="<?php echo Router::webroot('img/icon/Return.svg')?>" alt=""></a>
     </div>
     <table>
-    <thead>
-        <tr>
-            <th>Image</th>
-            <th>Titre</th>
-            <th>En ligne</th>
-        </tr>
-    </thead>
     <tbody>
         <?php foreach ($images as $k => $v) : ?>
             <tr>
                 <td><img src="<?php echo Router::webroot('img/' . $v->file);?>" height="100px" width="auto"></td>
                 <td><?php echo $v->name; ?></td>
                 <td>
-                    <a onclick="return confirm('Voulez-vous vraiment supprimer cette image')" href="<?php echo Router::url('medias/admin_delete/' . $v->id); ?>">Supprimer</a>
+                    <a onclick="return confirm('Voulez-vous vraiment supprimer cette image')" href="<?php echo Router::url('medias/admin_delete/' . $v->id); ?>"><img src="<?php echo Router::webroot('img/icon/DeletePage.svg')?>" width="40px" alt=""></a>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -36,9 +29,8 @@
 
 </table>
 <form action="<?php echo Router::url('admin/medias/index/' .$post_id)?>" method="post" enctype="multipart/form-data">
-        <?php echo $this->Form->input('name', 'Format');?>
+        <?php echo $this->Form->input('name', 'Titre');?>
         <?php echo $this->Form->input('file', 'Image', array('type' => 'file'));?>
-        <?php echo $this->Form->input('format', 'Format');?>
         <div class="action">
             <input type="submit" value="Valider">
         </div>
