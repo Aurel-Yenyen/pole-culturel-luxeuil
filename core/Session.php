@@ -1,11 +1,12 @@
+
 <?php
 
-class session{
+class Session{
 
     public function __construct()
     {
-        if(!isset($_SESSION)){
-            session_start();// Permet d'initialisé une session
+        if(session_status() !== PHP_SESSION_ACTIVE){
+            session_start(); // Permet d'initialiser une session si elle n'est pas déjà démarrée
         }
     }
 
@@ -13,31 +14,40 @@ class session{
     /********************************************************************************************/
 
 
-    public function setFlash($message,$type = 'success'){// Envoi un message au moment de l'action SQL
-        $_SESSION['flash'] = array(
-            'message'    => $message,
-            'type'       => $type
-        
-        );
+    public function setFlash($message, $type = 'success') // Envoie un message au moment de l'action SQL
+    {
+        $valid_types = array('success', 'info', 'warning', 'danger'); // Types de messages valides
+        if(in_array($type, $valid_types)) {
+            $_SESSION['flash'] = array(
+                'message'    => $message,
+                'type'       => $type
+            );
+        } else {
+            throw new Exception('Type de message flash invalide.');
+        }
     }
 
 
     /********************************************************************************************/
 
 
-    public function flash(){
+    public function flash()
+    {
+        $html = '';
         if(isset($_SESSION['flash']['message'])){
             $html = '<p>'.$_SESSION['flash']['message'].'</p>';
             $_SESSION['flash'] = array();
-            return $html;
         }
+        return $html;
     }
 
-    public function write($key, $value){
+    public function write($key, $value)
+    {
         $_SESSION[$key] = $value;
     }
 
-    public function read($key = null){
+    public function read($key = null)
+    {
         if($key){
             if(isset($_SESSION[$key])){
                 return $_SESSION[$key];
@@ -49,7 +59,8 @@ class session{
         }
     }
 
-    public function isLogged(){
+    public function isLogged()
+    {
         return isset($_SESSION['User']->id);
     }
 
