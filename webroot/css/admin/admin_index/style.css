@@ -173,3 +173,23 @@ a > img{
     padding: 2vw;
     padding-left: 6vw;
 }
+form > div{
+    display: flex;
+    justify-content: space-between;
+}
+label{
+    margin-top: 15px;
+}
+input{
+    background: none;
+    margin-top: 10px;
+}
+form > button{
+    background: none;
+    border: 2px solid #3a3a3a;
+    width: 150px;
+    height: 30px;
+    border-radius: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
