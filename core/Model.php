@@ -4,24 +4,21 @@ class Model{
 
     static $connections = array();
 
-    public $conf = 'default'; // Peut-être changé suivant la base de donnée utilisé
+    public $conf = 'default';
     public $table = false;
     public $db;
     public $primaryKey = 'id';
     public $id;
-    public $errors = array(); // Correction de la faute de frappe dans la variable $errors
+    public $errors = array();
     public $form;
 
     public function __construct()
     {
-        // J'initialise quelques variables
-
         if($this->table === false){
             $this->table = strtolower(get_class($this)) .'s';
         }
-        // Connection à la base de donnée
         
-        $conf = Conf::$databases[$this->conf]; // Correction : Conf::$databases au lieu de conf::$databases
+        $conf = Conf::$databases[$this->conf];
         if(isset(Model::$connections[$this->conf])){
             $this->db = Model::$connections[$this->conf];
             return true;
@@ -33,11 +30,10 @@ class Model{
                 $conf['database'],
                 $conf['login'],
                 $conf['password'],
-                array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8') // Correction de la syntaxe pour le paramètre PDO::MYSQL_ATTR_INIT_COMMAND
+                array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8')
             );
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
             Model::$connections[$this->conf] = $pdo;
-            // Stock PDO dans l'instance
             $this->db = $pdo;
         }catch(PDOException $e){
             if(Conf::$debug >= 1){
@@ -45,18 +41,10 @@ class Model{
             }else{
                 die('Impossible de se connecter à la base de donnée!');
             }
-
         }
-
     }
 
-
-
-    /*********************************************************************************************/
-
-
-
-    public function find($req){ // Requête SQL
+    public function find($req){
         $sql = 'SELECT ';
         if(isset($req['fields'])){
             if(is_array($req['fields'])){
@@ -70,8 +58,6 @@ class Model{
 
         $sql .= ' FROM '.$this->table.' as '.get_class($this).' ';
 
-
-        // Construction de la condition
         if(isset($req['conditions'])){
             $sql .= 'WHERE ';
             if(!is_array($req['conditions'])){
@@ -86,9 +72,7 @@ class Model{
                 }
                 $sql .= implode(' AND ', $cond);
             }
-
         }
-
 
         if(isset($req['limit'])){
             $sql .= ' LIMIT '.$req['limit']; // Correction : ajout d'un espace avant LIMIT
@@ -150,7 +134,7 @@ class Model{
             if($k!=$this->primaryKey){
                 $fields[] = "$k=:$k";
                 $d[":$k"] = $v;
-            }elseif(!empty($v)){
+            }elseif(isset($v) && !empty($v)){
                 $d[":$k"] = $v;   
             }
 
