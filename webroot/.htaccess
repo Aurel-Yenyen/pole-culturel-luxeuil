@@ -1,7 +1,23 @@
+Options +FollowSymLinks
 RewriteEngine On
-RewriteCond %{Request_FILENAME} !-d
-RewriteCond %{Request_FILENAME} !-f
-RewriteRule (.*) index.php/$1 [L]
+
+# Rediriger toutes les requêtes HTTP vers HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Rediriger toutes les requêtes non www vers www
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Rediriger toutes les requêtes index.php vers /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+index\.php [NC]
+RewriteRule ^ / [R=301,L]
+
+# Rediriger toutes les requêtes non existantes vers index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
 <FilesMatch "\.(css)$">
   FileETag None
   <IfModule mod_headers.c>

@@ -102,7 +102,7 @@
                 </div>
 
                 <div>
-                    <label for="colorPrimary11">COmbre Bouton Spectacle :</label>
+                    <label for="colorPrimary11">Ombre Bouton Spectacle :</label>
                     <input type="color" id="colorPrimary11" name="colorPrimary11" value="<?= $colors[11] ?>">
                 </div>
 
@@ -117,7 +117,7 @@
                 </div>
 
                 <div>
-                    <label for="colorPrimary14">COmbre Bouton Chorale :</label>
+                    <label for="colorPrimary14">Ombre Bouton Chorale :</label>
                     <input type="color" id="colorPrimary14" name="colorPrimary14" value="<?= $colors[14] ?>">
                 </div>
 

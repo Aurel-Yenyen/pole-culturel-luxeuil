@@ -46,6 +46,8 @@ class Model{
 
     public function find($req){
         $sql = 'SELECT ';
+    
+        // Ajout de la gestion des champs à sélectionner dans la requête
         if(isset($req['fields'])){
             if(is_array($req['fields'])){
                 $sql.= implode(',',$req['fields']);
@@ -55,9 +57,10 @@ class Model{
         }else{
             $sql.= '*';
         }
-
+    
         $sql .= ' FROM '.$this->table.' as '.get_class($this).' ';
-
+    
+        // Ajout de la gestion des conditions dans la requête
         if(isset($req['conditions'])){
             $sql .= 'WHERE ';
             if(!is_array($req['conditions'])){
@@ -65,24 +68,41 @@ class Model{
             }else{
                 $cond = array();
                 foreach($req['conditions'] as $k=>$v){
-                    if(!is_numeric($v)){
-                        $v = '"'.addslashes($v).'"';
+                    // Vérification si la valeur est un tableau (pour gérer les opérateurs)
+                    if(is_array($v)) {
+                        $op = key($v);
+                        $value = current($v);
+                        if(!is_numeric($value)){
+                            $value = '"'.addslashes($value).'"';
+                        }
+                        $cond[] = "$k $op $value";
                     }
-                    $cond[] = "$k=$v";
+                    else if(!is_numeric($v)){
+                        $v = '"'.addslashes($v).'"';
+                        $cond[] = "$k=$v";
+                    } else {
+                        $cond[] = "$k=$v";
+                    }
                 }
                 $sql .= implode(' AND ', $cond);
             }
         }
-
+    
+        // Ajout de la gestion de la limite dans la requête
         if(isset($req['limit'])){
-            $sql .= ' LIMIT '.$req['limit']; // Correction : ajout d'un espace avant LIMIT
+            $sql .= ' LIMIT '.$req['limit'];
         }
-
+    
+        // Exécution de la requête
         $pre = $this->db->prepare($sql);
         $pre->execute();
         return $pre->fetchAll(PDO::FETCH_OBJ);
-
     }
+    
+    
+    
+    
+    
 
 
 

@@ -42,22 +42,17 @@
             <div class="content-title">
                 <h3 class="title-affiche">Les Évènements à venir</h1>
             </div>
-            <?php // Connexion à la base de données
-$db = new PDO('mysql:host=localhost;dbname=poleculturel', 'root', '');
+            <?php $posts = $this->loadModel('Post');?>
+<?php print_r($posts)?>
+    <?php foreach ($posts as $p): ?>
+        <li>
+            <h3><?php echo $p->name; ?></h3>
+            <p>Date: <?php echo $p->date; ?></p>
+            <p>Description: <?php echo $p->content; ?></p>
+        </li>
+    <?php endforeach; ?>
 
-// Préparation de la requête SQL
-$sql = "SELECT * FROM posts WHERE date > NOW() ORDER BY date ASC LIMIT 3";
 
-// Exécution de la requête SQL
-$stmt = $db->query($sql);
-
-// Récupération des résultats
-$posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// Affichage des résultats
-foreach ($posts as $post) {
-    echo $post['name'] . ' - ' . $post['date'] . '<br>';
-}?>
             
             <div class="cards" id="cards">
 
