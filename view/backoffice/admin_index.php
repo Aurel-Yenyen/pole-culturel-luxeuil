@@ -217,7 +217,7 @@
                                         <a href="<?php echo Router::url('cockpit/medias/index/' . $v->id); ?>"><img src="<?php echo Router::webroot('img/icon/ImageComedie.svg')?>"width="44px" height="45px" alt=""></a>                      
                                     </td>
                                     <td>
-                                        <a href="<?php echo Router::url('backoffice/admin_editComedie/' . $v->id); ?>"><img src="<?php echo Router::webroot('img/icon/Edit-Comedie.svg')?>" alt="" width="40px" height="57px"></a>
+                                        <a hre="<?php echo Router::url('backoffice/admin_editComedie/' . $v->id); ?>"><img src="<?php echo Router::webroot('img/icon/Edit-Comedie.svg')?>" alt="" width="40px" height="57px"></a>
                                         <a onclick="return confirm('Voulez-vous vraiment supprimer cet article')" href="<?php echo Router::url('backoffice/admin_delete/' . $v->id); ?>"><img src="<?php echo Router::webroot('img/icon/Delete.svg')?>" alt="" width="40px" height="57px"></a>
                                     </td>
                                 </tr>
