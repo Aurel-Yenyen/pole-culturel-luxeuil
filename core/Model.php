@@ -4,24 +4,21 @@ class Model{
 
     static $connections = array();
 
-    public $conf = 'default'; // Peut-être changé suivant la base de donnée utilisé
+    public $conf = 'default';
     public $table = false;
     public $db;
     public $primaryKey = 'id';
     public $id;
-    public $erros = array();
+    public $errors = array();
     public $form;
 
     public function __construct()
     {
-        // J'initialise quelques variables
-
         if($this->table === false){
             $this->table = strtolower(get_class($this)) .'s';
         }
-        // Connection à la base de donnée
         
-        $conf = conf::$databases[$this->conf]; //Peut contenir plusieurs base de données
+        $conf = Conf::$databases[$this->conf];
         if(isset(Model::$connections[$this->conf])){
             $this->db = Model::$connections[$this->conf];
             return true;
@@ -33,11 +30,10 @@ class Model{
                 $conf['database'],
                 $conf['login'],
                 $conf['password'],
-                array((PDO::MYSQL_ATTR_INIT_COMMAND) => 'SET NAMES utf8')
+                array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8')
             );
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
             Model::$connections[$this->conf] = $pdo;
-            // Stock PDO dans l'instance
             $this->db = $pdo;
         }catch(PDOException $e){
             if(Conf::$debug >= 1){
@@ -45,21 +41,13 @@ class Model{
             }else{
                 die('Impossible de se connecter à la base de donnée!');
             }
-
         }
-
     }
 
-
-
-    /*********************************************************************************************/
-
-
-
-    public function find($req){ // Requête SQL
-        $sql = 'SELECT '; // Bien faire attention aux espaces SQLSTATE[42S02] [1146] Erreur de concataination de la requête lors de la connexion à la base de donnée
-        // Reviens à faire 
-        // $sql = 'SELECT * FROM table WHERE condition';
+    public function find($req){
+        $sql = 'SELECT ';
+    
+        // Ajout de la gestion des champs à sélectionner dans la requête
         if(isset($req['fields'])){
             if(is_array($req['fields'])){
                 $sql.= implode(',',$req['fields']);
@@ -69,38 +57,52 @@ class Model{
         }else{
             $sql.= '*';
         }
-
-        $sql .= ' FROM '.$this->table.' as '.get_class($this). ' ';
-
-
-        // Construction de la condition
-        if(isset($req['conditions'])){//SQLSTATE[42000]: Syntax error or access violation: 1064: Erreur de concataination de la requête SQL
+    
+        $sql .= ' FROM '.$this->table.' as '.get_class($this).' ';
+    
+        // Ajout de la gestion des conditions dans la requête
+        if(isset($req['conditions'])){
             $sql .= 'WHERE ';
             if(!is_array($req['conditions'])){
                 $sql .= $req['conditions'];
             }else{
                 $cond = array();
                 foreach($req['conditions'] as $k=>$v){
-                    if(!is_numeric($v)){
-                        $v = '"'.addslashes($v).'"';
+                    // Vérification si la valeur est un tableau (pour gérer les opérateurs)
+                    if(is_array($v)) {
+                        $op = key($v);
+                        $value = current($v);
+                        if(!is_numeric($value)){
+                            $value = '"'.addslashes($value).'"';
+                        }
+                        $cond[] = "$k $op $value";
                     }
-                    $cond[] = "$k=$v";
+                    else if(!is_numeric($v)){
+                        $v = '"'.addslashes($v).'"';
+                        $cond[] = "$k=$v";
+                    } else {
+                        $cond[] = "$k=$v";
+                    }
                 }
                 $sql .= implode(' AND ', $cond);
             }
-
         }
-
-
-        if(isset($req['limit'])){//SQLSTATE[42000]: Syntax error or access violation: 1064: Erreur de concataination de la requête SQL
-            $sql .= 'LIMIT '.$req['limit']; 
+    
+        // Ajout de la gestion de la limite dans la requête
+        if(isset($req['limit'])){
+            $sql .= ' LIMIT '.$req['limit'];
         }
-
+    
+        // Exécution de la requête
         $pre = $this->db->prepare($sql);
         $pre->execute();
         return $pre->fetchAll(PDO::FETCH_OBJ);
-
     }
+    
+    
+    
+    
+    
 
 
 
@@ -110,7 +112,7 @@ class Model{
 
 
     public function findFirst($req){ // Requête SQL
-        return current($this->find($req)); // Fonction current qui permet de récuperer l'élément courant du tableau
+        return current($this->find($req));
     }
 
 
@@ -134,7 +136,7 @@ class Model{
 
     
     public function delete($id){
-        $sql = "DELETE FROM {$this->table} WHERE {$this->primaryKey} = $id";
+        $sql = "DELETE FROM {$this->table} WHERE {$this->primaryKey} = ".$this->db->quote($id);
         $this->db->query($sql);
     }
 
@@ -152,7 +154,7 @@ class Model{
             if($k!=$this->primaryKey){
                 $fields[] = "$k=:$k";
                 $d[":$k"] = $v;
-            }elseif(!empty($v)){
+            }elseif(isset($v) && !empty($v)){
                 $d[":$k"] = $v;   
             }
 

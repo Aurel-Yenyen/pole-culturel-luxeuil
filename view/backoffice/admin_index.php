@@ -49,8 +49,125 @@
                 </tbody>
             </table>
 
-            
-            
+            <h2>Modifier les couleurs</h2>
+
+            <form method="post">
+                <div>
+                    <label for="colorPrimary1">Couleur Accueil:</label>
+                    <input type="color" id="colorPrimary1" name="colorPrimary1" value="<?= $colors[1] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary2">Couleur Spectacle :</label>
+                    <input type="color" id="colorPrimary2" name="colorPrimary2" value="<?= $colors[2] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary3">Couleur Theâtre :</label>
+                    <input type="color" id="colorPrimary3" name="colorPrimary3" value="<?= $colors[3] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary4">Couleur Magie :</label>
+                    <input type="color" id="colorPrimary4" name="colorPrimary4" value="<?= $colors[4] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary5">Couleur Chorale :</label>
+                    <input type="color" id="colorPrimary5" name="colorPrimary5" value="<?= $colors[5] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary6">Couleur Cirque :</label>
+                    <input type="color" id="colorPrimary6" name="colorPrimary6" value="<?= $colors[6] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary7">Couleur Comédie :</label>
+                    <input type="color" id="colorPrimary7" name="colorPrimary7" value="<?= $colors[7] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary8">Couleur Autres Evènement :</label>
+                    <input type="color" id="colorPrimary8" name="colorPrimary8" value="<?= $colors[8] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary9">Couleur Contact :</label>
+                    <input type="color" id="colorPrimary9" name="colorPrimary9" value="<?= $colors[9] ?>">
+                </div>
+                <div>
+                    <label for="colorPrimary10">Ombre Bouton Accueil :</label>
+                    <input type="color" id="colorPrimary10" name="colorPrimary10" value="<?= $colors[10] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary11">Ombre Bouton Spectacle :</label>
+                    <input type="color" id="colorPrimary11" name="colorPrimary11" value="<?= $colors[11] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary12">Ombre Bouton Theâtre :</label>
+                    <input type="color" id="colorPrimary12" name="colorPrimary12" value="<?= $colors[12] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary13">Ombre Bouton Magie :</label>
+                    <input type="color" id="colorPrimary13" name="colorPrimary13" value="<?= $colors[13] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary14">Ombre Bouton Chorale :</label>
+                    <input type="color" id="colorPrimary14" name="colorPrimary14" value="<?= $colors[14] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary15">Ombre Bouton Cirque :</label>
+                    <input type="color" id="colorPrimary15" name="colorPrimary15" value="<?= $colors[15] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary16">Ombre Bouton Comédie :</label>
+                    <input type="color" id="colorPrimary16" name="colorPrimary16" value="<?= $colors[16] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary17">Ombre Bouton Autres Evenement :</label>
+                    <input type="color" id="colorPrimary17" name="colorPrimary17" value="<?= $colors[17] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary18">Ombre Bouton Contact :</label>
+                    <input type="color" id="colorPrimary18" name="colorPrimary18" value="<?= $colors[18] ?>">
+                </div>
+                <div>
+                    <label for="colorPrimary19">Couleur du Titre :</label>
+                    <input type="color" id="colorPrimary19" name="colorPrimary19" value="<?= $colors[19] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary20">Ombre de Texte :</label>
+                    <input type="color" id="colorPrimary20" name="colorPrimary20" value="<?= $colors[20] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary21">Couleur du Texte sur Fond Blanc :</label>
+                    <input type="color" id="colorPrimary21" name="colorPrimary21" value="<?= $colors[21] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary22">Couleur du Texte sur Fond Coloré :</label>
+                    <input type="color" id="colorPrimary22" name="colorPrimary22" value="<?= $colors[22] ?>">
+                </div>
+
+                <div>
+                    <label for="colorPrimary23">Couleur Survol Pied de Page:</label>
+                    <input type="color" id="colorPrimary23" name="colorPrimary23" value="<?= $colors[23] ?>">
+                </div>
+
+                <button type="submit" name="submit" onclick="return confirm('Attention cela va modifier les couleurs?')">Modifier</button>
+            </form>
+
         </div>
 
         <div class="admin-event">
@@ -256,10 +373,9 @@
             </table>
 
             </div>
+
         </div>
     </div>
-
-
 
 
 

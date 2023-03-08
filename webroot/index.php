@@ -8,7 +8,15 @@ define('DS', DIRECTORY_SEPARATOR); // Permet de créer les séparateurs suivant 
 define('CORE', ROOT.DS.'core'); // Lie le chemin du core
 define('BASE_URL', dirname(dirname($_SERVER['SCRIPT_NAME']))); //Permet de remonter l'url à Pages
 
-require CORE.DS.'includes.php';
+
+
+// Inclusion du fichier d'inclusions
+require_once('../core/Includes.php');
+
+// Instanciation de l'objet Router pour gérer la requête
+
+
+// Traitement de la requête
 
 new dispatcher()
 ?>

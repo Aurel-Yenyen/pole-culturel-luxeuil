@@ -42,7 +42,17 @@
             <div class="content-title">
                 <h3 class="title-affiche">Les Évènements à venir</h1>
             </div>
-            
+            <?php $posts = $this->loadModel('Post');?>
+<?php print_r($posts)?>
+    <?php foreach ($posts as $p): ?>
+        <li>
+            <h3><?php echo $p->name; ?></h3>
+            <p>Date: <?php echo $p->date; ?></p>
+            <p>Description: <?php echo $p->content; ?></p>
+        </li>
+    <?php endforeach; ?>
+
+
             
             <div class="cards" id="cards">
 
