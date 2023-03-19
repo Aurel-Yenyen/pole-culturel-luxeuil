@@ -74,6 +74,11 @@ class EvenementsController extends Controller{
         ));
         $this->set($d);
     }
+    function contact(){
+        $this->layout = 'cont';
+
+
+    }
     /*********************************************************************************************/
 
 
@@ -96,12 +101,7 @@ class EvenementsController extends Controller{
         }
         $this->set($d);
     }
-    function contact()
-    {
-        $this->layout = 'event';
-
-    }
-
+   
 
 
 }

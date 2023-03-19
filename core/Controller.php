@@ -1,5 +1,3 @@
-<!-- Initialisé depuis le dispatcher et appel à une action, peut ou non utilisé un model et envoi les variable à view -->
-
 <?php
 
 class Controller{

@@ -40,6 +40,3 @@ class MediasController extends Controller{
         $this->redirect('cockpit/medias/index/'. $media->post_id);
     }
 }
-//Voir pour suppr les paramètre d'id pour un affichage intégrale
-
-//Vidéo à 30 Min

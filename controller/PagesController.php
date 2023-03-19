@@ -27,32 +27,16 @@ class PagesController extends Controller{
         ));
     }
 
-    function index(){
+    function index($Posts){
         $this->loadModel('Post');
-        $this->layout = 'default.php';
-        $conditions = array('online' => 1, 'date' => array('>=' => date('Y-m-d'))); // récupère les spectacles à venir
-        $d['posts'] = $this->Post->find(array(
-            'conditions' => $conditions,
-            'order' => 'date ASC', // tri par date croissante
-            'limit' => 3 // limite à 3 résultats
+        $d['posts'] = $this->Post->findFirst(array(
+            'conditions' => array('online' => 1, 'type' => 'Année') // Définit le nom de la page (http://localhost/Projet-Mairie/pages/view/(2))
         ));
         $this->set($d);
+        debug($d['posts']);
     }
 
-
     /*********************************************************************************************/
-
-
-
-    /**
-     * ADMIN
-     **/
-
-    //  function admin_index(){
-    //     $this->loadModel('Page');
-    //     $conditions = array('type' => 'pages' );
-
-    // }   
 
     
 }
